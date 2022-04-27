@@ -1,0 +1,22 @@
+uuid: 7aff0f90-c34d-4d9f-b5ca-ecac96a6796a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: LM3h25H9KldtEU-nbn86aGuZtvYKo94zp34DKU6rJE0
+id: node.field_stand_rights
+field_name: field_stand_rights
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+uuid: 44aa3e94-13bf-41d7-ae05-9ee3cf27d659
+langcode: en
+status: true
+dependencies: {  }
+name: 'Islandora Access'
+vid: islandora_access
+description: 'Terms used to limit, restrict or coordinate access'
+weight: 0

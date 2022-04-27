@@ -1,0 +1,18 @@
+uuid: 71f55381-3fb5-4e76-aac6-9c15d8b21cb0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupal8_parallax_theme
+id: drupal8_parallax_theme_local_actions
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: 3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,15 @@
+uuid: b7d8fa93-7491-4337-9d85-1dfd7fe996e3
+langcode: en
+status: true
+dependencies: {  }
+name: linked_image_jh
+label: 'Linked Image JH 750px'
+effects:
+  1c5c317f-7085-4b50-b665-169dcd8ec6f2:
+    uuid: 1c5c317f-7085-4b50-b665-169dcd8ec6f2
+    id: image_scale
+    weight: 1
+    data:
+      width: 750
+      height: null
+      upscale: false

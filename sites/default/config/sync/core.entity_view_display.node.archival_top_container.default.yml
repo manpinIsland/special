@@ -1,0 +1,64 @@
+uuid: 5d66f232-a31e-48a1-a418-030476802742
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.archival_top_container.field_as_container_collection
+    - field.field.node.archival_top_container.field_as_container_indicator
+    - field.field.node.archival_top_container.field_as_container_short_title
+    - field.field.node.archival_top_container.field_as_container_type
+    - field.field.node.archival_top_container.field_repository
+    - field.field.node.archival_top_container.field_restrictions_bool
+    - node.type.archival_top_container
+  module:
+    - user
+id: node.archival_top_container.default
+targetEntityType: node
+bundle: archival_top_container
+mode: default
+content:
+  archival_container_list_eva_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_as_container_collection:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_restrictions_bool:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: ''
+      format_custom_true: 'Access Restricted'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_service_file: true
+  display_media_thumbnail: true
+  field_as_container_indicator: true
+  field_as_container_short_title: true
+  field_as_container_type: true
+  field_repository: true
+  langcode: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  pdfjs_media_evas_service_file: true
+  search_api_excerpt: true

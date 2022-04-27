@@ -1,0 +1,25 @@
+uuid: 264108c0-85eb-42cb-9d98-6e9597eb2042
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_authority_link
+    - taxonomy.vocabulary.material_type
+  module:
+    - controlled_access_terms
+id: taxonomy_term.material_type.field_authority_link
+field_name: field_authority_link
+entity_type: taxonomy_term
+bundle: material_type
+label: 'Authority Sources'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  authority_sources:
+    other: Other
+  title: 1
+  link_type: 16
+field_type: authority_link

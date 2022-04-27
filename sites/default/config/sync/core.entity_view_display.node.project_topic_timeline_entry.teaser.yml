@@ -1,0 +1,90 @@
+uuid: ec532d0f-43e6-41d4-be4a-0ec44d82bc97
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.project_topic_timeline_entry.body
+    - field.field.node.project_topic_timeline_entry.field_project
+    - field.field.node.project_topic_timeline_entry.field_timeline_entry_date
+    - field.field.node.project_topic_timeline_entry.field_timeline_entry_image
+    - field.field.node.project_topic_timeline_entry.field_topic
+    - node.type.project_topic_timeline_entry
+  module:
+    - text
+    - user
+id: node.project_topic_timeline_entry.teaser
+targetEntityType: node
+bundle: project_topic_timeline_entry
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  display_media_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_thumbnail:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  openseadragon_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  field_project: true
+  field_timeline_entry_date: true
+  field_timeline_entry_image: true
+  field_topic: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: c04e2c89-c06b-424c-a6a2-f42affbd595c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: M03QRa-atkVaWP-JdgbNEY8aWXqNKI6SsjwDjMDc9GA
+id: node.field_geographic_coverage
+field_name: field_geographic_coverage
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

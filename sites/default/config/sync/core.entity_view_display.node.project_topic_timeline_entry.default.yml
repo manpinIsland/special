@@ -1,0 +1,114 @@
+uuid: c4f3938b-cbaf-4be3-aed7-1ade6032f9ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project_topic_timeline_entry.body
+    - field.field.node.project_topic_timeline_entry.field_project
+    - field.field.node.project_topic_timeline_entry.field_timeline_entry_date
+    - field.field.node.project_topic_timeline_entry.field_timeline_entry_image
+    - field.field.node.project_topic_timeline_entry.field_topic
+    - node.type.project_topic_timeline_entry
+  module:
+    - image
+    - text
+    - user
+id: node.project_topic_timeline_entry.default
+targetEntityType: node
+bundle: project_topic_timeline_entry
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  display_media_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_thumbnail:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_project:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_timeline_entry_date:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_timeline_entry_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_topic:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  openseadragon_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true

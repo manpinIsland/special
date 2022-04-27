@@ -1,0 +1,30 @@
+uuid: d515333f-fb87-4770-a654-185361cb4f73
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menus-side-menu
+  module:
+    - system
+  theme:
+    - menus
+id: menussidemenu
+theme: menus
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:menus-side-menu'
+settings:
+  id: 'system_menu_block:menus-side-menu'
+  label: 'Menus Side Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/collections/menus\r\n/collections/menus/*"

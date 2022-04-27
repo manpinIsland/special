@@ -1,0 +1,18 @@
+uuid: df09fd9b-f2e1-414d-90a4-3169950faf3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.archival_top_container
+id: node.archival_top_container.title
+field_name: title
+entity_type: node
+bundle: archival_top_container
+label: Label
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

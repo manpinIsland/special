@@ -1,0 +1,8 @@
+uuid: 18c7f133-b1f2-4251-97c2-c7ef67bfa23d
+langcode: en
+status: true
+dependencies: {  }
+name: Genre
+vid: genre
+description: 'A term or terms that designate a category characterizing a particular style, form, or content, such as artistic, musical, literary composition, etc.'
+weight: 0

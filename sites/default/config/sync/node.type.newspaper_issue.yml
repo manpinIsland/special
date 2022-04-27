@@ -1,0 +1,20 @@
+uuid: c1e15cbb-6575-40b7-9af3-8f8981b05c2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: n1QKz32Ce72mZFPJyP5PlRNNfgsHaXsUsZWCPvXD0ZY
+name: 'Newspaper Issue'
+type: newspaper_issue
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

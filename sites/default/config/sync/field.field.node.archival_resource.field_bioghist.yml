@@ -1,0 +1,21 @@
+uuid: fb84bcf2-7806-4326-a1f6-4bdb0454f0b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bioghist
+    - node.type.archival_resource
+  module:
+    - text
+id: node.archival_resource.field_bioghist
+field_name: field_bioghist
+entity_type: node
+bundle: archival_resource
+label: 'Biographical / Historical Note'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

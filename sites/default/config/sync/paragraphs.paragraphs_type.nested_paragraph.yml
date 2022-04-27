@@ -1,0 +1,9 @@
+uuid: 4a5dd2bd-78df-4d5d-99cb-6eb06cff500a
+langcode: en
+status: true
+dependencies: {  }
+id: nested_paragraph
+label: 'Nested Paragraph'
+icon_uuid: null
+description: 'Use <em>Nested Paragraph</em> for nesting more paragraphs inside.'
+behavior_plugins: {  }

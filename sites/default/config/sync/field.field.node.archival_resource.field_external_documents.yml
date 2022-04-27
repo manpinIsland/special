@@ -1,0 +1,23 @@
+uuid: de2e2799-d5de-4ae4-8ba2-cdde8f978e25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_documents
+    - node.type.archival_resource
+  module:
+    - link
+id: node.archival_resource.field_external_documents
+field_name: field_external_documents
+entity_type: node
+bundle: archival_resource
+label: 'External Documents'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

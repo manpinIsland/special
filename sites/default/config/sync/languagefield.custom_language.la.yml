@@ -1,0 +1,8 @@
+uuid: ae674c4a-b4cd-45ae-8af0-246abcf276d2
+langcode: en
+status: true
+dependencies: {  }
+id: la
+label: Latin
+weight: -10
+native_name: 'Lingua Latina'

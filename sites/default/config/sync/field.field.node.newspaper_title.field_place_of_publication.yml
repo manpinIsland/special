@@ -1,0 +1,31 @@
+uuid: ecf9216a-03cc-44c0-a69c-66c91b743c9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_place_of_publication
+    - node.type.newspaper_title
+    - taxonomy.vocabulary.geo_location
+_core:
+  default_config_hash: d5m38muAmZYwozl7CuKodigxkboc0deS160pih0pj1o
+id: node.newspaper_title.field_place_of_publication
+field_name: field_place_of_publication
+entity_type: node
+bundle: newspaper_title
+label: 'Place of Publication'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      geo_location: geo_location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

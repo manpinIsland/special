@@ -1,0 +1,30 @@
+uuid: 39d3ac24-d2ca-47ef-9c92-772284a1242d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.skyline-footer-menu
+  module:
+    - system
+  theme:
+    - skyline
+id: skylinefootermenu
+theme: skyline
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:skyline-footer-menu'
+settings:
+  id: 'system_menu_block:skyline-footer-menu'
+  label: 'Skyline Footer Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*"

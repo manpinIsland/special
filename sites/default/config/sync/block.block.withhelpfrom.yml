@@ -1,0 +1,31 @@
+uuid: 8758eb0f-8337-428a-8491-e56a7d410a4c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:91314c41-6916-4d3c-a77d-cc7514687eb3'
+  module:
+    - block_content
+    - system
+  theme:
+    - menus
+id: withhelpfrom
+theme: menus
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:91314c41-6916-4d3c-a77d-cc7514687eb3'
+settings:
+  id: 'block_content:91314c41-6916-4d3c-a77d-cc7514687eb3'
+  label: 'With help from'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/collections/menus\r\n/collections/menus/*"

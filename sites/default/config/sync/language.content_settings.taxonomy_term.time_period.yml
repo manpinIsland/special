@@ -1,0 +1,11 @@
+uuid: 7f8b6088-db78-477a-84e4-94a16244428d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.time_period
+id: taxonomy_term.time_period
+target_entity_type_id: taxonomy_term
+target_bundle: time_period
+default_langcode: site_default
+language_alterable: false

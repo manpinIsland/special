@@ -1,0 +1,26 @@
+uuid: 6b7d893d-81b0-423b-b248-20be5664d98d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.header_image.field_image
+    - image.style.small_collection_head
+    - paragraphs.paragraphs_type.header_image
+  module:
+    - image
+id: paragraph.header_image.default
+targetEntityType: paragraph
+bundle: header_image
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: small_collection_head
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

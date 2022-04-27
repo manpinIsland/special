@@ -1,0 +1,75 @@
+uuid: e63a1caa-f853-46bb-8966-9e5de3c6afba
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newspaper_issue
+  module:
+    - node
+  enforced:
+    module:
+      - newspapers
+_core:
+  default_config_hash: ciRgnNWIfxXAD5MG3hu6rDXSQPNgs05ph7WibdLPBUg
+id: node.newspaper_issue
+targetEntityType: node
+bundle: newspaper_issue
+types:
+  - 'pcdm:Object'
+  - 'bibo:Issue'
+fieldMappings:
+  body:
+    properties:
+      - 'dcterms:description'
+  field_alternate_title:
+    properties:
+      - 'dcterms:alternative'
+  field_date:
+    properties:
+      - 'dcterms:date'
+  field_digital_id:
+    properties:
+      - 'dcterms:identifier'
+  field_editition_number:
+    properties:
+      - 'bibo:edition'
+  field_edition:
+    properties:
+      - 'bibo:edition'
+  field_geographic_coverage:
+    properties:
+      - 'dcterms:spatial'
+  field_issue_number:
+    properties:
+      - 'bibo:issue'
+  field_issue_volume:
+    properties:
+      - 'bibo:volume'
+  field_mimetype:
+    properties:
+      - 'dcterms:format'
+  field_place_of_publication:
+    properties:
+      - 'dcterms:spatial'
+  field_publisher:
+    properties:
+      - 'dcterms:publisher'
+  field_stand_rights:
+    properties:
+      - 'dcterms:rights'
+  field_title:
+    properties:
+      - 'dcterms:isPartOf'
+  field_type:
+    properties:
+      - 'dcterms:type'
+  created:
+    properties:
+      - 'schema:dateCreated'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'

@@ -1,0 +1,62 @@
+uuid: ed9baeef-60c7-4afb-9a17-a9354fdf68f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.newspaper_issue.field_date
+    - field.field.node.newspaper_issue.field_digital_id
+    - field.field.node.newspaper_issue.field_edition
+    - field.field.node.newspaper_issue.field_edition_number
+    - field.field.node.newspaper_issue.field_geographic_coverage
+    - field.field.node.newspaper_issue.field_issue_number
+    - field.field.node.newspaper_issue.field_issue_volume
+    - field.field.node.newspaper_issue.field_mimetype
+    - field.field.node.newspaper_issue.field_place_of_publication
+    - field.field.node.newspaper_issue.field_publisher
+    - field.field.node.newspaper_issue.field_stand_rights
+    - field.field.node.newspaper_issue.field_title
+    - field.field.node.newspaper_issue.field_type
+    - node.type.newspaper_issue
+  module:
+    - user
+_core:
+  default_config_hash: rq33oFuVrbYA9iYDUt_EbeTUlMzPehJZTIFcHNsyyXc
+id: node.newspaper_issue.teaser
+targetEntityType: node
+bundle: newspaper_issue
+mode: teaser
+content:
+  display_media_thumbnail:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  digital_object_children_entity_view_1: true
+  digital_object_children_entity_view_2: true
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_service_file: true
+  field_date: true
+  field_digital_id: true
+  field_edition: true
+  field_edition_number: true
+  field_geographic_coverage: true
+  field_issue_number: true
+  field_issue_volume: true
+  field_mimetype: true
+  field_place_of_publication: true
+  field_publisher: true
+  field_stand_rights: true
+  field_title: true
+  field_type: true
+  langcode: true
+  links: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  pdfjs_media_evas_service_file: true
+  search_api_excerpt: true

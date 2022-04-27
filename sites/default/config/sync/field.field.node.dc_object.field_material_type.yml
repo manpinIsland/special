@@ -1,0 +1,29 @@
+uuid: 8de68c6f-89f1-4fa9-b191-3a11ff40cdf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_material_type
+    - node.type.dc_object
+    - taxonomy.vocabulary.material_type
+id: node.dc_object.field_material_type
+field_name: field_material_type
+entity_type: node
+bundle: dc_object
+label: 'Material Type'
+description: 'Use the Guide to Material Types to assign the appropriate Art and Architecture Thesaurus term(s) to describe the genre(s) of the resource.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      material_type: material_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

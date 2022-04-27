@@ -1,0 +1,31 @@
+uuid: 86c74d3a-8540-4ddd-92da-f90e92766554
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:44b38535-d123-4cf7-8edc-5e5d767272ad'
+  module:
+    - block_content
+    - system
+  theme:
+    - skyline
+id: skylinesearchbox_3
+theme: skyline
+region: search_box
+weight: 0
+provider: null
+plugin: 'block_content:44b38535-d123-4cf7-8edc-5e5d767272ad'
+settings:
+  id: 'block_content:44b38535-d123-4cf7-8edc-5e5d767272ad'
+  label: 'Skyline Search Box'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/hotel/*"

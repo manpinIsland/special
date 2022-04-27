@@ -1,0 +1,31 @@
+uuid: 475bd94d-d1e2-415b-baac-bf4a76590375
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e755a2f1-b6b7-429f-bb1a-d1138ce77d98'
+  module:
+    - block_content
+    - system
+  theme:
+    - aae
+id: aaesearchbox
+theme: aae
+region: search_box
+weight: -7
+provider: null
+plugin: 'block_content:e755a2f1-b6b7-429f-bb1a-d1138ce77d98'
+settings:
+  id: 'block_content:e755a2f1-b6b7-429f-bb1a-d1138ce77d98'
+  label: 'AAE Search Box'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/aae\r\n/aae/*"

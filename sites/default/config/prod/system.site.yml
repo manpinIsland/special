@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+langcode: en
+uuid: 87d08f4a-837b-47dc-be5e-2f0c5665bf37
+name: 'UNLV Special Collections Portal'
+mail: libhelp@unlv.edu
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/6
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

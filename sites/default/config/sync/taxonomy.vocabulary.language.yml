@@ -1,0 +1,8 @@
+uuid: 6b229bc8-fc85-4aa3-ba24-08caf783af66
+langcode: en
+status: true
+dependencies: {  }
+name: Language
+vid: language
+description: 'Language of the work'
+weight: 0

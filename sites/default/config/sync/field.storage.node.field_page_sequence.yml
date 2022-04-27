@@ -1,0 +1,22 @@
+uuid: ae43c915-3874-4a4c-8998-e0a8ce316230
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: FcytJbwx89lhmtdYzNNC-13b1ripwmQ4nrkws3UUKmg
+id: node.field_page_sequence
+field_name: field_page_sequence
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

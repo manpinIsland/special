@@ -1,0 +1,10 @@
+uuid: b4c38ffc-7d20-4cb7-a00f-bcadb6d21d03
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.timeline
+label: Timeline
+targetEntityType: node
+cache: true

@@ -1,0 +1,33 @@
+uuid: 70d11719-13a0-41f4-8bca-d93a48c71942
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.archival_container_list
+  module:
+    - node
+    - views
+  theme:
+    - drupal8_parallax_theme
+id: views_block__archival_container_list_block_1_2
+theme: drupal8_parallax_theme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:archival_container_list-block_1'
+settings:
+  id: 'views_block:archival_container_list-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      archival_top_container: archival_top_container

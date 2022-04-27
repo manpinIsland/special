@@ -1,0 +1,23 @@
+uuid: 8824c741-19ec-4a55-9d0a-cfcdcc9439fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_double_nested
+    - node.type.paragraphed_collection
+id: node.paragraphed_collection.field_is_double_nested
+field_name: field_is_double_nested
+entity_type: node
+bundle: paragraphed_collection
+label: 'Is Double Nested'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

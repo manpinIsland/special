@@ -1,0 +1,20 @@
+uuid: a6feb494-afd8-48c4-87a7-911f14c7d98b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.digital_projects
+  module:
+    - taxonomy
+id: taxonomy_term.digital_projects
+targetEntityType: taxonomy_term
+bundle: digital_projects
+types:
+  - 'schema:Thing'
+fieldMappings:
+  name:
+    properties:
+      - 'schema:name'
+  field_project_site_url:
+    properties:
+      - 'schema:sameAs'

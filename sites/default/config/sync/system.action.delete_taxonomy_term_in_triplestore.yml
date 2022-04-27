@@ -1,0 +1,16 @@
+uuid: 577919ff-1da3-414a-91a7-65c0fbac5b6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+  enforced:
+    module:
+      - islandora_core_feature
+id: delete_taxonomy_term_in_triplestore
+label: 'Delete Taxonomy Term in Triplestore'
+type: taxonomy_term
+plugin: emit_term_event
+configuration:
+  queue: islandora-indexing-triplestore-delete
+  event: Delete

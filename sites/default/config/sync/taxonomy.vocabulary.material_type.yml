@@ -1,0 +1,8 @@
+uuid: 33eb3dc4-2952-4532-9e8e-97a6219b0f26
+langcode: en
+status: true
+dependencies: {  }
+name: 'Material Type'
+vid: material_type
+description: 'The genre of the resource.'
+weight: 0

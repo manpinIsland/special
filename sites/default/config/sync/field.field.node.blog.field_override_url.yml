@@ -1,0 +1,23 @@
+uuid: c0155cda-41ba-424c-8260-93243799cc37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_override_url
+    - node.type.blog
+  module:
+    - link
+id: node.blog.field_override_url
+field_name: field_override_url
+entity_type: node
+bundle: blog
+label: 'External Blog URL'
+description: 'Link to the blog outside of system.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

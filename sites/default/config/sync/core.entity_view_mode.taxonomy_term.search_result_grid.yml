@@ -1,0 +1,10 @@
+uuid: 3ad76845-d0e9-4de4-84b0-3b745a0ef4cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.search_result_grid
+label: 'Search result grid'
+targetEntityType: taxonomy_term
+cache: true

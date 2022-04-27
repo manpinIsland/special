@@ -1,0 +1,9 @@
+uuid: 31386b13-c302-41f0-b310-885922881f21
+langcode: en
+status: true
+dependencies: {  }
+id: small_gallery
+label: 'Small Gallery Linked'
+icon_uuid: null
+description: 'Use Images for adding one to four images to a small gallery.'
+behavior_plugins: {  }

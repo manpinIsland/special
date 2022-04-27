@@ -1,0 +1,8 @@
+uuid: b22502db-aad3-45bf-858b-d4bdd05b8be2
+langcode: en
+status: true
+dependencies: {  }
+name: Family
+vid: family
+description: 'Two or more people related through marriage, birth, adoption, or other legal manner, or who present themselves as a family.'
+weight: 0

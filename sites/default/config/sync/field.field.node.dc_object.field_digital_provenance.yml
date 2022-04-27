@@ -1,0 +1,29 @@
+uuid: cb1a7a4c-3d44-41ec-8ea0-63729013443e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_digital_provenance
+    - node.type.dc_object
+    - taxonomy.vocabulary.digital_provenance
+id: node.dc_object.field_digital_provenance
+field_name: field_digital_provenance
+entity_type: node
+bundle: dc_object
+label: 'Digital Provenance'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      digital_provenance: digital_provenance
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

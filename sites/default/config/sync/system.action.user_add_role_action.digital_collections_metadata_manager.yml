@@ -1,0 +1,14 @@
+uuid: 8c35d20a-549a-4bf6-a24a-501d3c0ebe0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.digital_collections_metadata_manager
+  module:
+    - user
+id: user_add_role_action.digital_collections_metadata_manager
+label: 'Add the Metadata Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: digital_collections_metadata_manager

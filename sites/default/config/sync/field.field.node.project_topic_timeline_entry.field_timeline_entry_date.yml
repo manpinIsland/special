@@ -1,0 +1,19 @@
+uuid: 83a6b2de-b736-436a-97e3-75429dcb450d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_timeline_entry_date
+    - node.type.project_topic_timeline_entry
+id: node.project_topic_timeline_entry.field_timeline_entry_date
+field_name: field_timeline_entry_date
+entity_type: node
+bundle: project_topic_timeline_entry
+label: 'Timeline Entry Date'
+description: 'Enter a date in the format YYYY, YYYY-MM, or YYYY-MM-DD. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

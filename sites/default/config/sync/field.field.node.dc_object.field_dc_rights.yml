@@ -1,0 +1,21 @@
+uuid: 0ccaeff8-6c93-4fa0-bab1-8db7d592d2c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dc_rights
+    - node.type.dc_object
+id: node.dc_object.field_dc_rights
+field_name: field_dc_rights
+entity_type: node
+bundle: dc_object
+label: Rights
+description: "Information about rights held in and over the resource.\r\n\r\nUse the Rights field to describe the copyright status of the access file."
+required: true
+translatable: false
+default_value:
+  -
+    value: 'This material is made available to facilitate private study, scholarship, or research. It may be protected by copyright, trademark, privacy, publicity rights, or other interests not owned by UNLV. Users are responsible for determining whether permissions are necessary from rights owners for any intended use and for obtaining all required permissions. Acknowledgement of the UNLV University Libraries is requested. For more information, please see the UNLV Special Collections policies on reproduction and use (https://www.library.unlv.edu/speccol/research_and_services/reproductions) or contact us at special.collections@unlv.edu.'
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: XgeYJpPmZIOwE_nA73tYvFw-Rcj-HtlbNwfktqSVsaQ
+broker_url: 'tcp://fedora.library.unlv.edu:61613'
+jwt_expiry: '+14 days'
+gemini_url: 'http://fedora.library.unlv.edu/gemini'
+gemini_pseudo_bundles:
+  'islandora_access:taxonomy_term': 'islandora_access:taxonomy_term'
+  'islandora_display:taxonomy_term': 'islandora_display:taxonomy_term'
+  'islandora_media_use:taxonomy_term': 'islandora_media_use:taxonomy_term'
+  'islandora_models:taxonomy_term': 'islandora_models:taxonomy_term'

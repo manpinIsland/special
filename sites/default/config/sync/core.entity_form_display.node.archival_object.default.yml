@@ -1,0 +1,504 @@
+uuid: e588565c-59a0-49d2-8f48-f164c60072ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.archival_object.field_abstract
+    - field.field.node.archival_object.field_accessrestrict
+    - field.field.node.archival_object.field_accruals
+    - field.field.node.archival_object.field_acqinfo
+    - field.field.node.archival_object.field_altformavail
+    - field.field.node.archival_object.field_appraisal
+    - field.field.node.archival_object.field_archival_container
+    - field.field.node.archival_object.field_archival_record_level
+    - field.field.node.archival_object.field_arrangement
+    - field.field.node.archival_object.field_as_date
+    - field.field.node.archival_object.field_as_extent
+    - field.field.node.archival_object.field_as_ref_id
+    - field.field.node.archival_object.field_as_resource
+    - field.field.node.archival_object.field_as_title
+    - field.field.node.archival_object.field_bioghist
+    - field.field.node.archival_object.field_custodhist
+    - field.field.node.archival_object.field_dimensions
+    - field.field.node.archival_object.field_external_documents
+    - field.field.node.archival_object.field_fileplan
+    - field.field.node.archival_object.field_langmaterial
+    - field.field.node.archival_object.field_legalstatus
+    - field.field.node.archival_object.field_linked_agent
+    - field.field.node.archival_object.field_materialspec
+    - field.field.node.archival_object.field_member_of
+    - field.field.node.archival_object.field_odd
+    - field.field.node.archival_object.field_originalsloc
+    - field.field.node.archival_object.field_otherfindaid
+    - field.field.node.archival_object.field_physdesc
+    - field.field.node.archival_object.field_physfacet
+    - field.field.node.archival_object.field_physloc
+    - field.field.node.archival_object.field_phystech
+    - field.field.node.archival_object.field_prefercite
+    - field.field.node.archival_object.field_processinfo
+    - field.field.node.archival_object.field_relatedmaterial
+    - field.field.node.archival_object.field_resource_identifier
+    - field.field.node.archival_object.field_restrictions_bool
+    - field.field.node.archival_object.field_scopecontent
+    - field.field.node.archival_object.field_separatedmaterial
+    - field.field.node.archival_object.field_subject
+    - field.field.node.archival_object.field_user_mtime
+    - field.field.node.archival_object.field_userestrict
+    - field.field.node.archival_object.field_weight
+    - node.type.archival_object
+  module:
+    - archivesspace
+    - controlled_access_terms
+    - datetime
+    - field_group
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_basic_information:
+      children:
+        - title
+        - field_as_title
+        - field_resource_identifier
+        - field_archival_record_level
+        - langcode
+        - field_member_of
+        - field_as_resource
+        - status
+        - field_restrictions_bool
+      label: 'Basic Information'
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: true
+        required_fields: true
+    group_notes:
+      children:
+        - field_abstract
+        - field_accruals
+        - field_accessrestrict
+        - field_acqinfo
+        - field_altformavail
+        - field_appraisal
+        - field_arrangement
+        - field_bioghist
+        - field_custodhist
+        - field_dimensions
+        - field_fileplan
+        - field_langmaterial
+        - field_legalstatus
+        - field_materialspec
+        - field_originalsloc
+        - field_otherfindaid
+        - field_physdesc
+        - field_physfacet
+        - field_physloc
+        - field_phystech
+        - field_prefercite
+        - field_processinfo
+        - field_relatedmaterial
+        - field_scopecontent
+        - field_separatedmaterial
+        - field_userestrict
+        - field_odd
+      label: Notes
+      parent_name: ''
+      weight: 20
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: false
+        required_fields: true
+id: node.archival_object.default
+targetEntityType: node
+bundle: archival_object
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_abstract:
+    type: text_textarea
+    weight: 19
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_accessrestrict:
+    type: text_textarea
+    weight: 21
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_accruals:
+    type: text_textarea
+    weight: 20
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_acqinfo:
+    type: text_textarea
+    weight: 22
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_altformavail:
+    type: text_textarea
+    weight: 23
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_appraisal:
+    type: text_textarea
+    weight: 24
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_archival_container:
+    type: archival_physical_instance_default
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+      match_operator: CONTAINS
+      match_limit: 10
+    third_party_settings: {  }
+  field_archival_record_level:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_arrangement:
+    type: text_textarea
+    weight: 25
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_as_date:
+    type: as_date_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_as_extent:
+    type: as_extent_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_as_resource:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_as_title:
+    type: text_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_bioghist:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_custodhist:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_dimensions:
+    type: text_textarea
+    weight: 28
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_fileplan:
+    type: text_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_langmaterial:
+    type: text_textarea
+    weight: 30
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_legalstatus:
+    type: text_textarea
+    weight: 31
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_linked_agent:
+    type: typed_relation_default
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+      match_operator: CONTAINS
+      match_limit: 10
+    third_party_settings: {  }
+  field_materialspec:
+    type: text_textarea
+    weight: 32
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_member_of:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_odd:
+    type: text_textarea
+    weight: 45
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_originalsloc:
+    type: text_textarea
+    weight: 33
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_otherfindaid:
+    type: text_textarea
+    weight: 34
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_physdesc:
+    type: text_textarea
+    weight: 35
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_physfacet:
+    type: text_textarea
+    weight: 36
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_physloc:
+    type: text_textarea
+    weight: 37
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_phystech:
+    type: text_textarea
+    weight: 38
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_prefercite:
+    type: text_textarea
+    weight: 39
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_processinfo:
+    type: text_textarea
+    weight: 40
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_relatedmaterial:
+    type: text_textarea
+    weight: 41
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_resource_identifier:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_restrictions_bool:
+    type: boolean_checkbox
+    weight: 18
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_scopecontent:
+    type: text_textarea
+    weight: 42
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_separatedmaterial:
+    type: text_textarea
+    weight: 43
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_subject:
+    type: entity_reference_autocomplete
+    weight: 13
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_user_mtime:
+    type: datetime_default
+    weight: 46
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_userestrict:
+    type: text_textarea
+    weight: 44
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 14
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_as_agent_links: true
+  field_as_parent: true
+  field_as_ref_id: true
+  field_as_subject: true
+  field_as_weight: true
+  field_external_documents: true

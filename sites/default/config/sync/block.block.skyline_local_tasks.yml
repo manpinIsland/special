@@ -1,0 +1,20 @@
+uuid: 53fec58c-5ae1-47f8-b68b-e71703fa3a2c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - skyline
+id: skyline_local_tasks
+theme: skyline
+region: content
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,15 @@
+uuid: 236c5422-d721-409b-a329-ea90d7e84775
+langcode: en
+status: true
+dependencies: {  }
+name: front_page_blogs
+label: 'Front Page Blogs'
+effects:
+  29c1c86b-c0c7-455e-b89b-7232f13464bf:
+    uuid: 29c1c86b-c0c7-455e-b89b-7232f13464bf
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 223
+      anchor: center-center

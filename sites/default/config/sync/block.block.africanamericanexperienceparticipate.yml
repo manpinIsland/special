@@ -1,0 +1,31 @@
+uuid: 19cd7566-7a96-4534-ade9-6318d8f39aef
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ff73b803-50ef-4f7b-8ac7-1a7a802f10ca'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: africanamericanexperienceparticipate
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: 6
+provider: null
+plugin: 'block_content:ff73b803-50ef-4f7b-8ac7-1a7a802f10ca'
+settings:
+  id: 'block_content:ff73b803-50ef-4f7b-8ac7-1a7a802f10ca'
+  label: 'African American Experience Participate'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /aae/participate

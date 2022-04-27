@@ -1,0 +1,23 @@
+uuid: 8ad0c8bb-8412-49f2-8cb5-ddf2c72bd5ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.subject
+  module:
+    - taxonomy
+id: taxonomy_term.subject
+targetEntityType: taxonomy_term
+bundle: subject
+types:
+  - 'schema:Thing'
+fieldMappings:
+  name:
+    properties:
+      - 'schema:name'
+  description:
+    properties:
+      - 'schema:description'
+  field_authority_link:
+    properties:
+      - 'schema:sameAs'

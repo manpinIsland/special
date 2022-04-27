@@ -1,0 +1,15 @@
+uuid: 3a0d0a3c-29c3-478d-8291-a46b7a26ee6c
+langcode: en
+status: true
+dependencies: {  }
+name: small_collection_head
+label: 'Small Collection Head (744 x 311)'
+effects:
+  10a475d9-995a-4bdd-bb8b-0db324f5ad56:
+    uuid: 10a475d9-995a-4bdd-bb8b-0db324f5ad56
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 744
+      height: 311
+      anchor: center-center

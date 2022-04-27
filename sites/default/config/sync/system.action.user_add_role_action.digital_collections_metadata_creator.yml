@@ -1,0 +1,14 @@
+uuid: 3744b12e-3f54-419f-8c80-a13ed6768799
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.digital_collections_metadata_creator
+  module:
+    - user
+id: user_add_role_action.digital_collections_metadata_creator
+label: 'Add the Digital Collections Metadata Creator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: digital_collections_metadata_creator

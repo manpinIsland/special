@@ -1,0 +1,8 @@
+uuid: 4ab12719-2d7d-412b-bc3d-be5b37cd5253
+langcode: en
+status: true
+dependencies: {  }
+name: 'AAE Featured Grid'
+vid: aae_featured_grid
+description: 'The top grid of image links on African American Experience'
+weight: 0

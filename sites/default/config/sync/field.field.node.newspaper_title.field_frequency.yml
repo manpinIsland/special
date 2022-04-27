@@ -1,0 +1,21 @@
+uuid: 45be3a42-5b4d-4dd7-bf18-8ad589fe2a25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_frequency
+    - node.type.newspaper_title
+_core:
+  default_config_hash: DW1HXiT0IIKAslEg8ywlOdxmaJ9wHS1V4u-vpvOEjdQ
+id: node.newspaper_title.field_frequency
+field_name: field_frequency
+entity_type: node
+bundle: newspaper_title
+label: Frequency
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

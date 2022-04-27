@@ -1,0 +1,21 @@
+uuid: a31d38cb-98ae-4f84-a43d-234ffd26484e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+  enforced:
+    module:
+      - islandora_defaults
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Digital Collections Object'
+type: dc_object
+description: 'Implements the Digital Collections metadata profile for repository objects'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

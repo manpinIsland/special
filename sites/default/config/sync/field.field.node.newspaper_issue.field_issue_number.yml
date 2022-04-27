@@ -1,0 +1,25 @@
+uuid: b4c68635-9268-41bb-9ee3-2394733a7d93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_issue_number
+    - node.type.newspaper_issue
+_core:
+  default_config_hash: dso2xJY6jC0dPwWh53ZGCkBtbzEbWrwK5ukapiBUvhY
+id: node.newspaper_issue.field_issue_number
+field_name: field_issue_number
+entity_type: node
+bundle: newspaper_issue
+label: Number
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

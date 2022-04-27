@@ -1,0 +1,23 @@
+uuid: 244f60b6-21ab-4bc7-844e-9a23d1fbddb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.paragraph_linked_image_left_
+  module:
+    - link
+id: paragraph.paragraph_linked_image_left_.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: paragraph_linked_image_left_
+label: 'Collection Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

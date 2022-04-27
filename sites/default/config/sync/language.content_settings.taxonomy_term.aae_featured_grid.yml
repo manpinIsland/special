@@ -1,0 +1,11 @@
+uuid: ce6c6f93-3841-4299-ad8e-4750692dfcec
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.aae_featured_grid
+id: taxonomy_term.aae_featured_grid
+target_entity_type_id: taxonomy_term
+target_bundle: aae_featured_grid
+default_langcode: site_default
+language_alterable: false

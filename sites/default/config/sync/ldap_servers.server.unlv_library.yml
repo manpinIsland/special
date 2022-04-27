@@ -1,0 +1,39 @@
+uuid: d648937a-e95c-431d-b691-22a48a7b00ad
+langcode: en
+status: true
+dependencies: {  }
+id: unlv_library
+label: UNLV_Library
+type: ad
+address: redwood.library.unlv.edu
+port: 389
+timeout: 10
+tls: false
+weight: null
+bind_method: service_account
+binddn: 'CN=System No Rights User,OU=Users,OU=Support,DC=library,DC=unlv,DC=edu'
+bindpw: LTD-1243
+basedn:
+  - 'OU=Users,OU=Support,DC=library,DC=unlv,DC=edu'
+  - 'OU=Staff,DC=library,DC=unlv,DC=edu'
+user_attr: samaccountname
+account_name_attr: ''
+mail_attr: mail
+mail_template: '[givenname].[sn]@unlv.edu'
+picture_attr: ''
+unique_persistent_attr: objectsid
+unique_persistent_attr_binary: true
+user_dn_expression: 'cn=%username,%basedn'
+testing_drupal_username: sshaw
+testing_drupal_user_dn: ''
+grp_unused: false
+grp_object_cat: ''
+grp_nested: false
+grp_user_memb_attr_exists: false
+grp_user_memb_attr: ''
+grp_memb_attr: ''
+grp_memb_attr_match_user_attr: ''
+grp_derive_from_dn: false
+grp_derive_from_dn_attr: ''
+grp_test_grp_dn: ''
+grp_test_grp_dn_writeable: ''

@@ -1,0 +1,57 @@
+spt_table:
+  1:
+    status: '1'
+    pages: "/aae\r\n/aae/*"
+    theme: aae
+    weight: '-10'
+    roles:
+      anonymous: 0
+      authenticated: 0
+      administrator: 0
+    language:
+      en: 0
+      de: 0
+      fr: 0
+    remove: Remove
+  0:
+    status: '1'
+    pages: "/skyline\r\n/skyline/*"
+    theme: skyline
+    weight: '-9'
+    roles:
+      anonymous: 0
+      authenticated: 0
+      administrator: 0
+    language:
+      en: 0
+      de: 0
+      fr: 0
+    remove: Remove
+  2:
+    status: '1'
+    pages: "/jewishheritage\r\n/jewishheritage/*"
+    theme: jewishheritage_d8
+    weight: '-10'
+    roles:
+      anonymous: 0
+      authenticated: 0
+      administrator: 0
+    language:
+      en: 0
+      de: 0
+      fr: 0
+    remove: Remove
+  3:
+    status: '1'
+    pages: "/collections/menus\r\n/collections/menus/*"
+    theme: menus
+    weight: '-10'
+    roles:
+      anonymous: 0
+      authenticated: 0
+      administrator: 0
+    language:
+      en: 0
+      de: 0
+      fr: 0
+    remove: Remove

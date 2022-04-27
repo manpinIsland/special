@@ -1,0 +1,22 @@
+uuid: 93f1422c-049a-4183-b6e1-d9fb5f00314b
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+  enforced:
+    module:
+      - islandora_core_feature
+id: taxonomy_term.field_external_uri
+field_name: field_external_uri
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

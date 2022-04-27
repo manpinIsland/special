@@ -1,0 +1,11 @@
+uuid: 6a78b0d8-1478-4844-904b-09625a6213b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.digital_provenance
+id: taxonomy_term.digital_provenance
+target_entity_type_id: taxonomy_term
+target_bundle: digital_provenance
+default_langcode: site_default
+language_alterable: false

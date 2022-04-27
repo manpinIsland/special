@@ -1,0 +1,18 @@
+uuid: 25980bf3-e1db-4721-9e94-bf175ee2dd07
+langcode: en
+status: true
+dependencies:
+  theme:
+    - jewishheritage_d8
+id: jewishheritage_d8_local_actions
+theme: jewishheritage_d8
+region: header
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: c2e9c023-aa28-46d7-9748-a84e49af8d41
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dc_object
+id: node.dc_object.status
+field_name: status
+entity_type: node
+bundle: dc_object
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

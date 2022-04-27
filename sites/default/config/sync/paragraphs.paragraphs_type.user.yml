@@ -1,0 +1,9 @@
+uuid: b2c0f1a4-8d7e-425b-9daa-134a24bb3a5f
+langcode: en
+status: true
+dependencies: {  }
+id: user
+label: User
+icon_uuid: null
+description: 'Use <em>User</em> for adding a reference to an existing user.'
+behavior_plugins: {  }

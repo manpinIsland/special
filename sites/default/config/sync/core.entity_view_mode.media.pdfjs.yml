@@ -1,0 +1,10 @@
+uuid: 7a68bb3d-6884-45f0-be80-f60c93c83906
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.pdfjs
+label: PDFjs
+targetEntityType: media
+cache: true

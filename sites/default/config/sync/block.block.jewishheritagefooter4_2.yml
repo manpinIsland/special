@@ -1,0 +1,31 @@
+uuid: 34674127-e3d6-460a-82e2-151095f1aaa3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:17b6203b-b2c3-4b5e-9790-5b4ec954bc5a'
+  module:
+    - block_content
+    - system
+  theme:
+    - jewishheritage_d8
+id: jewishheritagefooter4_2
+theme: jewishheritage_d8
+region: footer_fourth
+weight: 0
+provider: null
+plugin: 'block_content:17b6203b-b2c3-4b5e-9790-5b4ec954bc5a'
+settings:
+  id: 'block_content:17b6203b-b2c3-4b5e-9790-5b4ec954bc5a'
+  label: 'Jewish Heritage Footer 4'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/jewishheritage\r\n/jewishheritage/*"

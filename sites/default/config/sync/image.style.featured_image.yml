@@ -1,0 +1,15 @@
+uuid: 4a32ba4a-9164-4187-89c7-9aed050947cf
+langcode: en
+status: true
+dependencies: {  }
+name: featured_image
+label: 'Featured Image(560px wide)'
+effects:
+  3096b945-2006-4ad4-87cf-5770148285b7:
+    uuid: 3096b945-2006-4ad4-87cf-5770148285b7
+    id: image_scale
+    weight: 1
+    data:
+      width: 560
+      height: null
+      upscale: true

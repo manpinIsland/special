@@ -1,0 +1,21 @@
+uuid: daa2ac9f-52c7-4ab8-b3cf-78009d621c8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_release_date
+    - node.type.dc_object
+  module:
+    - datetime
+id: node.dc_object.field_release_date
+field_name: field_release_date
+entity_type: node
+bundle: dc_object
+label: 'Restriction Release Date'
+description: "Date that the resource became or will become available.\r\n\r\nThe date covered by this element refers to the date on which restrictions are lifted and the resource is available for public access.  Reference the “Condition Governing Access” note in the finding aid for restriction release date."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,31 @@
+uuid: 268bc073-6442-42fb-898c-802c276cabd9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d7ba9fbe-8a95-40cf-b46b-aa8c4833a5b4'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: jewishheritageprojectupdates
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: 17
+provider: null
+plugin: 'block_content:d7ba9fbe-8a95-40cf-b46b-aa8c4833a5b4'
+settings:
+  id: 'block_content:d7ba9fbe-8a95-40cf-b46b-aa8c4833a5b4'
+  label: 'Jewish Heritage Project Updates'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/jewishheritage\r\n/jewishheritage/*"

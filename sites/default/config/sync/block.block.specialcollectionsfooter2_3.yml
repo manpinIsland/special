@@ -1,0 +1,43 @@
+uuid: f40788c1-b3e8-44d4-b4a8-d225b7cf5241
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:bec52ed9-f952-405e-8931-6df6eb25ac47'
+  module:
+    - block_content
+    - context
+    - islandora
+  theme:
+    - aae
+id: specialcollectionsfooter2_3
+theme: aae
+region: footer_second
+weight: 0
+provider: null
+plugin: 'block_content:bec52ed9-f952-405e-8931-6df6eb25ac47'
+settings:
+  id: 'block_content:bec52ed9-f952-405e-8931-6df6eb25ac47'
+  label: 'Special Collections Footer 2'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  media_source_mimetype:
+    id: media_source_mimetype
+    mimetype: ''
+    negate: false
+    context_mapping: {  }

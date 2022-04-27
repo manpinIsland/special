@@ -1,0 +1,29 @@
+uuid: ab3d6038-4ed5-4a0e-95fe-05ad08e9c86a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_restrictions
+    - node.type.dc_object
+    - taxonomy.vocabulary.restrictions
+id: node.dc_object.field_restrictions
+field_name: field_restrictions
+entity_type: node
+bundle: dc_object
+label: Restrictions
+description: 'Information regarding access or restrictions based on privacy, security, or other policies.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      restrictions: restrictions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

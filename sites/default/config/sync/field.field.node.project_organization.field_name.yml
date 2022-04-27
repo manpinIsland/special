@@ -1,0 +1,19 @@
+uuid: 008332be-1943-4ab7-accd-9a2be18c027f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name
+    - node.type.project_organization
+id: node.project_organization.field_name
+field_name: field_name
+entity_type: node
+bundle: project_organization
+label: 'View Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

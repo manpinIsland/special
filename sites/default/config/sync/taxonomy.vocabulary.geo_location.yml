@@ -1,0 +1,8 @@
+uuid: a159f68f-c8e7-49f9-8304-f2a434e346cb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Geographic Location'
+vid: geo_location
+description: 'Geographic area(s) and places to which the records pertain.'
+weight: 0

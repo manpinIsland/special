@@ -1,0 +1,56 @@
+uuid: 84cc69b3-db26-41be-9d9d-1c8ca1c466d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.islandora
+    - views.view.islandora_search
+  module:
+    - search_api
+_core:
+  default_config_hash: 3IV_AM44c0mx1Ch9p0Ff8ez3FjnWoQGn_Wq2x065qq8
+id: date
+name: Date
+url_alias: date
+weight: -4
+min_count: 1
+show_only_one_result: false
+field_identifier: aggregated_dates
+facet_source_id: 'search_api:views_page__islandora_search__search'
+widget:
+  type: select2
+  config:
+    show_numbers: true
+    width: 100%
+    autocomplete: false
+    match_operator: CONTAINS
+query_operator: and
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  count_widget_order:
+    processor_id: count_widget_order
+    weights:
+      sort: 30
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false

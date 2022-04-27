@@ -1,0 +1,29 @@
+uuid: 9c2fd124-33ef-4a48-b781-5a64fd76f4e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_narrator
+    - node.type.dc_object
+    - taxonomy.vocabulary.person
+id: node.dc_object.field_narrator
+field_name: field_narrator
+entity_type: node
+bundle: dc_object
+label: Narrator
+description: "A person who recounts past events.\r\n\r\nThis field is controlled and is used for Oral Histories. It is preferred to use the name that is verified in an authority file such as Library of Congress Name Authority File (LCNAF), ULAN, or VIAF. If a name is not already found in the controlled vocabulary and is not in these authority files, refer to the name that the individual uses themselves, rather than perhaps a different, given name. To determine what the interviewer calls themselves, look up how the interviewer refers to themselves in the PDF transcript or how they sign their name on the Contract/Use Agreement."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

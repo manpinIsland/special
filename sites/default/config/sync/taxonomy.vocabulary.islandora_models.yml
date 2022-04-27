@@ -1,0 +1,8 @@
+uuid: 94b5a7e9-8139-4bb7-ad95-9ae89ca3b66e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Islandora Models'
+vid: islandora_models
+description: 'Types of repository objects'
+weight: 0

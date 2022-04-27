@@ -1,0 +1,29 @@
+uuid: ce1c1571-00d1-4f8d-bfe2-ebd621348051
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publisher
+    - node.type.dc_object
+    - taxonomy.vocabulary.corporate_body
+id: node.dc_object.field_publisher
+field_name: field_publisher
+entity_type: node
+bundle: dc_object
+label: Publisher
+description: "An entity responsible for making the resource available.\r\n\r\nUse 'University of Nevada, Las Vegas. Libraries'."
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      corporate_body: corporate_body
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

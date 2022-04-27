@@ -1,0 +1,21 @@
+uuid: 63e0a042-9992-4688-b36c-e44f7f6efb2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.paragraph_linked_image_right_
+  module:
+    - text
+id: paragraph.paragraph_linked_image_right_.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: paragraph_linked_image_right_
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

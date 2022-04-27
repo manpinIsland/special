@@ -1,0 +1,8 @@
+uuid: 8446ad0e-e499-4629-b2aa-344040eb585e
+langcode: en
+status: true
+dependencies: {  }
+name: Restrictions
+vid: restrictions
+description: 'Information regarding access or restrictions based on privacy, security, or other policies.'
+weight: 0

@@ -1,0 +1,8 @@
+uuid: b483e7eb-95dd-484e-a46a-535be855dab8
+langcode: en
+status: true
+dependencies: {  }
+id: menus-main-menu
+label: 'Menus Main Menu'
+description: 'Main navigation for Menus and Digital Collections'
+locked: false

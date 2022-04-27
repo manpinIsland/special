@@ -1,0 +1,44 @@
+uuid: 06e5c275-9e41-40f9-ae95-f6dae672cc8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collection_paragraphs
+    - node.type.paragraphed_collection
+  module:
+    - entity_reference_revisions
+id: node.paragraphed_collection.field_collection_paragraphs
+field_name: field_collection_paragraphs
+entity_type: node
+bundle: paragraphed_collection
+label: 'Collection Paragraphs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      image_text:
+        weight: 8
+        enabled: false
+      images:
+        weight: 7
+        enabled: false
+      nested_paragraph:
+        weight: 9
+        enabled: false
+      text:
+        weight: 10
+        enabled: false
+      text_image:
+        weight: 11
+        enabled: false
+      user:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

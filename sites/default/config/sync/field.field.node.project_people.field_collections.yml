@@ -1,0 +1,28 @@
+uuid: 24ec72ab-0106-40ef-99b9-f89e4d8b93a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collections
+    - node.type.project_people
+    - taxonomy.vocabulary.collections
+id: node.project_people.field_collections
+field_name: field_collections
+entity_type: node
+bundle: project_people
+label: Project
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      collections: collections
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: e40779c4-4bc9-4614-8e65-dbf67022a39a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.project_people
+id: node.project_people.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: project_people
+label: 'First Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

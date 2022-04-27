@@ -1,0 +1,23 @@
+uuid: 5a63dab2-f187-44dc-a737-b5fe75073143
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.newspaper_issue
+  module:
+    - controlled_access_terms
+_core:
+  default_config_hash: ckTbRI_NV0xiQOVJ3f8TuHqccdbMWJG5HBekz9R9lak
+id: node.newspaper_issue.field_date
+field_name: field_date
+entity_type: node
+bundle: newspaper_issue
+label: Date
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: edtf

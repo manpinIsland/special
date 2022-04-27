@@ -1,0 +1,30 @@
+uuid: ce47709e-31ba-4892-a63e-97a67db6e089
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.dreaming-the-skyline
+  module:
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: dreamingtheskyline
+theme: drupal8_parallax_theme
+region: primary_menu
+weight: -5
+provider: null
+plugin: 'system_menu_block:dreaming-the-skyline'
+settings:
+  id: 'system_menu_block:dreaming-the-skyline'
+  label: 'Dreaming the Skyline Menu'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 3
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '/skyline*'

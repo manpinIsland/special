@@ -1,0 +1,21 @@
+uuid: 17b2cee5-17a6-43b0-a7a8-2f0077c4f771
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_digital_processing_note
+    - media.type.audio
+  module:
+    - text
+id: media.audio.field_digital_processing_note
+field_name: field_digital_processing_note
+entity_type: media
+bundle: audio
+label: 'Digital Processing Note'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,49 @@
+uuid: 0c3a0ef2-f377-4503-8de5-93aa6a05994b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.aae_featured_grid.field_collections_image
+    - field.field.taxonomy_term.aae_featured_grid.field_collections_url
+    - image.style.aae_feature_grid
+    - taxonomy.vocabulary.aae_featured_grid
+  module:
+    - image
+    - link
+    - text
+id: taxonomy_term.aae_featured_grid.default
+targetEntityType: taxonomy_term
+bundle: aae_featured_grid
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_collections_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: aae_feature_grid
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_collections_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

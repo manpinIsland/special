@@ -1,0 +1,15 @@
+uuid: cc4a393a-d58d-4af6-bb05-56983fcd3187
+langcode: en
+status: true
+dependencies: {  }
+name: medium_thumbnail
+label: 'Medium Thumbnail (155px x *)'
+effects:
+  5f4b822f-7a30-48ad-835a-d8d99079dc18:
+    uuid: 5f4b822f-7a30-48ad-835a-d8d99079dc18
+    id: image_scale
+    weight: 1
+    data:
+      width: 155
+      height: null
+      upscale: true

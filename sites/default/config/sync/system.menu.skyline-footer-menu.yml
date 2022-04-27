@@ -1,0 +1,8 @@
+uuid: 075af48e-0bcb-43e9-8bdc-40d974a6e216
+langcode: en
+status: true
+dependencies: {  }
+id: skyline-footer-menu
+label: 'Skyline Footer Menu'
+description: 'The footer menu for the Skyline Template'
+locked: false

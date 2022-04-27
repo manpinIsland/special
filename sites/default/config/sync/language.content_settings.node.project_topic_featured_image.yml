@@ -1,0 +1,11 @@
+uuid: 90548601-b7fe-4a5f-a2f1-8029c1d5d17b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.project_topic_featured_image
+id: node.project_topic_featured_image
+target_entity_type_id: node
+target_bundle: project_topic_featured_image
+default_langcode: site_default
+language_alterable: false

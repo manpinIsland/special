@@ -1,0 +1,32 @@
+uuid: fd2d5d33-0d94-4c6e-bd5c-fed0a4998f39
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_local
+label: 'Complex Digital Object'
+name: complex_digital_object
+group: Display
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  node_referenced_by_field:
+    id: node_referenced_by_field
+    negate: 0
+    reference_field: field_member_of
+    context_mapping:
+      node: '@node.node_route_context:node'
+  media_has_mimetype:
+    id: media_has_mimetype
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+    mimetypes: application/pdf
+reactions:
+  view_mode_alter:
+    id: view_mode_alter
+    mode: node.complex_object
+    saved: false
+weight: -8

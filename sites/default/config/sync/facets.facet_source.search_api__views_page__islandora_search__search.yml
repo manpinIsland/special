@@ -1,0 +1,12 @@
+uuid: 58aa9b0d-08b8-4d43-869a-aaf1ce1346e4
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__islandora_search__search
+name: 'search_api:views_page__islandora_search__search'
+filter_key: ''
+url_processor: query_string
+breadcrumb:
+  active: false
+  before: true
+  group: false

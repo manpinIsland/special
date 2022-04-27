@@ -1,0 +1,31 @@
+uuid: 577b297c-8524-49ac-9e0c-5b9c46b60de8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:adf54b3f-3269-4bdd-a0a6-4ae501175f6f'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: digitalcollectionsfooter2
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -30
+provider: null
+plugin: 'block_content:adf54b3f-3269-4bdd-a0a6-4ae501175f6f'
+settings:
+  id: 'block_content:adf54b3f-3269-4bdd-a0a6-4ae501175f6f'
+  label: 'Digital Collections Footer 2'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*\r\n/aae\r\n/aae/*\r\n/jewishheritage\r\n/jewishheritage/*"

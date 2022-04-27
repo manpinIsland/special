@@ -1,0 +1,8 @@
+uuid: 4c13fabe-3eea-4776-918e-8172d1c5137e
+langcode: en
+status: true
+dependencies: {  }
+id: jewish-heritage-main-menu
+label: 'Jewish Heritage Main Menu'
+description: 'The main menu for the Jewish Heritage Template'
+locked: false

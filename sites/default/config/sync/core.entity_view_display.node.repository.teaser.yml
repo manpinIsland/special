@@ -1,0 +1,88 @@
+uuid: bd82bfc0-8478-43c8-b17b-140f0727c0f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.repository.body
+    - field.field.node.repository.field_as_address
+    - field.field.node.repository.field_repository_org_code
+    - field.field.node.repository.field_repository_parent_name
+    - field.field.node.repository.field_repository_short_name
+    - node.type.repository
+  module:
+    - text
+    - user
+id: node.repository.teaser
+targetEntityType: node
+bundle: repository
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  display_media_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_thumbnail:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    weight: 100
+    region: content
+  openseadragon_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  field_as_address: true
+  field_repository_org_code: true
+  field_repository_parent_name: true
+  field_repository_short_name: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: aa17ee08-22cd-4929-8aab-134df0978575
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_override_url
+field_name: field_override_url
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: e0b8fcd7-e4b4-4c32-9c53-84899f913dee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alternate_title
+    - node.type.newspaper_title
+_core:
+  default_config_hash: '-P3XW_vgHJEdGyvJymg7744X3ifVUNE_4RBvYepDhMQ'
+id: node.newspaper_title.field_alternate_title
+field_name: field_alternate_title
+entity_type: node
+bundle: newspaper_title
+label: 'Alternate Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

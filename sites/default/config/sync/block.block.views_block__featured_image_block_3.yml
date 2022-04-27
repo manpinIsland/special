@@ -1,0 +1,30 @@
+uuid: 2d0df5a3-31f5-4341-aabe-0af581b96b6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.featured_image
+  module:
+    - system
+    - views
+  theme:
+    - drupal8_parallax_theme
+id: views_block__featured_image_block_3
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: 15
+provider: null
+plugin: 'views_block:featured_image-block_3'
+settings:
+  id: 'views_block:featured_image-block_3'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /jewishheritage

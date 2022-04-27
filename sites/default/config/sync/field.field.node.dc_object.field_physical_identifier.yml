@@ -1,0 +1,19 @@
+uuid: dbfb1699-e07a-4a94-b4d9-111a6a719c5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_physical_identifier
+    - node.type.dc_object
+id: node.dc_object.field_physical_identifier
+field_name: field_physical_identifier
+entity_type: node
+bundle: dc_object
+label: 'Physical Identifier'
+description: "Alphanumeric identifier used for internal identification of physical photographic resource.\r\n\r\nVerify that the Physical Identifier value in the master file matches the value in the Project Client.\r\n\r\nExample: 0036_0004 [Photographs]\r\nExample: OH-00283 [Oral Histories]"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+langcode: en
+sids:
+  unlv_library: unlv_library
+authenticationMode: mixed
+loginUIUsernameTxt: ''
+loginUIPasswordTxt: ''
+ldapUserHelpLinkUrl: ''
+ldapUserHelpLinkText: ''
+emailOption: disable
+emailUpdate: update_notify
+emailTemplateHandling: none
+emailTemplate: '@username@example.com'
+emailTemplateUsageResolveConflict: false
+emailTemplateUsageNeverUpdate: false
+emailTemplateUsagePromptUser: false
+emailTemplateUsageRedirectOnLogin: false
+emailTemplateUsagePromptRegex: '.*@example\\.com'
+passwordOption: hide
+allowOnlyIfTextInDn: {  }
+excludeIfTextInDn: {  }
+excludeIfNoAuthorizations: false
+skipAdministrators: false
+basedn:
+  - 'OU=Users,OU=Support,DC=library,DC=unlv,DC=edu'
+  - 'OU=Staff,DC=library,DC=unlv,DC=edu'

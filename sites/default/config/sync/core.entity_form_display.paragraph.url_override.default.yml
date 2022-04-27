@@ -1,0 +1,26 @@
+uuid: f919266d-d83e-4ea9-b621-e0349580aefc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.url_override.field_external_link
+    - paragraphs.paragraphs_type.url_override
+  module:
+    - link
+id: paragraph.url_override.default
+targetEntityType: paragraph
+bundle: url_override
+mode: default
+content:
+  field_external_link:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

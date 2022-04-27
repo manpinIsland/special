@@ -1,0 +1,29 @@
+uuid: ec36513c-ea09-485f-9c87-aa968783cbf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_interviewer
+    - node.type.dc_object
+    - taxonomy.vocabulary.person
+id: node.dc_object.field_interviewer
+field_name: field_interviewer
+entity_type: node
+bundle: dc_object
+label: Interviewer
+description: "A person conducting the interview.\r\n\r\nThis field is controlled and is used for Oral Histories. It is preferred to use the name that is verified in an authority file such as Library of Congress Name Authority File (LCNAF) or VIAF. If a name is not already found in the controlled vocabulary and is not in these authority files, refer to the name that the individual uses themselves, rather than perhaps a different, given name. To determine what the interviewer calls themselves, look up how the interviewer refers to themselves in the PDF transcript or how they sign their name on the Contract/Use Agreement."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

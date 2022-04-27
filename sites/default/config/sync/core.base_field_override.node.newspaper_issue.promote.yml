@@ -1,0 +1,24 @@
+uuid: 0bafba7b-ecb2-41d0-baf4-56415cac54fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newspaper_issue
+_core:
+  default_config_hash: vQYyO-171Bpc5sQLcHwx2AjpWlFld-yDFPmo5O0HIPA
+id: node.newspaper_issue.promote
+field_name: promote
+entity_type: node
+bundle: newspaper_issue
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

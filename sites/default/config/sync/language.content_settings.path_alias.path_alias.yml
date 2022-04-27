@@ -1,0 +1,11 @@
+uuid: 1320b56b-4334-4e16-8428-3afb55333b50
+langcode: en
+status: true
+dependencies:
+  module:
+    - path_alias
+id: path_alias.path_alias
+target_entity_type_id: path_alias
+target_bundle: path_alias
+default_langcode: und
+language_alterable: true

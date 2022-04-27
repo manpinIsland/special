@@ -1,0 +1,20 @@
+uuid: 977e760c-97fe-48e2-a1a5-7dcee8d1602e
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - menus
+id: menus_help
+theme: menus
+region: header
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

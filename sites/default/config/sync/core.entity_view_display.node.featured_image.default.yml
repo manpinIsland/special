@@ -1,0 +1,81 @@
+uuid: 417eb403-ef62-4d47-86e5-2a69999bc465
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.featured_image.field_collections
+    - field.field.node.featured_image.field_image
+    - image.style.large
+    - node.type.featured_image
+  module:
+    - image
+    - user
+id: node.featured_image.default
+targetEntityType: node
+bundle: featured_image
+mode: default
+content:
+  display_media_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_thumbnail:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: file
+      image_style: large
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  openseadragon_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  field_collections: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,31 @@
+uuid: 68ca76ae-bc44-4a94-b268-3e2a39d17231
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:610b270f-feeb-41d9-9724-61ecdfe78c06'
+  module:
+    - block_content
+    - system
+  theme:
+    - jewishheritage_d8
+id: jewishsearchbox_2
+theme: jewishheritage_d8
+region: search_box
+weight: 0
+provider: null
+plugin: 'block_content:610b270f-feeb-41d9-9724-61ecdfe78c06'
+settings:
+  id: 'block_content:610b270f-feeb-41d9-9724-61ecdfe78c06'
+  label: 'Jewish Search Box'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/jewishheritage\r\n/jewishheritage/*"

@@ -1,0 +1,8 @@
+uuid: 4533e418-cf2c-42aa-9719-b45ca92d619e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Time Period'
+vid: time_period
+description: 'Time-related characteristics associated with the intellectual content of a resource and not its lifecycle.'
+weight: 0

@@ -1,0 +1,31 @@
+uuid: 2e35ca30-66c8-4cd8-a6c9-9ed7b254ae8e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c9ca90d5-5939-499e-8c80-89712d15364d'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: healthscienceslibraryfooter4
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -24
+provider: null
+plugin: 'block_content:c9ca90d5-5939-499e-8c80-89712d15364d'
+settings:
+  id: 'block_content:c9ca90d5-5939-499e-8c80-89712d15364d'
+  label: 'Health Sciences Library Footer 4'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*\r\n/aae\r\n/aae/*\r\n/jewishheritage\r\n/jewishheritage/*"

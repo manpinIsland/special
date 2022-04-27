@@ -1,0 +1,31 @@
+uuid: dddf4ead-cc3c-44f8-b045-a13ae7e922da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stand_rights
+    - node.type.newspaper_issue
+    - taxonomy.vocabulary.standardized_rights_statement
+_core:
+  default_config_hash: 0q7uq5q9n8YtDzsf-7MR9bmqXKCquG2ARrL0K0D-O5k
+id: node.newspaper_issue.field_stand_rights
+field_name: field_stand_rights
+entity_type: node
+bundle: newspaper_issue
+label: 'Standardized Rights Statement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      standardized_rights_statement: standardized_rights_statement
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

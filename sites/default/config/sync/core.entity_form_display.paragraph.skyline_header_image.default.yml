@@ -1,0 +1,37 @@
+uuid: 472fb265-3351-4d43-a275-45fceb1bcb40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.skyline_header_image.field_image
+    - field.field.paragraph.skyline_header_image.field_link
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.skyline_header_image
+  module:
+    - image
+    - link
+id: paragraph.skyline_header_image.default
+targetEntityType: paragraph
+bundle: skyline_header_image
+mode: default
+content:
+  field_image:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

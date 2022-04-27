@@ -1,0 +1,84 @@
+uuid: 7bcb4fc1-c42a-458b-b7af-5be060b321f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newspaper_title
+  module:
+    - node
+  enforced:
+    module:
+      - newspapers
+_core:
+  default_config_hash: BJEcyiyBb0d_u-8o15kCFcYwQG7j_SD8LQw2oJ_8NJs
+id: node.newspaper_title
+targetEntityType: node
+bundle: newspaper_title
+types:
+  - 'pcdm:Object'
+  - 'bibo:Newspaper'
+fieldMappings:
+  body:
+    properties:
+      - 'dcterms:description'
+  field_alternate_title:
+    properties:
+      - 'dcterms:alternative'
+  field_date:
+    properties:
+      - 'dcterms:date'
+  field_editor:
+    properties:
+      - 'dcterms:contributor'
+      - 'realtors:edt'
+  field_founder:
+    properties:
+      - 'dcterms:contributor'
+      - 'relators:fmo'
+  field_geographic_coverage:
+    properties:
+      - 'dcterms:spatial'
+  field_issn:
+    properties:
+      - 'dcterms:identifier'
+  field_language:
+    properties:
+      - 'dcterms:language'
+  field_lccn:
+    properties:
+      - 'dcterms:identifier'
+  field_motto:
+    properties:
+      - 'dcterms:description'
+  field_oclc:
+    properties:
+      - 'dcterms:identifier'
+  field_owner:
+    properties:
+      - 'dcterms:contributor'
+      - 'relators:own'
+  field_place_of_publication:
+    properties:
+      - 'dcterms:spatial'
+  field_publisher:
+    properties:
+      - 'dcterms:publisher'
+  field_replaces:
+    properties:
+      - 'dcterms:replaces'
+  field_subject:
+    properties:
+      - 'dcterms:subject'
+  field_website:
+    properties:
+      - 'dcterms:identifier'
+  created:
+    properties:
+      - 'schema:dateCreated'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'

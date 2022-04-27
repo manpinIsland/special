@@ -1,0 +1,20 @@
+uuid: d9379baa-0880-4112-b4cd-be3c5fd0e38e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - skyline
+id: skyline_breadcrumbs
+theme: skyline
+region: header
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

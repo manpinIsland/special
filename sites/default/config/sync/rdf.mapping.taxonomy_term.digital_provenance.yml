@@ -1,0 +1,17 @@
+uuid: b04852c1-896c-48f1-85f3-376221228235
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.digital_provenance
+  module:
+    - taxonomy
+id: taxonomy_term.digital_provenance
+targetEntityType: taxonomy_term
+bundle: digital_provenance
+types:
+  - 'schema:Thing'
+fieldMappings:
+  name:
+    properties:
+      - 'schema:name'

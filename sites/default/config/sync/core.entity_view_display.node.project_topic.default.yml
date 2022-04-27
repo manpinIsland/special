@@ -1,0 +1,130 @@
+uuid: fc87e822-96ab-4f7d-a212-90d0765140d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project_topic.field_project
+    - field.field.node.project_topic.field_topic_description
+    - field.field.node.project_topic.field_topic_links
+    - field.field.node.project_topic.field_topic_location
+    - node.type.project_topic
+  module:
+    - entity_reference_revisions
+    - geolocation
+    - link
+    - user
+id: node.project_topic.default
+targetEntityType: node
+bundle: project_topic
+mode: default
+content:
+  display_media_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_thumbnail:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_topic_description:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_topic_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_topic_location:
+    type: geolocation_map
+    label: hidden
+    settings:
+      set_marker: true
+      common_map: false
+      use_overridden_map_settings: false
+      title: '[node:title]'
+      info_text: '[node:title]'
+      map_provider_id: google_maps
+      map_provider_settings:
+        type: HYBRID
+        zoom: 14
+        minZoom: 0
+        maxZoom: 18
+        rotateControl: false
+        height: 400px
+        width: 100%
+        gestureHandling: auto
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  openseadragon_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  field_project: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

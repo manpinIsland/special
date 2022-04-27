@@ -1,0 +1,11 @@
+uuid: 1b85d172-acc8-4bb2-ab53-41fdd16f9c85
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.archival_object
+id: node.archival_object
+target_entity_type_id: node
+target_bundle: archival_object
+default_langcode: site_default
+language_alterable: false

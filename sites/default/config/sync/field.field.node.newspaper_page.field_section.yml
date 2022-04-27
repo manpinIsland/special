@@ -1,0 +1,21 @@
+uuid: e177f95b-3a12-421c-a21d-a2db6e943f74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.newspaper_page
+_core:
+  default_config_hash: GqGj3Z5NGVcsemCWOoyovIKugJaXJjQG0lAqM4NgnYI
+id: node.newspaper_page.field_section
+field_name: field_section
+entity_type: node
+bundle: newspaper_page
+label: Section
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

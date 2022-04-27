@@ -1,0 +1,166 @@
+uuid: 3a668095-7029-4717-82d5-2e2d4304dc7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - node.type.article
+    - node.type.blog
+    - node.type.featured_image
+    - node.type.page
+    - node.type.paragraphed_collection
+    - node.type.paragraphed_content_demo
+    - node.type.project_congregation
+    - node.type.project_front_page
+    - node.type.project_organization
+    - node.type.project_people
+    - node.type.project_topic
+    - node.type.project_topic_featured_image
+    - node.type.project_topic_timeline_entry
+    - taxonomy.vocabulary.aae_featured_grid
+    - taxonomy.vocabulary.collections
+    - taxonomy.vocabulary.jewish_heritage_explore
+    - taxonomy.vocabulary.jewish_heritage_formats
+    - taxonomy.vocabulary.jewish_heritage_themes
+    - taxonomy.vocabulary.project_topics
+    - taxonomy.vocabulary.small_collections
+    - taxonomy.vocabulary.tags
+  module:
+    - block
+    - comment
+    - content_translation
+    - filter
+    - node
+    - paragraphs
+    - paragraphs_type_permissions
+    - path
+    - system
+    - taxonomy
+    - toolbar
+id: contributor
+label: Contributor
+weight: 3
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'administer blocks'
+  - 'administer comments'
+  - 'administer menu'
+  - 'administer url aliases'
+  - 'create article content'
+  - 'create blog content'
+  - 'create content translations'
+  - 'create featured_image content'
+  - 'create paragraph content header_image'
+  - 'create paragraph content image_text'
+  - 'create paragraph content images'
+  - 'create paragraph content linked_image'
+  - 'create paragraph content linked_image_750_max_'
+  - 'create paragraph content linked_image_jh_750_max_'
+  - 'create paragraph content nested_paragraph'
+  - 'create paragraph content paragraph_linked_image_left_'
+  - 'create paragraph content paragraph_linked_image_right_'
+  - 'create paragraph content skyline_header_image'
+  - 'create paragraph content small_gallery'
+  - 'create paragraph content text'
+  - 'create paragraph content text_image'
+  - 'create paragraph content text_large_image_left'
+  - 'create paragraph content url_override'
+  - 'create paragraph content user'
+  - 'create paragraphed_collection content'
+  - 'create paragraphed_content_demo content'
+  - 'create project_congregation content'
+  - 'create project_organization content'
+  - 'create project_people content'
+  - 'create project_topic content'
+  - 'create project_topic_featured_image content'
+  - 'create project_topic_timeline_entry content'
+  - 'create url aliases'
+  - 'delete own article content'
+  - 'delete own blog content'
+  - 'delete own featured_image content'
+  - 'delete own page content'
+  - 'edit any article content'
+  - 'edit any blog content'
+  - 'edit any featured_image content'
+  - 'edit any page content'
+  - 'edit any paragraphed_collection content'
+  - 'edit any paragraphed_content_demo content'
+  - 'edit any project_congregation content'
+  - 'edit any project_front_page content'
+  - 'edit any project_organization content'
+  - 'edit any project_people content'
+  - 'edit any project_topic content'
+  - 'edit any project_topic_featured_image content'
+  - 'edit any project_topic_timeline_entry content'
+  - 'edit own article content'
+  - 'edit own blog content'
+  - 'edit own comments'
+  - 'edit own featured_image content'
+  - 'edit own page content'
+  - 'edit own paragraphed_collection content'
+  - 'edit own paragraphed_content_demo content'
+  - 'edit own project_congregation content'
+  - 'edit own project_front_page content'
+  - 'edit own project_organization content'
+  - 'edit own project_people content'
+  - 'edit own project_topic content'
+  - 'edit own project_topic_featured_image content'
+  - 'edit own project_topic_timeline_entry content'
+  - 'edit terms in aae_featured_grid'
+  - 'edit terms in collections'
+  - 'edit terms in jewish_heritage_explore'
+  - 'edit terms in jewish_heritage_formats'
+  - 'edit terms in jewish_heritage_themes'
+  - 'edit terms in project_topics'
+  - 'edit terms in small_collections'
+  - 'edit terms in tags'
+  - 'link to any page'
+  - 'revert project_people revisions'
+  - 'translate any entity'
+  - 'translate paragraph'
+  - 'translate paragraphed_collection node'
+  - 'translate paragraphed_content_demo node'
+  - 'translate small_collections taxonomy_term'
+  - 'update content translations'
+  - 'update paragraph content header_image'
+  - 'update paragraph content image_text'
+  - 'update paragraph content images'
+  - 'update paragraph content linked_image'
+  - 'update paragraph content linked_image_750_max_'
+  - 'update paragraph content linked_image_jh_750_max_'
+  - 'update paragraph content nested_paragraph'
+  - 'update paragraph content paragraph_linked_image_left_'
+  - 'update paragraph content paragraph_linked_image_right_'
+  - 'update paragraph content skyline_header_image'
+  - 'update paragraph content small_gallery'
+  - 'update paragraph content text'
+  - 'update paragraph content text_image'
+  - 'update paragraph content text_large_image_left'
+  - 'update paragraph content url_override'
+  - 'update paragraph content user'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view all revisions'
+  - 'view article revisions'
+  - 'view blog revisions'
+  - 'view featured_image revisions'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view paragraph content linked_image_750_max_'
+  - 'view paragraph content linked_image_jh_750_max_'
+  - 'view paragraph content small_gallery'
+  - 'view paragraphed_collection revisions'
+  - 'view paragraphed_content_demo revisions'
+  - 'view project_congregation revisions'
+  - 'view project_front_page revisions'
+  - 'view project_organization revisions'
+  - 'view project_people revisions'
+  - 'view project_topic revisions'
+  - 'view project_topic_featured_image revisions'
+  - 'view project_topic_timeline_entry revisions'
+  - 'view the administration theme'

@@ -1,0 +1,36 @@
+uuid: 243e32fa-8baf-4526-a887-f26350d8af1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_image.field_image_demo
+    - field.field.paragraph.text_image.field_text_demo
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - image
+    - text
+id: paragraph.text_image.default
+targetEntityType: paragraph
+bundle: text_image
+mode: default
+content:
+  field_image_demo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text_demo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  search_api_excerpt: true
+  uid: true

@@ -1,0 +1,33 @@
+uuid: f834b532-e218-4cb8-aa17-d96ed72ca218
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.search_result_grid
+    - field.field.taxonomy_term.digital_projects.field_project_alias
+    - field.field.taxonomy_term.digital_projects.field_project_site_url
+    - taxonomy.vocabulary.digital_projects
+  module:
+    - link
+id: taxonomy_term.digital_projects.search_result_grid
+targetEntityType: taxonomy_term
+bundle: digital_projects
+mode: search_result_grid
+content:
+  field_project_site_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  field_project_alias: true
+  langcode: true
+  search_api_excerpt: true

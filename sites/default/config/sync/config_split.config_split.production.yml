@@ -1,0 +1,26 @@
+uuid: 2565ced6-94ca-4603-af82-4ce10c568cee
+langcode: en
+status: true
+dependencies: {  }
+id: production
+label: Production
+description: ''
+weight: 0
+folder: sites/default/config/prod
+module:
+  dblog: 0
+  devel: 0
+  syslog: 0
+theme: {  }
+blacklist:
+  - context.context.openseadragon_block
+  - islandora.settings
+  - islandora_iiif.settings
+  - key.key.islandora
+  - openseadragon.settings
+  - system.performance
+  - system.site
+graylist:
+  - search_api.server.islandora
+graylist_dependents: false
+graylist_skip_equal: true

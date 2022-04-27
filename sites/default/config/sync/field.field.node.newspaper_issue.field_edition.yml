@@ -1,0 +1,21 @@
+uuid: 04379c59-b989-4db2-bcd2-8d109550872b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_edition
+    - node.type.newspaper_issue
+_core:
+  default_config_hash: JORVz8gtdpvX6sNSitkACyleemdcwt6-eDIzE7l89-0
+id: node.newspaper_issue.field_edition
+field_name: field_edition
+entity_type: node
+bundle: newspaper_issue
+label: Edition
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

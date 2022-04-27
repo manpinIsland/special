@@ -1,0 +1,8 @@
+uuid: 877a8944-b6f0-4054-b3cc-c47f5730b2c1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Small Collections'
+vid: small_collections
+description: 'The main collection each piece of content is linked to.'
+weight: 0

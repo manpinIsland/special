@@ -1,0 +1,21 @@
+uuid: 504da9a8-c62e-42a2-8da7-9adb49513a67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_physfacet
+    - node.type.archival_object
+  module:
+    - text
+id: node.archival_object.field_physfacet
+field_name: field_physfacet
+entity_type: node
+bundle: archival_object
+label: 'Physical Facet'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

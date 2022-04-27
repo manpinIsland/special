@@ -1,0 +1,42 @@
+uuid: 16fd5215-3946-4d6c-8b82-0938432d5507
+langcode: en
+status: true
+dependencies:
+  module:
+    - facets_block
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: facetsblock
+theme: drupal8_parallax_theme
+region: sidebar_second
+weight: -42
+provider: null
+plugin: facets_block
+settings:
+  id: facets_block
+  label: 'Refine my results'
+  label_display: visible
+  provider: facets_block
+  show_title: true
+  exclude_empty_facets: true
+  facets_to_include:
+    'facet_block:type': 'facet_block:type'
+    'facet_block:creator_contributor': 'facet_block:creator_contributor'
+    'facet_block:subjects': 'facet_block:subjects'
+    'facet_block:archival_collection': 'facet_block:archival_collection'
+    'facet_block:digital_project': 'facet_block:digital_project'
+    'facet_block:resource_type': 'facet_block:resource_type'
+    'facet_block:year': 'facet_block:year'
+    'facet_block:material_type': 'facet_block:material_type'
+    'facet_block:place': 'facet_block:place'
+    'facet_block:language': 'facet_block:language'
+    'facet_block:records_classification': 'facet_block:records_classification'
+    'facet_block:date': '0'
+  add_js_classes: true
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /search

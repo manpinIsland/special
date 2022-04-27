@@ -1,0 +1,17 @@
+uuid: 4314c259-569a-45e0-89a1-8a5fc6fbc7d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Project Front Page'
+type: project_front_page
+description: 'Front page of a large collection; e.g. Skyline, JHC, and AAE.'
+help: 'Project title.'
+new_revision: true
+preview_mode: 1
+display_submitted: false

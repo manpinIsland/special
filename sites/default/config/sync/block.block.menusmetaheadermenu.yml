@@ -1,0 +1,30 @@
+uuid: 03e60e47-a3e9-4769-b0f5-72761250e4f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menus-meta-header-menu
+  module:
+    - system
+  theme:
+    - menus
+id: menusmetaheadermenu
+theme: menus
+region: meta_breadcrumb
+weight: 0
+provider: null
+plugin: 'system_menu_block:menus-meta-header-menu'
+settings:
+  id: 'system_menu_block:menus-meta-header-menu'
+  label: 'Menus Meta Header Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/collections/menus\r\n/collections/menus/*"

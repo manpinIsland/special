@@ -1,0 +1,22 @@
+uuid: d6ea3a49-2a76-469d-ac33-dd8b677c561e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.project_topic_featured_image
+id: node.project_topic_featured_image.status
+field_name: status
+entity_type: node
+bundle: project_topic_featured_image
+label: 'Publishing status'
+description: 'A boolean indicating the published state.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

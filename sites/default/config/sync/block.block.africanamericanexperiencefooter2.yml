@@ -1,0 +1,31 @@
+uuid: f402efd4-9e12-4e93-aecc-5e81ea95657d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:bf1f84b7-a49f-463d-a15e-ef54fb463af7'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: africanamericanexperiencefooter2
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -41
+provider: null
+plugin: 'block_content:bf1f84b7-a49f-463d-a15e-ef54fb463af7'
+settings:
+  id: 'block_content:bf1f84b7-a49f-463d-a15e-ef54fb463af7'
+  label: 'African American Experience Footer 2'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/aae\r\n/aae/*"

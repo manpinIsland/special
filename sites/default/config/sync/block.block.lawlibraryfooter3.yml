@@ -1,0 +1,31 @@
+uuid: 71c89e93-14e4-485e-813b-4b9e7eb4e885
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ad9ccb2a-95f6-4c14-a532-f15cdbe21c8d'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: lawlibraryfooter3
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -34
+provider: null
+plugin: 'block_content:ad9ccb2a-95f6-4c14-a532-f15cdbe21c8d'
+settings:
+  id: 'block_content:ad9ccb2a-95f6-4c14-a532-f15cdbe21c8d'
+  label: 'Law Library Footer 3'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*\r\n/aae\r\n/aae/*\r\n/jewishheritage\r\n/jewishheritage/*"

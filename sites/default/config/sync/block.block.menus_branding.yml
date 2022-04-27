@@ -1,0 +1,23 @@
+uuid: 8710267c-b9e2-422e-a30b-8a0f3186697a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - menus
+id: menus_branding
+theme: menus
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

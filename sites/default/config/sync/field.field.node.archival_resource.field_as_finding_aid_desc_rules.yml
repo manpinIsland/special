@@ -1,0 +1,21 @@
+uuid: 7f5e40dc-e719-4398-ae50-cb01143e62e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_as_finding_aid_desc_rules
+    - node.type.archival_resource
+  module:
+    - options
+id: node.archival_resource.field_as_finding_aid_desc_rules
+field_name: field_as_finding_aid_desc_rules
+entity_type: node
+bundle: archival_resource
+label: 'Finding Aid Description Rules'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

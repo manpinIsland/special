@@ -1,0 +1,8 @@
+uuid: 5e0545ad-fd3f-4003-a437-44408a21f833
+langcode: en
+status: true
+dependencies: {  }
+name: 'Digital Provenance'
+vid: digital_provenance
+description: 'A statement that describes the creation of the digital object and any changes in ownership and custody of the resource.'
+weight: 0

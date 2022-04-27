@@ -1,0 +1,14 @@
+uuid: 5075b78a-751a-4da6-b304-02a60a8e9535
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.digital_collections_metadata_manager
+  module:
+    - user
+id: user_remove_role_action.digital_collections_metadata_manager
+label: 'Remove the Metadata Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: digital_collections_metadata_manager

@@ -1,0 +1,21 @@
+uuid: ee9431d0-518a-4b00-b003-5bbf2972cf84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_digital_id
+    - node.type.newspaper_page
+_core:
+  default_config_hash: 2CUKo1dQXdRamrN3EOPfw66zEL3UKzCynK_bT4k5GOk
+id: node.newspaper_page.field_digital_id
+field_name: field_digital_id
+entity_type: node
+bundle: newspaper_page
+label: 'Digital ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

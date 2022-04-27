@@ -1,0 +1,36 @@
+uuid: 24e73056-a74a-4b58-b89d-fc1827667b4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_as_address
+    - node.type.repository
+  module:
+    - address
+id: node.repository.field_as_address
+field_name: field_as_address
+entity_type: node
+bundle: repository
+label: Address
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides: {  }
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    dependentLocality: dependentLocality
+    postalCode: postalCode
+    sortingCode: sortingCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    organization: organization
+    givenName: '0'
+    additionalName: '0'
+    familyName: '0'
+field_type: address

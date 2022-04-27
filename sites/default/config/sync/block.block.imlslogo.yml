@@ -1,0 +1,31 @@
+uuid: 252da5a5-5f51-4f06-9997-f1b9b699beed
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:ff0f0df0-a8c3-48ad-9eb6-e52442433b21'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: imlslogo
+theme: drupal8_parallax_theme
+region: sidebar_second
+weight: -39
+provider: null
+plugin: 'block_content:ff0f0df0-a8c3-48ad-9eb6-e52442433b21'
+settings:
+  id: 'block_content:ff0f0df0-a8c3-48ad-9eb6-e52442433b21'
+  label: 'With help from'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/collections/menus*\r\n/collections/historic-landscape*\r\n/skyline*"

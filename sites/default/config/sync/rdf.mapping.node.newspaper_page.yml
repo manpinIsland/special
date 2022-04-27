@@ -1,0 +1,41 @@
+uuid: dc6ef4e9-6ec2-4564-ad35-400fe19e4a29
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newspaper_page
+  module:
+    - node
+  enforced:
+    module:
+      - newspapers
+_core:
+  default_config_hash: '-pyh-tY_gQHaYBG-NHnNIjhc_iZcwC_t5rQDb2EsPSk'
+id: node.newspaper_page
+targetEntityType: node
+bundle: newspaper_page
+types:
+  - 'pcdm:Object'
+fieldMappings:
+  body:
+    properties:
+      - 'dcterms:description'
+  field_digital_id:
+    properties:
+      - 'dcterms:identifier'
+  field_issue:
+    properties:
+      - 'dcterms:isPartOf'
+  field_page_sequence:
+    properties:
+      - 'co:index'
+  created:
+    properties:
+      - 'schema:dateCreated'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'

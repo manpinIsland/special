@@ -1,0 +1,23 @@
+uuid: 7156484a-b0c2-43fb-bc1d-0840ed2b63ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.dc_object
+  module:
+    - text
+id: node.dc_object.body
+field_name: body
+entity_type: node
+bundle: dc_object
+label: Description
+description: "An account of the resource.<br>\r\nEnter text, remarks or comments about the resource. Use standard punctuation and grammar to describe the item’s history, physical appearance, contents, etc. You may add transcribed notes from the original. In this case, identify them as such.<br>\r\nExample: Aerial view of Hughes Airport in Culver City, now Playa Vista, California. This private airport was owned by Howard Hughes and used for projects of the Hughes Aircraft Company and Hughes Tool Company. Lincoln Boulevard can be seen in the foreground."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

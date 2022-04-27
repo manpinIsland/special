@@ -1,0 +1,20 @@
+uuid: 2a997e17-5681-4928-b796-0981fe1c6732
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dc_object
+  module:
+    - path
+id: node.dc_object.path
+field_name: path
+entity_type: node
+bundle: dc_object
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

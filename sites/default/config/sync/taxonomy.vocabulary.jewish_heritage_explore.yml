@@ -1,0 +1,8 @@
+uuid: cfa19465-2632-4b1e-9007-b295fed1d2f0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Jewish Heritage Explore'
+vid: jewish_heritage_explore
+description: 'The ''Explore'' list of image/links on Jewish Heritage'
+weight: 0

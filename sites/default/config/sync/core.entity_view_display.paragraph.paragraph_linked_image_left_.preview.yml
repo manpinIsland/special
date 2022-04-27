@@ -1,0 +1,36 @@
+uuid: 56e3a420-96b5-4e7c-9218-3fa00aaa4abe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.paragraph_linked_image_left_.field_image
+    - field.field.paragraph.paragraph_linked_image_left_.field_text
+    - paragraphs.paragraphs_type.paragraph_linked_image_left_
+  module:
+    - image
+    - text
+id: paragraph.paragraph_linked_image_left_.preview
+targetEntityType: paragraph
+bundle: paragraph_linked_image_left_
+mode: preview
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_link: true
+  search_api_excerpt: true

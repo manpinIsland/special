@@ -1,0 +1,104 @@
+uuid: 820db885-4a83-4604-bde0-7e879658ad66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project_congregation.body
+    - field.field.node.project_congregation.field_collections
+    - field.field.node.project_congregation.field_digital_object_link
+    - field.field.node.project_congregation.field_image
+    - field.field.node.project_congregation.field_image_gallery
+    - field.field.node.project_congregation.field_name
+    - field.field.node.project_congregation.field_topic_links
+    - image.style.thumbnail
+    - node.type.project_congregation
+  module:
+    - image
+    - link
+    - path
+    - text
+id: node.project_congregation.default
+targetEntityType: node
+bundle: project_congregation
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_collections:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_digital_object_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_image_gallery:
+    type: image_image
+    weight: 6
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_topic_links:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 121
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_name: true
+  langcode: true
+  promote: true
+  sticky: true
+  uid: true

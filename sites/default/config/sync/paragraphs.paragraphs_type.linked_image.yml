@@ -1,0 +1,9 @@
+uuid: affc70dd-3ea3-4045-80f3-40855940b51b
+langcode: en
+status: true
+dependencies: {  }
+id: linked_image
+label: 'Linked Image'
+icon_uuid: null
+description: 'A paragraph of with a linked image.'
+behavior_plugins: {  }

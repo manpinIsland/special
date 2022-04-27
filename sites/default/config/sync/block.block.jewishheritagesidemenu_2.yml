@@ -1,0 +1,30 @@
+uuid: 7968ad62-d73e-4189-b3d8-3d9f6ccfac85
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.jewish-heritage-side-menu
+  module:
+    - system
+  theme:
+    - jewishheritage_d8
+id: jewishheritagesidemenu_2
+theme: jewishheritage_d8
+region: sidebar_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:jewish-heritage-side-menu'
+settings:
+  id: 'system_menu_block:jewish-heritage-side-menu'
+  label: 'Jewish Heritage Side Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/jewishheritage\r\n/jewishheritage/*"

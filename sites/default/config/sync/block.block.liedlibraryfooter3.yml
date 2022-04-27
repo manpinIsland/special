@@ -1,0 +1,31 @@
+uuid: dc5a70ad-fc87-4c6c-b8ae-f7a39f980873
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:bda7540c-4d1a-4670-a18f-9bccae88dc64'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: liedlibraryfooter3
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -5
+provider: null
+plugin: 'block_content:bda7540c-4d1a-4670-a18f-9bccae88dc64'
+settings:
+  id: 'block_content:bda7540c-4d1a-4670-a18f-9bccae88dc64'
+  label: 'Lied Library Footer 3'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*\r\n/aae\r\n/aae/*\r\n/jewishheritage\r\n/jewishheritage/*"

@@ -1,0 +1,25 @@
+uuid: 1bcf2656-b924-4766-b538-47ec51bcbdcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.newspaper_page
+  module:
+    - text
+_core:
+  default_config_hash: FIuy_cGcXsmEI-8tQwRbXV51vjS6O9Wg02iA8wl1tHQ
+id: node.newspaper_page.body
+field_name: body
+entity_type: node
+bundle: newspaper_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

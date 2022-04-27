@@ -1,0 +1,21 @@
+uuid: ce96b5a8-fff7-48a6-a588-ecb295d8c5b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_as_title
+    - node.type.archival_object
+  module:
+    - text
+id: node.archival_object.field_as_title
+field_name: field_as_title
+entity_type: node
+bundle: archival_object
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

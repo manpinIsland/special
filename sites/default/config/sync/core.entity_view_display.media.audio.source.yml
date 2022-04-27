@@ -1,0 +1,50 @@
+uuid: 04c771e1-8018-4060-96f1-246f67c660a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.source
+    - field.field.media.audio.field_access_terms
+    - field.field.media.audio.field_digital_processing_note
+    - field.field.media.audio.field_file_size
+    - field.field.media.audio.field_media_audio_file
+    - field.field.media.audio.field_media_of
+    - field.field.media.audio.field_media_use
+    - field.field.media.audio.field_mime_type
+    - field.field.media.audio.field_original_name
+    - media.type.audio
+  module:
+    - file
+  enforced:
+    module:
+      - islandora_core_feature
+id: media.audio.source
+targetEntityType: media
+bundle: audio
+mode: source
+content:
+  field_media_audio_file:
+    type: file_audio
+    label: visually_hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_access_terms: true
+  field_digital_processing_note: true
+  field_file_size: true
+  field_media_of: true
+  field_media_use: true
+  field_mime_type: true
+  field_original_name: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

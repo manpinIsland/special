@@ -1,0 +1,8 @@
+uuid: 293434a0-05e0-435d-ad16-5139b35656a7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Jewish Heritage Formats'
+vid: jewish_heritage_formats
+description: 'The ''Formats'' list of image/links on Jewish Heritage'
+weight: 0

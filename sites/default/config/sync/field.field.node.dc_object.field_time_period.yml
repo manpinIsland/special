@@ -1,0 +1,29 @@
+uuid: 745c833f-b559-4f1e-9045-45422fdeaaaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_period
+    - node.type.dc_object
+    - taxonomy.vocabulary.time_period
+id: node.dc_object.field_time_period
+field_name: field_time_period
+entity_type: node
+bundle: dc_object
+label: 'Time Period'
+description: "Time-related characteristics associated with the intellectual content of a resource and not its lifecycle.\r\n\r\nEnter temporal topics as an estimated date from the controlled vocabulary. If the time period spans larger than a decade, select multiple values from the controlled vocabulary."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      time_period: time_period
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

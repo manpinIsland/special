@@ -1,0 +1,14 @@
+uuid: e2e57072-d8b1-43e8-a83d-6f225b724ba6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.digital_collections_metadata_editor
+  module:
+    - user
+id: user_remove_role_action.digital_collections_metadata_editor
+label: 'Remove the Digital Collections Metadata Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: digital_collections_metadata_editor

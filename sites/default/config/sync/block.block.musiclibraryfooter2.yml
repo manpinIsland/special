@@ -1,0 +1,31 @@
+uuid: 7b18ccda-8b7c-421b-83b8-370b743c373a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:64857725-0672-457b-9236-3c57abba9e1a'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: musiclibraryfooter2
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -2
+provider: null
+plugin: 'block_content:64857725-0672-457b-9236-3c57abba9e1a'
+settings:
+  id: 'block_content:64857725-0672-457b-9236-3c57abba9e1a'
+  label: 'Music Library Footer 2'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*\r\n/aae\r\n/aae/*\r\n/jewishheritage\r\n/jewishheritage/*"

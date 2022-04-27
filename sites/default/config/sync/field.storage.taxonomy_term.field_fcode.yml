@@ -1,0 +1,2064 @@
+uuid: b4e4da4d-7194-4057-9ecc-c325ec9a0491
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_fcode
+field_name: field_fcode
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ADM1
+      label: 'first-order administrative division'
+    -
+      value: ADM1H
+      label: 'historical first-order administrative division'
+    -
+      value: ADM2
+      label: 'second-order administrative division'
+    -
+      value: ADM2H
+      label: 'historical second-order administrative division'
+    -
+      value: ADM3
+      label: 'third-order administrative division'
+    -
+      value: ADM3H
+      label: 'historical third-order administrative division'
+    -
+      value: ADM4
+      label: 'fourth-order administrative division'
+    -
+      value: ADM4H
+      label: 'historical fourth-order administrative division'
+    -
+      value: ADM5
+      label: 'fifth-order administrative division'
+    -
+      value: ADM5H
+      label: 'historical fifth-order administrative division'
+    -
+      value: ADMD
+      label: 'administrative division'
+    -
+      value: ADMDH
+      label: 'historical administrative division'
+    -
+      value: LTER
+      label: 'leased area'
+    -
+      value: PCL
+      label: 'political entity'
+    -
+      value: PCLD
+      label: 'dependent political entity'
+    -
+      value: PCLF
+      label: 'freely associated state'
+    -
+      value: PCLH
+      label: 'historical political entity'
+    -
+      value: PCLI
+      label: 'independent political entity'
+    -
+      value: PCLIX
+      label: 'section of independent political entity'
+    -
+      value: PCLS
+      label: 'semi-independent political entity'
+    -
+      value: PRSH
+      label: parish
+    -
+      value: TERR
+      label: territory
+    -
+      value: ZN
+      label: zone
+    -
+      value: ZNB
+      label: 'buffer zone'
+    -
+      value: AIRS
+      label: 'seaplane landing area'
+    -
+      value: ANCH
+      label: anchorage
+    -
+      value: BAY
+      label: bay
+    -
+      value: BAYS
+      label: bays
+    -
+      value: BGHT
+      label: bight(s)
+    -
+      value: BNK
+      label: bank(s)
+    -
+      value: BNKR
+      label: 'stream bank'
+    -
+      value: BNKX
+      label: 'section of bank'
+    -
+      value: BOG
+      label: bog(s)
+    -
+      value: CAPG
+      label: icecap
+    -
+      value: CHN
+      label: channel
+    -
+      value: CHNL
+      label: 'lake channel(s)'
+    -
+      value: CHNM
+      label: 'marine channel'
+    -
+      value: CHNN
+      label: 'navigation channel'
+    -
+      value: CNFL
+      label: confluence
+    -
+      value: CNL
+      label: canal
+    -
+      value: CNLA
+      label: aqueduct
+    -
+      value: CNLB
+      label: 'canal bend'
+    -
+      value: CNLD
+      label: 'drainage canal'
+    -
+      value: CNLI
+      label: 'irrigation canal'
+    -
+      value: CNLN
+      label: 'navigation canal(s)'
+    -
+      value: CNLQ
+      label: 'abandoned canal'
+    -
+      value: CNLSB
+      label: 'underground irrigation canal(s)'
+    -
+      value: CNLX
+      label: 'section of canal'
+    -
+      value: COVE
+      label: cove(s)
+    -
+      value: CRKT
+      label: 'tidal creek(s)'
+    -
+      value: CRNT
+      label: current
+    -
+      value: CUTF
+      label: cutoff
+    -
+      value: DCK
+      label: dock(s)
+    -
+      value: DCKB
+      label: 'docking basin'
+    -
+      value: DOMG
+      label: 'icecap dome'
+    -
+      value: DPRG
+      label: 'icecap depression'
+    -
+      value: DTCH
+      label: ditch
+    -
+      value: DTCHD
+      label: 'drainage ditch'
+    -
+      value: DTCHI
+      label: 'irrigation ditch'
+    -
+      value: DTCHM
+      label: 'ditch mouth(s)'
+    -
+      value: ESTY
+      label: estuary
+    -
+      value: FISH
+      label: 'fishing area'
+    -
+      value: FJD
+      label: fjord
+    -
+      value: FJDS
+      label: fjords
+    -
+      value: FLLS
+      label: waterfall(s)
+    -
+      value: FLLSX
+      label: 'section of waterfall(s)'
+    -
+      value: FLTM
+      label: 'mud flat(s)'
+    -
+      value: FLTT
+      label: 'tidal flat(s)'
+    -
+      value: GLCR
+      label: glacier(s)
+    -
+      value: GULF
+      label: gulf
+    -
+      value: GYSR
+      label: geyser
+    -
+      value: HBR
+      label: harbor(s)
+    -
+      value: HBRX
+      label: 'section of harbor'
+    -
+      value: INLT
+      label: inlet
+    -
+      value: INLTQ
+      label: 'former inlet'
+    -
+      value: LBED
+      label: 'lake bed(s)'
+    -
+      value: LGN
+      label: lagoon
+    -
+      value: LGNS
+      label: lagoons
+    -
+      value: LGNX
+      label: 'section of lagoon'
+    -
+      value: LK
+      label: lake
+    -
+      value: LKC
+      label: 'crater lake'
+    -
+      value: LKI
+      label: 'intermittent lake'
+    -
+      value: LKN
+      label: 'salt lake'
+    -
+      value: LKNI
+      label: 'intermittent salt lake'
+    -
+      value: LKO
+      label: 'oxbow lake'
+    -
+      value: LKOI
+      label: 'intermittent oxbow lake'
+    -
+      value: LKS
+      label: lakes
+    -
+      value: LKSB
+      label: 'underground lake'
+    -
+      value: LKSC
+      label: 'crater lakes'
+    -
+      value: LKSI
+      label: 'intermittent lakes'
+    -
+      value: LKSN
+      label: 'salt lakes'
+    -
+      value: LKSNI
+      label: 'intermittent salt lakes'
+    -
+      value: LKX
+      label: 'section of lake'
+    -
+      value: MFGN
+      label: 'salt evaporation ponds'
+    -
+      value: MGV
+      label: 'mangrove swamp'
+    -
+      value: MOOR
+      label: moor(s)
+    -
+      value: MRSH
+      label: marsh(es)
+    -
+      value: MRSHN
+      label: 'salt marsh'
+    -
+      value: NRWS
+      label: narrows
+    -
+      value: OCN
+      label: ocean
+    -
+      value: OVF
+      label: overfalls
+    -
+      value: PND
+      label: pond
+    -
+      value: PNDI
+      label: 'intermittent pond'
+    -
+      value: PNDN
+      label: 'salt pond'
+    -
+      value: PNDNI
+      label: 'intermittent salt pond(s)'
+    -
+      value: PNDS
+      label: ponds
+    -
+      value: PNDSF
+      label: fishponds
+    -
+      value: PNDSI
+      label: 'intermittent ponds'
+    -
+      value: PNDSN
+      label: 'salt ponds'
+    -
+      value: POOL
+      label: pool(s)
+    -
+      value: POOLI
+      label: 'intermittent pool'
+    -
+      value: RCH
+      label: reach
+    -
+      value: RDGG
+      label: 'icecap ridge'
+    -
+      value: RDST
+      label: roadstead
+    -
+      value: RF
+      label: reef(s)
+    -
+      value: RFC
+      label: 'coral reef(s)'
+    -
+      value: RFX
+      label: 'section of reef'
+    -
+      value: RPDS
+      label: rapids
+    -
+      value: RSV
+      label: reservoir(s)
+    -
+      value: RSVI
+      label: 'intermittent reservoir'
+    -
+      value: RSVT
+      label: 'water tank'
+    -
+      value: RVN
+      label: ravine(s)
+    -
+      value: SBKH
+      label: sabkha(s)
+    -
+      value: SD
+      label: sound
+    -
+      value: SEA
+      label: sea
+    -
+      value: SHOL
+      label: shoal(s)
+    -
+      value: SILL
+      label: sill
+    -
+      value: SPNG
+      label: spring(s)
+    -
+      value: SPNS
+      label: 'sulphur spring(s)'
+    -
+      value: SPNT
+      label: 'hot spring(s)'
+    -
+      value: STM
+      label: stream
+    -
+      value: STMA
+      label: anabranch
+    -
+      value: STMB
+      label: 'stream bend'
+    -
+      value: STMC
+      label: 'canalized stream'
+    -
+      value: STMD
+      label: distributary(-ies)
+    -
+      value: STMH
+      label: headwaters
+    -
+      value: STMI
+      label: 'intermittent stream'
+    -
+      value: STMIX
+      label: 'section of intermittent stream'
+    -
+      value: STMM
+      label: 'stream mouth(s)'
+    -
+      value: STMQ
+      label: 'abandoned watercourse'
+    -
+      value: STMS
+      label: streams
+    -
+      value: STMSB
+      label: 'lost river'
+    -
+      value: STMX
+      label: 'section of stream'
+    -
+      value: STRT
+      label: strait
+    -
+      value: SWMP
+      label: swamp
+    -
+      value: SYSI
+      label: 'irrigation system'
+    -
+      value: TNLC
+      label: 'canal tunnel'
+    -
+      value: WAD
+      label: wadi
+    -
+      value: WADB
+      label: 'wadi bend'
+    -
+      value: WADJ
+      label: 'wadi junction'
+    -
+      value: WADM
+      label: 'wadi mouth'
+    -
+      value: WADS
+      label: wadies
+    -
+      value: WADX
+      label: 'section of wadi'
+    -
+      value: WHRL
+      label: whirlpool
+    -
+      value: WLL
+      label: well
+    -
+      value: WLLQ
+      label: 'abandoned well'
+    -
+      value: WLLS
+      label: wells
+    -
+      value: WTLD
+      label: wetland
+    -
+      value: WTLDI
+      label: 'intermittent wetland'
+    -
+      value: WTRC
+      label: watercourse
+    -
+      value: WTRH
+      label: waterhole(s)
+    -
+      value: AGRC
+      label: 'agricultural colony'
+    -
+      value: AMUS
+      label: 'amusement park'
+    -
+      value: AREA
+      label: area
+    -
+      value: BSND
+      label: 'drainage basin'
+    -
+      value: BSNP
+      label: 'petroleum basin'
+    -
+      value: BTL
+      label: battlefield
+    -
+      value: CLG
+      label: clearing
+    -
+      value: CMN
+      label: common
+    -
+      value: CNS
+      label: 'concession area'
+    -
+      value: COLF
+      label: coalfield
+    -
+      value: CONT
+      label: continent
+    -
+      value: CST
+      label: coast
+    -
+      value: CTRB
+      label: 'business center'
+    -
+      value: DEVH
+      label: 'housing development'
+    -
+      value: FLD
+      label: field(s)
+    -
+      value: FLDI
+      label: 'irrigated field(s)'
+    -
+      value: GASF
+      label: gasfield
+    -
+      value: GRAZ
+      label: 'grazing area'
+    -
+      value: GVL
+      label: 'gravel area'
+    -
+      value: INDS
+      label: 'industrial area'
+    -
+      value: LAND
+      label: 'arctic land'
+    -
+      value: LCTY
+      label: locality
+    -
+      value: MILB
+      label: 'military base'
+    -
+      value: MNA
+      label: 'mining area'
+    -
+      value: MVA
+      label: 'maneuver area'
+    -
+      value: NVB
+      label: 'naval base'
+    -
+      value: OAS
+      label: oasis(-es)
+    -
+      value: OILF
+      label: oilfield
+    -
+      value: PEAT
+      label: 'peat cutting area'
+    -
+      value: PRK
+      label: park
+    -
+      value: PRT
+      label: port
+    -
+      value: QCKS
+      label: quicksand
+    -
+      value: RES
+      label: reserve
+    -
+      value: RESA
+      label: 'agricultural reserve'
+    -
+      value: RESF
+      label: 'forest reserve'
+    -
+      value: RESH
+      label: 'hunting reserve'
+    -
+      value: RESN
+      label: 'nature reserve'
+    -
+      value: RESP
+      label: 'palm tree reserve'
+    -
+      value: RESV
+      label: reservation
+    -
+      value: RESW
+      label: 'wildlife reserve'
+    -
+      value: RGN
+      label: region
+    -
+      value: RGNE
+      label: 'economic region'
+    -
+      value: RGNH
+      label: 'historical region'
+    -
+      value: RGNL
+      label: 'lake region'
+    -
+      value: RNGA
+      label: 'artillery range'
+    -
+      value: SALT
+      label: 'salt area'
+    -
+      value: SNOW
+      label: snowfield
+    -
+      value: TRB
+      label: 'tribal area'
+    -
+      value: PPL
+      label: 'populated place'
+    -
+      value: PPLA
+      label: 'seat of a first-order administrative division'
+    -
+      value: PPLA2
+      label: 'seat of a second-order administrative division'
+    -
+      value: PPLA3
+      label: 'seat of a third-order administrative division'
+    -
+      value: PPLA4
+      label: 'seat of a fourth-order administrative division'
+    -
+      value: PPLA5
+      label: 'seat of a fifth-order administrative division'
+    -
+      value: PPLC
+      label: 'capital of a political entity'
+    -
+      value: PPLCH
+      label: 'historical capital of a political entity'
+    -
+      value: PPLF
+      label: 'farm village'
+    -
+      value: PPLG
+      label: 'seat of government of a political entity'
+    -
+      value: PPLH
+      label: 'historical populated place'
+    -
+      value: PPLL
+      label: 'populated locality'
+    -
+      value: PPLQ
+      label: 'abandoned populated place'
+    -
+      value: PPLR
+      label: 'religious populated place'
+    -
+      value: PPLS
+      label: 'populated places'
+    -
+      value: PPLW
+      label: 'destroyed populated place'
+    -
+      value: PPLX
+      label: 'section of populated place'
+    -
+      value: STLMT
+      label: 'israeli settlement'
+    -
+      value: CSWY
+      label: causeway
+    -
+      value: OILP
+      label: 'oil pipeline'
+    -
+      value: PRMN
+      label: promenade
+    -
+      value: PTGE
+      label: portage
+    -
+      value: RD
+      label: road
+    -
+      value: RDA
+      label: 'ancient road'
+    -
+      value: RDB
+      label: 'road bend'
+    -
+      value: RDCUT
+      label: 'road cut'
+    -
+      value: RDJCT
+      label: 'road junction'
+    -
+      value: RJCT
+      label: 'railroad junction'
+    -
+      value: RR
+      label: railroad
+    -
+      value: RRQ
+      label: 'abandoned railroad'
+    -
+      value: RTE
+      label: 'caravan route'
+    -
+      value: RYD
+      label: 'railroad yard'
+    -
+      value: ST
+      label: street
+    -
+      value: STKR
+      label: 'stock route'
+    -
+      value: TNL
+      label: tunnel
+    -
+      value: TNLN
+      label: 'natural tunnel'
+    -
+      value: TNLRD
+      label: 'road tunnel'
+    -
+      value: TNLRR
+      label: 'railroad tunnel'
+    -
+      value: TNLS
+      label: tunnels
+    -
+      value: TRL
+      label: trail
+    -
+      value: ADMF
+      label: 'administrative facility'
+    -
+      value: AGRF
+      label: 'agricultural facility'
+    -
+      value: AIRB
+      label: airbase
+    -
+      value: AIRF
+      label: airfield
+    -
+      value: AIRH
+      label: heliport
+    -
+      value: AIRP
+      label: airport
+    -
+      value: AIRQ
+      label: 'abandoned airfield'
+    -
+      value: AIRT
+      label: terminal
+    -
+      value: AMTH
+      label: amphitheater
+    -
+      value: ANS
+      label: 'archaeological/prehistoric site'
+    -
+      value: AQC
+      label: 'aquaculture facility'
+    -
+      value: ARCH
+      label: arch
+    -
+      value: ARCHV
+      label: archive
+    -
+      value: ART
+      label: 'piece of art'
+    -
+      value: ASTR
+      label: 'astronomical station'
+    -
+      value: ASYL
+      label: asylum
+    -
+      value: ATHF
+      label: 'athletic field'
+    -
+      value: ATM
+      label: 'automatic teller machine'
+    -
+      value: BANK
+      label: bank
+    -
+      value: BCN
+      label: beacon
+    -
+      value: BDG
+      label: bridge
+    -
+      value: BDGQ
+      label: 'ruined bridge'
+    -
+      value: BLDA
+      label: 'apartment building'
+    -
+      value: BLDG
+      label: building(s)
+    -
+      value: BLDO
+      label: 'office building'
+    -
+      value: BP
+      label: 'boundary marker'
+    -
+      value: BRKS
+      label: barracks
+    -
+      value: BRKW
+      label: breakwater
+    -
+      value: BSTN
+      label: 'baling station'
+    -
+      value: BTYD
+      label: boatyard
+    -
+      value: BUR
+      label: 'burial cave(s)'
+    -
+      value: BUSTN
+      label: 'bus station'
+    -
+      value: BUSTP
+      label: 'bus stop'
+    -
+      value: CARN
+      label: cairn
+    -
+      value: CAVE
+      label: cave(s)
+    -
+      value: CH
+      label: church
+    -
+      value: CMP
+      label: camp(s)
+    -
+      value: CMPL
+      label: 'logging camp'
+    -
+      value: CMPLA
+      label: 'labor camp'
+    -
+      value: CMPMN
+      label: 'mining camp'
+    -
+      value: CMPO
+      label: 'oil camp'
+    -
+      value: CMPQ
+      label: 'abandoned camp'
+    -
+      value: CMPRF
+      label: 'refugee camp'
+    -
+      value: CMTY
+      label: cemetery
+    -
+      value: COMC
+      label: 'communication center'
+    -
+      value: CRRL
+      label: corral(s)
+    -
+      value: CSNO
+      label: casino
+    -
+      value: CSTL
+      label: castle
+    -
+      value: CSTM
+      label: 'customs house'
+    -
+      value: CTHSE
+      label: courthouse
+    -
+      value: CTRA
+      label: 'atomic center'
+    -
+      value: CTRCM
+      label: 'community center'
+    -
+      value: CTRF
+      label: 'facility center'
+    -
+      value: CTRM
+      label: 'medical center'
+    -
+      value: CTRR
+      label: 'religious center'
+    -
+      value: CTRS
+      label: 'space center'
+    -
+      value: CVNT
+      label: convent
+    -
+      value: DAM
+      label: dam
+    -
+      value: DAMQ
+      label: 'ruined dam'
+    -
+      value: DAMSB
+      label: 'sub-surface dam'
+    -
+      value: DARY
+      label: dairy
+    -
+      value: DCKD
+      label: 'dry dock'
+    -
+      value: DCKY
+      label: dockyard
+    -
+      value: DIKE
+      label: dike
+    -
+      value: DIP
+      label: 'diplomatic facility'
+    -
+      value: DPOF
+      label: 'fuel depot'
+    -
+      value: EST
+      label: estate(s)
+    -
+      value: ESTO
+      label: 'oil palm plantation'
+    -
+      value: ESTR
+      label: 'rubber plantation'
+    -
+      value: ESTSG
+      label: 'sugar plantation'
+    -
+      value: ESTT
+      label: 'tea plantation'
+    -
+      value: ESTX
+      label: 'section of estate'
+    -
+      value: FCL
+      label: facility
+    -
+      value: FNDY
+      label: foundry
+    -
+      value: FRM
+      label: farm
+    -
+      value: FRMQ
+      label: 'abandoned farm'
+    -
+      value: FRMS
+      label: farms
+    -
+      value: FRMT
+      label: farmstead
+    -
+      value: FT
+      label: fort
+    -
+      value: FY
+      label: ferry
+    -
+      value: FYT
+      label: 'ferry terminal'
+    -
+      value: GATE
+      label: gate
+    -
+      value: GDN
+      label: garden(s)
+    -
+      value: GHAT
+      label: ghat
+    -
+      value: GHSE
+      label: 'guest house'
+    -
+      value: GOSP
+      label: 'gas-oil separator plant'
+    -
+      value: GOVL
+      label: 'local government office'
+    -
+      value: GRVE
+      label: grave
+    -
+      value: HERM
+      label: hermitage
+    -
+      value: HLT
+      label: 'halting place'
+    -
+      value: HMSD
+      label: homestead
+    -
+      value: HSE
+      label: house(s)
+    -
+      value: HSEC
+      label: 'country house'
+    -
+      value: HSP
+      label: hospital
+    -
+      value: HSPC
+      label: clinic
+    -
+      value: HSPD
+      label: dispensary
+    -
+      value: HSPL
+      label: leprosarium
+    -
+      value: HSTS
+      label: 'historical site'
+    -
+      value: HTL
+      label: hotel
+    -
+      value: HUT
+      label: hut
+    -
+      value: HUTS
+      label: huts
+    -
+      value: INSM
+      label: 'military installation'
+    -
+      value: ITTR
+      label: 'research institute'
+    -
+      value: JTY
+      label: jetty
+    -
+      value: LDNG
+      label: landing
+    -
+      value: LEPC
+      label: 'leper colony'
+    -
+      value: LIBR
+      label: library
+    -
+      value: LNDF
+      label: landfill
+    -
+      value: LOCK
+      label: lock(s)
+    -
+      value: LTHSE
+      label: lighthouse
+    -
+      value: MALL
+      label: mall
+    -
+      value: MAR
+      label: marina
+    -
+      value: MFG
+      label: factory
+    -
+      value: MFGB
+      label: brewery
+    -
+      value: MFGC
+      label: cannery
+    -
+      value: MFGCU
+      label: 'copper works'
+    -
+      value: MFGLM
+      label: limekiln
+    -
+      value: MFGM
+      label: 'munitions plant'
+    -
+      value: MFGPH
+      label: 'phosphate works'
+    -
+      value: MFGQ
+      label: 'abandoned factory'
+    -
+      value: MFGSG
+      label: 'sugar refinery'
+    -
+      value: MKT
+      label: market
+    -
+      value: ML
+      label: mill(s)
+    -
+      value: MLM
+      label: 'ore treatment plant'
+    -
+      value: MLO
+      label: 'olive oil mill'
+    -
+      value: MLSG
+      label: 'sugar mill'
+    -
+      value: MLSGQ
+      label: 'former sugar mill'
+    -
+      value: MLSW
+      label: sawmill
+    -
+      value: MLWND
+      label: windmill
+    -
+      value: MLWTR
+      label: 'water mill'
+    -
+      value: MN
+      label: mine(s)
+    -
+      value: MNAU
+      label: 'gold mine(s)'
+    -
+      value: MNC
+      label: 'coal mine(s)'
+    -
+      value: MNCR
+      label: 'chrome mine(s)'
+    -
+      value: MNCU
+      label: 'copper mine(s)'
+    -
+      value: MNFE
+      label: 'iron mine(s)'
+    -
+      value: MNMT
+      label: monument
+    -
+      value: MNN
+      label: 'salt mine(s)'
+    -
+      value: MNQ
+      label: 'abandoned mine'
+    -
+      value: MNQR
+      label: quarry(-ies)
+    -
+      value: MOLE
+      label: mole
+    -
+      value: MSQE
+      label: mosque
+    -
+      value: MSSN
+      label: mission
+    -
+      value: MSSNQ
+      label: 'abandoned mission'
+    -
+      value: MSTY
+      label: monastery
+    -
+      value: MTRO
+      label: 'metro station'
+    -
+      value: MUS
+      label: museum
+    -
+      value: NOV
+      label: novitiate
+    -
+      value: NSY
+      label: nursery(-ies)
+    -
+      value: OBPT
+      label: 'observation point'
+    -
+      value: OBS
+      label: observatory
+    -
+      value: OBSR
+      label: 'radio observatory'
+    -
+      value: OILJ
+      label: 'oil pipeline junction'
+    -
+      value: OILQ
+      label: 'abandoned oil well'
+    -
+      value: OILR
+      label: 'oil refinery'
+    -
+      value: OILT
+      label: 'tank farm'
+    -
+      value: OILW
+      label: 'oil well'
+    -
+      value: OPRA
+      label: 'opera house'
+    -
+      value: PAL
+      label: palace
+    -
+      value: PGDA
+      label: pagoda
+    -
+      value: PIER
+      label: pier
+    -
+      value: PKLT
+      label: 'parking lot'
+    -
+      value: PMPO
+      label: 'oil pumping station'
+    -
+      value: PMPW
+      label: 'water pumping station'
+    -
+      value: PO
+      label: 'post office'
+    -
+      value: PP
+      label: 'police post'
+    -
+      value: PPQ
+      label: 'abandoned police post'
+    -
+      value: PRKGT
+      label: 'park gate'
+    -
+      value: PRKHQ
+      label: 'park headquarters'
+    -
+      value: PRN
+      label: prison
+    -
+      value: PRNJ
+      label: reformatory
+    -
+      value: PRNQ
+      label: 'abandoned prison'
+    -
+      value: PS
+      label: 'power station'
+    -
+      value: PSH
+      label: 'hydroelectric power station'
+    -
+      value: PSN
+      label: 'nuclear power station'
+    -
+      value: PSTB
+      label: 'border post'
+    -
+      value: PSTC
+      label: 'customs post'
+    -
+      value: PSTP
+      label: 'patrol post'
+    -
+      value: PYR
+      label: pyramid
+    -
+      value: PYRS
+      label: pyramids
+    -
+      value: QUAY
+      label: quay
+    -
+      value: RDCR
+      label: 'traffic circle'
+    -
+      value: RDIN
+      label: intersection
+    -
+      value: RECG
+      label: 'golf course'
+    -
+      value: RECR
+      label: racetrack
+    -
+      value: REST
+      label: restaurant
+    -
+      value: RET
+      label: store
+    -
+      value: RHSE
+      label: resthouse
+    -
+      value: RKRY
+      label: rookery
+    -
+      value: RLG
+      label: 'religious site'
+    -
+      value: RLGR
+      label: retreat
+    -
+      value: RNCH
+      label: ranch(es)
+    -
+      value: RSD
+      label: 'railroad siding'
+    -
+      value: RSGNL
+      label: 'railroad signal'
+    -
+      value: RSRT
+      label: resort
+    -
+      value: RSTN
+      label: 'railroad station'
+    -
+      value: RSTNQ
+      label: 'abandoned railroad station'
+    -
+      value: RSTP
+      label: 'railroad stop'
+    -
+      value: RSTPQ
+      label: 'abandoned railroad stop'
+    -
+      value: RUIN
+      label: ruin(s)
+    -
+      value: SCH
+      label: school
+    -
+      value: SCHA
+      label: 'agricultural school'
+    -
+      value: SCHC
+      label: college
+    -
+      value: SCHL
+      label: 'language school'
+    -
+      value: SCHM
+      label: 'military school'
+    -
+      value: SCHN
+      label: 'maritime school'
+    -
+      value: SCHT
+      label: 'technical school'
+    -
+      value: SECP
+      label: 'State Exam Prep Centre'
+    -
+      value: SHPF
+      label: sheepfold
+    -
+      value: SHRN
+      label: shrine
+    -
+      value: SHSE
+      label: storehouse
+    -
+      value: SLCE
+      label: sluice
+    -
+      value: SNTR
+      label: sanatorium
+    -
+      value: SPA
+      label: spa
+    -
+      value: SPLY
+      label: spillway
+    -
+      value: SQR
+      label: square
+    -
+      value: STBL
+      label: stable
+    -
+      value: STDM
+      label: stadium
+    -
+      value: STNB
+      label: 'scientific research base'
+    -
+      value: STNC
+      label: 'coast guard station'
+    -
+      value: STNE
+      label: 'experiment station'
+    -
+      value: STNF
+      label: 'forest station'
+    -
+      value: STNI
+      label: 'inspection station'
+    -
+      value: STNM
+      label: 'meteorological station'
+    -
+      value: STNR
+      label: 'radio station'
+    -
+      value: STNS
+      label: 'satellite station'
+    -
+      value: STNW
+      label: 'whaling station'
+    -
+      value: STPS
+      label: steps
+    -
+      value: SWT
+      label: 'sewage treatment plant'
+    -
+      value: SYG
+      label: synagogue
+    -
+      value: THTR
+      label: theater
+    -
+      value: TMB
+      label: tomb(s)
+    -
+      value: TMPL
+      label: temple(s)
+    -
+      value: TNKD
+      label: 'cattle dipping tank'
+    -
+      value: TOLL
+      label: 'toll gate/barrier'
+    -
+      value: TOWR
+      label: tower
+    -
+      value: TRAM
+      label: tram
+    -
+      value: TRANT
+      label: 'transit terminal'
+    -
+      value: TRIG
+      label: 'triangulation station'
+    -
+      value: TRMO
+      label: 'oil pipeline terminal'
+    -
+      value: TWO
+      label: 'temp work office'
+    -
+      value: UNIP
+      label: 'university prep school'
+    -
+      value: UNIV
+      label: university
+    -
+      value: USGE
+      label: 'united states government establishment'
+    -
+      value: VETF
+      label: 'veterinary facility'
+    -
+      value: WALL
+      label: wall
+    -
+      value: WALLA
+      label: 'ancient wall'
+    -
+      value: WEIR
+      label: weir(s)
+    -
+      value: WHRF
+      label: wharf(-ves)
+    -
+      value: WRCK
+      label: wreck
+    -
+      value: WTRW
+      label: waterworks
+    -
+      value: ZNF
+      label: 'free trade zone'
+    -
+      value: ZOO
+      label: zoo
+    -
+      value: ASPH
+      label: 'asphalt lake'
+    -
+      value: ATOL
+      label: atoll(s)
+    -
+      value: BAR
+      label: bar
+    -
+      value: BCH
+      label: beach
+    -
+      value: BCHS
+      label: beaches
+    -
+      value: BDLD
+      label: badlands
+    -
+      value: BLDR
+      label: 'boulder field'
+    -
+      value: BLHL
+      label: blowhole(s)
+    -
+      value: BLOW
+      label: blowout(s)
+    -
+      value: BNCH
+      label: bench
+    -
+      value: BUTE
+      label: butte(s)
+    -
+      value: CAPE
+      label: cape
+    -
+      value: CFT
+      label: cleft(s)
+    -
+      value: CLDA
+      label: caldera
+    -
+      value: CLF
+      label: cliff(s)
+    -
+      value: CNYN
+      label: canyon
+    -
+      value: CONE
+      label: cone(s)
+    -
+      value: CRDR
+      label: corridor
+    -
+      value: CRQ
+      label: cirque
+    -
+      value: CRQS
+      label: cirques
+    -
+      value: CRTR
+      label: crater(s)
+    -
+      value: CUET
+      label: cuesta(s)
+    -
+      value: DLTA
+      label: delta
+    -
+      value: DPR
+      label: depression(s)
+    -
+      value: DSRT
+      label: desert
+    -
+      value: DUNE
+      label: dune(s)
+    -
+      value: DVD
+      label: divide
+    -
+      value: ERG
+      label: 'sandy desert'
+    -
+      value: FAN
+      label: fan(s)
+    -
+      value: FORD
+      label: ford
+    -
+      value: FSR
+      label: fissure
+    -
+      value: GAP
+      label: gap
+    -
+      value: GRGE
+      label: gorge(s)
+    -
+      value: HDLD
+      label: headland
+    -
+      value: HLL
+      label: hill
+    -
+      value: HLLS
+      label: hills
+    -
+      value: HMCK
+      label: hammock(s)
+    -
+      value: HMDA
+      label: 'rock desert'
+    -
+      value: INTF
+      label: interfluve
+    -
+      value: ISL
+      label: island
+    -
+      value: ISLET
+      label: islet
+    -
+      value: ISLF
+      label: 'artificial island'
+    -
+      value: ISLM
+      label: 'mangrove island'
+    -
+      value: ISLS
+      label: islands
+    -
+      value: ISLT
+      label: 'land-tied island'
+    -
+      value: ISLX
+      label: 'section of island'
+    -
+      value: ISTH
+      label: isthmus
+    -
+      value: KRST
+      label: 'karst area'
+    -
+      value: LAVA
+      label: 'lava area'
+    -
+      value: LEV
+      label: levee
+    -
+      value: MESA
+      label: mesa(s)
+    -
+      value: MND
+      label: mound(s)
+    -
+      value: MRN
+      label: moraine
+    -
+      value: MT
+      label: mountain
+    -
+      value: MTS
+      label: mountains
+    -
+      value: NKM
+      label: 'meander neck'
+    -
+      value: NTK
+      label: nunatak
+    -
+      value: NTKS
+      label: nunataks
+    -
+      value: PAN
+      label: pan
+    -
+      value: PANS
+      label: pans
+    -
+      value: PASS
+      label: pass
+    -
+      value: PEN
+      label: peninsula
+    -
+      value: PENX
+      label: 'section of peninsula'
+    -
+      value: PK
+      label: peak
+    -
+      value: PKS
+      label: peaks
+    -
+      value: PLAT
+      label: plateau
+    -
+      value: PLATX
+      label: 'section of plateau'
+    -
+      value: PLDR
+      label: polder
+    -
+      value: PLN
+      label: plain(s)
+    -
+      value: PLNX
+      label: 'section of plain'
+    -
+      value: PROM
+      label: promontory(-ies)
+    -
+      value: PT
+      label: point
+    -
+      value: PTS
+      label: points
+    -
+      value: RDGB
+      label: 'beach ridge'
+    -
+      value: RDGE
+      label: ridge(s)
+    -
+      value: REG
+      label: 'stony desert'
+    -
+      value: RK
+      label: rock
+    -
+      value: RKFL
+      label: rockfall
+    -
+      value: RKS
+      label: rocks
+    -
+      value: SAND
+      label: 'sand area'
+    -
+      value: SBED
+      label: 'dry stream bed'
+    -
+      value: SCRP
+      label: escarpment
+    -
+      value: SDL
+      label: saddle
+    -
+      value: SHOR
+      label: shore
+    -
+      value: SINK
+      label: sinkhole
+    -
+      value: SLID
+      label: slide
+    -
+      value: SLP
+      label: slope(s)
+    -
+      value: SPIT
+      label: spit
+    -
+      value: SPUR
+      label: spur(s)
+    -
+      value: TAL
+      label: 'talus slope'
+    -
+      value: TRGD
+      label: 'interdune trough(s)'
+    -
+      value: TRR
+      label: terrace
+    -
+      value: UPLD
+      label: upland
+    -
+      value: VAL
+      label: valley
+    -
+      value: VALG
+      label: 'hanging valley'
+    -
+      value: VALS
+      label: valleys
+    -
+      value: VALX
+      label: 'section of valley'
+    -
+      value: VLC
+      label: volcano
+    -
+      value: APNU
+      label: apron
+    -
+      value: ARCU
+      label: arch
+    -
+      value: ARRU
+      label: arrugado
+    -
+      value: BDLU
+      label: borderland
+    -
+      value: BKSU
+      label: banks
+    -
+      value: BNKU
+      label: bank
+    -
+      value: BSNU
+      label: basin
+    -
+      value: CDAU
+      label: cordillera
+    -
+      value: CNSU
+      label: canyons
+    -
+      value: CNYU
+      label: canyon
+    -
+      value: CRSU
+      label: 'continental rise'
+    -
+      value: DEPU
+      label: deep
+    -
+      value: EDGU
+      label: 'shelf edge'
+    -
+      value: ESCU
+      label: 'escarpment (or scarp)'
+    -
+      value: FANU
+      label: fan
+    -
+      value: FLTU
+      label: flat
+    -
+      value: FRZU
+      label: 'fracture zone'
+    -
+      value: FURU
+      label: furrow
+    -
+      value: GAPU
+      label: gap
+    -
+      value: GLYU
+      label: gully
+    -
+      value: HLLU
+      label: hill
+    -
+      value: HLSU
+      label: hills
+    -
+      value: HOLU
+      label: hole
+    -
+      value: KNLU
+      label: knoll
+    -
+      value: KNSU
+      label: knolls
+    -
+      value: LDGU
+      label: ledge
+    -
+      value: LEVU
+      label: levee
+    -
+      value: MESU
+      label: mesa
+    -
+      value: MNDU
+      label: mound
+    -
+      value: MOTU
+      label: moat
+    -
+      value: MTU
+      label: mountain
+    -
+      value: PKSU
+      label: peaks
+    -
+      value: PKU
+      label: peak
+    -
+      value: PLNU
+      label: plain
+    -
+      value: PLTU
+      label: plateau
+    -
+      value: PNLU
+      label: pinnacle
+    -
+      value: PRVU
+      label: province
+    -
+      value: RDGU
+      label: ridge
+    -
+      value: RDSU
+      label: ridges
+    -
+      value: RFSU
+      label: reefs
+    -
+      value: RFU
+      label: reef
+    -
+      value: RISU
+      label: rise
+    -
+      value: SCNU
+      label: seachannel
+    -
+      value: SCSU
+      label: seachannels
+    -
+      value: SDLU
+      label: saddle
+    -
+      value: SHFU
+      label: shelf
+    -
+      value: SHLU
+      label: shoal
+    -
+      value: SHSU
+      label: shoals
+    -
+      value: SHVU
+      label: 'shelf valley'
+    -
+      value: SILU
+      label: sill
+    -
+      value: SLPU
+      label: slope
+    -
+      value: SMSU
+      label: seamounts
+    -
+      value: SMU
+      label: seamount
+    -
+      value: SPRU
+      label: spur
+    -
+      value: TERU
+      label: terrace
+    -
+      value: TMSU
+      label: 'tablemounts (or guyots)'
+    -
+      value: TMTU
+      label: 'tablemount (or guyot)'
+    -
+      value: TNGU
+      label: tongue
+    -
+      value: TRGU
+      label: trough
+    -
+      value: TRNU
+      label: trench
+    -
+      value: VALU
+      label: valley
+    -
+      value: VLSU
+      label: valleys
+    -
+      value: BUSH
+      label: bush(es)
+    -
+      value: CULT
+      label: 'cultivated area'
+    -
+      value: FRST
+      label: forest(s)
+    -
+      value: FRSTF
+      label: 'fossilized forest'
+    -
+      value: GROVE
+      label: grove
+    -
+      value: GRSLD
+      label: grassland
+    -
+      value: GRVC
+      label: 'coconut grove'
+    -
+      value: GRVO
+      label: 'olive grove'
+    -
+      value: GRVP
+      label: 'palm grove'
+    -
+      value: GRVPN
+      label: 'pine grove'
+    -
+      value: HTH
+      label: heath
+    -
+      value: MDW
+      label: meadow
+    -
+      value: OCH
+      label: orchard(s)
+    -
+      value: SCRB
+      label: scrubland
+    -
+      value: TREE
+      label: tree(s)
+    -
+      value: TUND
+      label: tundra
+    -
+      value: VIN
+      label: vineyard
+    -
+      value: VINS
+      label: vineyards
+    -
+      value: ll
+      label: 'not available'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

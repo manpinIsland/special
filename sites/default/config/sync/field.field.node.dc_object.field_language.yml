@@ -1,0 +1,21 @@
+uuid: 16f1d36d-45a2-4600-88f2-c117961e7257
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_language
+    - node.type.dc_object
+  module:
+    - languagefield
+id: node.dc_object.field_language
+field_name: field_language
+entity_type: node
+bundle: dc_object
+label: Language
+description: "A language of the resource.\r\n\r\nIf the item includes written or spoken language, select the language used."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: language_field

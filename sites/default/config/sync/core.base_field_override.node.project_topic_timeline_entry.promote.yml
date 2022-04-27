@@ -1,0 +1,22 @@
+uuid: 895d79aa-c4e0-4f58-a0e1-1841dc4c9902
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.project_topic_timeline_entry
+id: node.project_topic_timeline_entry.promote
+field_name: promote
+entity_type: node
+bundle: project_topic_timeline_entry
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

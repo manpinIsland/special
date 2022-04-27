@@ -1,0 +1,21 @@
+uuid: c642d501-69cc-4f02-9ffe-2a01bb3c7137
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_citation
+    - node.type.dc_object
+  module:
+    - text
+id: node.dc_object.field_citation
+field_name: field_citation
+entity_type: node
+bundle: dc_object
+label: Citation
+description: "A reference to a published or unpublished resource.\r\n\r\nTo construct an item-level citation, use the following syntax:\r\n\r\n<b>Manuscript or photo collection</b>\r\n[Document Title]. Collection name, date span. Collection number. Repository name and location. \r\n\r\nExample for manuscript or photo collection: [Photograph of Tonopah High School Band, Tonopah (Nev.), circa 1923-1929]. Walter V. Long Photographs, approximately 1923-1966. PH-00146. Special Collections and Archives, University Libraries, University of Nevada, Las Vegas. Las Vegas, Nevada. \r\n\r\n<b>Oral history interview</b>\r\nNarrator last name, Narrator first name Interview, date. OH number. Format of interview [audio recording or transcript]. Repository name and location. \r\n\r\nExample for oral history interview:\r\nGoodman, Caryoln G. Interview, 2016 August 18. OH-02803. [Transcript.] Oral History Research Center, Special Collections and Archives, University Libraries, University of Nevada, Las Vegas. Las Vegas, Nevada.\r\n\r\nNote: When no citation has been constructed in ArchivesSpace, construct date using instructions below:\r\n\r\nTo determine date, reference the resource record type in ArchivesSpace (http://archives:8080/). Open record, and under the “Dates” heading, copy the date values into the Project Client. If multiple date values are in the resource record, select the “Inclusive Dates” values."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,9 @@
+uuid: 39eb8ab8-8039-4835-a4d7-db8b9161d294
+langcode: en
+status: true
+dependencies: {  }
+id: text
+label: Text
+icon_uuid: null
+description: 'Use <em>Text</em> for adding a text.'
+behavior_plugins: {  }

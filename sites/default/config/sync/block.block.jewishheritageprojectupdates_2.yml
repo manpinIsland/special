@@ -1,0 +1,31 @@
+uuid: 063cbb44-bbc3-487e-898c-f62257704bdf
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d7ba9fbe-8a95-40cf-b46b-aa8c4833a5b4'
+  module:
+    - block_content
+    - system
+  theme:
+    - jewishheritage_d8
+id: jewishheritageprojectupdates_2
+theme: jewishheritage_d8
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'block_content:d7ba9fbe-8a95-40cf-b46b-aa8c4833a5b4'
+settings:
+  id: 'block_content:d7ba9fbe-8a95-40cf-b46b-aa8c4833a5b4'
+  label: 'Project Updates'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/jewishheritage\r\n/jewishheritage/*"

@@ -1,0 +1,18 @@
+uuid: 34b9cdd3-2a0c-465d-be2d-ac55562a5d30
+langcode: en
+status: true
+dependencies:
+  theme:
+    - menus
+id: menus_local_actions
+theme: menus
+region: header
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

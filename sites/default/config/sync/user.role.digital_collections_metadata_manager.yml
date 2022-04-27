@@ -1,0 +1,125 @@
+uuid: 1de71e67-c1e7-4716-b3ae-52365d6e0171
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - node.type.dc_object
+    - node.type.newspaper_issue
+    - node.type.newspaper_page
+    - node.type.newspaper_title
+    - taxonomy.vocabulary.corporate_body
+    - taxonomy.vocabulary.digital_projects
+    - taxonomy.vocabulary.digital_provenance
+    - taxonomy.vocabulary.family
+    - taxonomy.vocabulary.geo_location
+    - taxonomy.vocabulary.material_type
+    - taxonomy.vocabulary.person
+    - taxonomy.vocabulary.physical_form
+    - taxonomy.vocabulary.resource_types
+    - taxonomy.vocabulary.restrictions
+    - taxonomy.vocabulary.standardized_rights_statement
+    - taxonomy.vocabulary.subject
+    - taxonomy.vocabulary.time_period
+  module:
+    - field_permissions
+    - filter
+    - islandora
+    - media
+    - node
+    - system
+    - taxonomy
+id: digital_collections_metadata_manager
+label: 'Metadata Manager'
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'create dc_object content'
+  - 'create field_conversion_specifications'
+  - 'create field_staff_note'
+  - 'create media'
+  - 'create newspaper_issue content'
+  - 'create newspaper_page content'
+  - 'create newspaper_title content'
+  - 'create terms in corporate_body'
+  - 'create terms in digital_projects'
+  - 'create terms in digital_provenance'
+  - 'create terms in family'
+  - 'create terms in geo_location'
+  - 'create terms in material_type'
+  - 'create terms in person'
+  - 'create terms in resource_types'
+  - 'create terms in restrictions'
+  - 'create terms in standardized_rights_statement'
+  - 'create terms in subject'
+  - 'create terms in time_period'
+  - 'delete any dc_object content'
+  - 'delete any media'
+  - 'delete any newspaper_issue content'
+  - 'delete any newspaper_page content'
+  - 'delete any newspaper_title content'
+  - 'delete media'
+  - 'delete own dc_object content'
+  - 'delete own newspaper_issue content'
+  - 'delete own newspaper_page content'
+  - 'delete own newspaper_title content'
+  - 'delete terms in corporate_body'
+  - 'delete terms in digital_provenance'
+  - 'delete terms in family'
+  - 'delete terms in geo_location'
+  - 'delete terms in material_type'
+  - 'delete terms in person'
+  - 'delete terms in resource_types'
+  - 'delete terms in restrictions'
+  - 'delete terms in standardized_rights_statement'
+  - 'delete terms in subject'
+  - 'delete terms in time_period'
+  - 'edit any dc_object content'
+  - 'edit any newspaper_issue content'
+  - 'edit any newspaper_page content'
+  - 'edit any newspaper_title content'
+  - 'edit field_conversion_specifications'
+  - 'edit field_staff_note'
+  - 'edit own dc_object content'
+  - 'edit own field_conversion_specifications'
+  - 'edit own field_staff_note'
+  - 'edit own newspaper_issue content'
+  - 'edit own newspaper_page content'
+  - 'edit own newspaper_title content'
+  - 'edit terms in corporate_body'
+  - 'edit terms in digital_projects'
+  - 'edit terms in digital_provenance'
+  - 'edit terms in family'
+  - 'edit terms in geo_location'
+  - 'edit terms in material_type'
+  - 'edit terms in person'
+  - 'edit terms in physical_form'
+  - 'edit terms in resource_types'
+  - 'edit terms in standardized_rights_statement'
+  - 'edit terms in subject'
+  - 'edit terms in time_period'
+  - 'manage media'
+  - 'manage members'
+  - 'revert dc_object revisions'
+  - 'revert newspaper_issue revisions'
+  - 'revert newspaper_page revisions'
+  - 'revert newspaper_title revisions'
+  - 'update any media'
+  - 'update media'
+  - 'use text format restricted_html'
+  - 'view all media revisions'
+  - 'view checksums'
+  - 'view dc_object revisions'
+  - 'view field_conversion_specifications'
+  - 'view field_staff_note'
+  - 'view newspaper_issue revisions'
+  - 'view newspaper_page revisions'
+  - 'view newspaper_title revisions'
+  - 'view own field_conversion_specifications'
+  - 'view own field_staff_note'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'

@@ -1,0 +1,9 @@
+uuid: dac2cc1e-84ea-4aa4-90c4-d6738415e1e1
+langcode: en
+status: true
+dependencies: {  }
+id: de
+label: German
+direction: ltr
+weight: 1
+locked: false

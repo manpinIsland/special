@@ -1,0 +1,50 @@
+uuid: f7c9efd2-0b31-4c23-9030-da0daa0133f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_local
+label: 'Open Seadragon'
+name: open_seadragon
+group: Display
+description: 'Open Seadragon viewer for Images'
+requireAllConditions: true
+disabled: false
+conditions:
+  node_has_term:
+    id: node_has_term
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uri: 'http://purl.org/coar/resource_type/c_c513'
+    logic: and
+    tids:
+      -
+        target_id: '35'
+  node_anon_access:
+    id: node_anon_access
+    negate: 0
+    uuid: a8917cb9-9136-4164-98f2-62825912d92c
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_referenced_by_field:
+    id: node_referenced_by_field
+    negate: 1
+    reference_field: field_member_of
+    uuid: f514256e-129e-41de-b8de-9a3210a8eb37
+    context_mapping:
+      node: '@node.node_route_context:node'
+  media_has_mimetype:
+    id: media_has_mimetype
+    negate: true
+    uuid: 47b4a5c0-2818-402b-9fcb-870c77b9e2db
+    context_mapping:
+      node: '@node.node_route_context:node'
+    mimetypes: application/pdf
+reactions:
+  view_mode_alter:
+    id: view_mode_alter
+    mode: node.open_seadragon
+    saved: false
+weight: -8

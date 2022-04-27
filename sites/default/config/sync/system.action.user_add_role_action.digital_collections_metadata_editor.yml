@@ -1,0 +1,14 @@
+uuid: 0b673251-f220-4900-8e29-4889a623df4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.digital_collections_metadata_editor
+  module:
+    - user
+id: user_add_role_action.digital_collections_metadata_editor
+label: 'Add the Digital Collections Metadata Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: digital_collections_metadata_editor

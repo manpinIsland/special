@@ -1,0 +1,30 @@
+uuid: 259550a4-27ca-447c-8748-049fc78532c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog_views
+  module:
+    - system
+    - views
+  theme:
+    - menus
+id: views_block__blog_views_block_6
+theme: menus
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:blog_views-block_6'
+settings:
+  id: 'views_block:blog_views-block_6'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /collections/menus

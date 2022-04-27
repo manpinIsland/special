@@ -1,0 +1,23 @@
+uuid: 025e3ec9-3cdc-4f02-af72-259cabab9920
+langcode: en
+status: true
+dependencies: {  }
+name: linked_image_750px
+label: 'Linked Image 750px'
+effects:
+  c1c43f35-9723-428f-ba5f-2d5bd21f9605:
+    uuid: c1c43f35-9723-428f-ba5f-2d5bd21f9605
+    id: image_scale
+    weight: 1
+    data:
+      width: 750
+      height: null
+      upscale: true
+  5b9735c7-ad11-4fb5-8a76-3a73e3ca4a24:
+    uuid: 5b9735c7-ad11-4fb5-8a76-3a73e3ca4a24
+    id: image_crop
+    weight: 2
+    data:
+      width: 750
+      height: 465
+      anchor: center-top

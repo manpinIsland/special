@@ -1,0 +1,31 @@
+uuid: 694764a8-2eaa-45a5-9a23-1a249a73ae33
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:02907e69-bada-4b98-b3a2-bc7b8f9cb390'
+  module:
+    - block_content
+    - system
+  theme:
+    - menus
+id: menusfootermenu
+theme: menus
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:02907e69-bada-4b98-b3a2-bc7b8f9cb390'
+settings:
+  id: 'block_content:02907e69-bada-4b98-b3a2-bc7b8f9cb390'
+  label: 'Menus Footer Menu'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/collections/menus\r\n/collections/menus/*"

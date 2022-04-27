@@ -1,0 +1,31 @@
+uuid: c085c1f4-c758-47c8-a094-a06878d51b7b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0556a6df-ce07-4ec7-bc7f-2b983155353c'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: skylinefooter2
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -16
+provider: null
+plugin: 'block_content:0556a6df-ce07-4ec7-bc7f-2b983155353c'
+settings:
+  id: 'block_content:0556a6df-ce07-4ec7-bc7f-2b983155353c'
+  label: 'Skyline Footer 2'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*"

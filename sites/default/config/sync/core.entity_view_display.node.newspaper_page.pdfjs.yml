@@ -1,0 +1,93 @@
+uuid: 2e23fa5a-70ff-4948-901c-47a4b56e69a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.pdfjs
+    - field.field.node.newspaper_page.body
+    - field.field.node.newspaper_page.field_digital_id
+    - field.field.node.newspaper_page.field_issue
+    - field.field.node.newspaper_page.field_page
+    - field.field.node.newspaper_page.field_page_sequence
+    - field.field.node.newspaper_page.field_section
+    - node.type.newspaper_page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: G7TuAFqPiHV-IlBQ6zD6Z47HCHNV_wiIdU83yn-UkdY
+id: node.newspaper_page.pdfjs
+targetEntityType: node
+bundle: newspaper_page
+mode: pdfjs
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  display_media_entity_view_2:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_digital_id:
+    weight: 8
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_issue:
+    weight: 4
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_page:
+    weight: 6
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  openseadragon_media_evas_service_file:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  pdfjs_media_evas_service_file:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  display_media_entity_view_1: true
+  display_media_service_file: true
+  display_media_thumbnail: true
+  field_page_sequence: true
+  langcode: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  search_api_excerpt: true

@@ -1,0 +1,20 @@
+uuid: 32ec3378-5023-48f8-af9a-eb3ced72e662
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - aae
+id: aae_content
+theme: aae
+region: content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

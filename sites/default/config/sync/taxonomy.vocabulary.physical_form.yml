@@ -1,0 +1,8 @@
+uuid: 1788a4db-b5a0-40b3-b6d9-2f93534cb4e7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Physical Form'
+vid: physical_form
+description: 'A designation of a particular physical presentation of a resource, including the physical form or medium of material for a resou'
+weight: 0

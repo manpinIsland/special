@@ -1,0 +1,21 @@
+uuid: 8d07b650-830d-4511-93b4-ecb91fac867d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_digital_processing_note
+    - media.type.video
+  module:
+    - text
+id: media.video.field_digital_processing_note
+field_name: field_digital_processing_note
+entity_type: media
+bundle: video
+label: 'Digital Processing Note'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

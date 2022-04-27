@@ -1,0 +1,36 @@
+uuid: d95cb3ff-cc5d-4e5e-b870-a18f8a6d7c39
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+label: 'Image Service File'
+name: image_service_file
+group: Derivatives
+description: 'Service files for images'
+requireAllConditions: true
+disabled: true
+conditions:
+  media_has_term:
+    id: media_has_term
+    negate: false
+    uuid: a57e9fb8-db27-4ea0-a65b-d18277dfe944
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+    uri: 'http://pcdm.org/use#ServiceFile'
+    logic: and
+  parent_node_has_term:
+    id: parent_node_has_term
+    negate: false
+    uuid: d90b6285-e455-4af9-b924-7551616bbd52
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+    uri: 'http://purl.org/coar/resource_type/c_c513'
+    logic: and
+reactions:
+  derivative:
+    id: derivative
+    actions:
+      image_generate_a_thumbnail_from_a_service_file: image_generate_a_thumbnail_from_a_service_file
+    saved: false
+weight: -9

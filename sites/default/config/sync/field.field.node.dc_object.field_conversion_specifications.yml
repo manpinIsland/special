@@ -1,0 +1,19 @@
+uuid: 2cf9295d-f2b6-49fc-9d40-a52b30c66e88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conversion_specifications
+    - node.type.dc_object
+id: node.dc_object.field_conversion_specifications
+field_name: field_conversion_specifications
+entity_type: node
+bundle: dc_object
+label: 'Conversion Specifications'
+description: "Text field to enter technical metadata. Not visible to the public.\r\n\r\nAdd the appropriate values from the controlled vocabulary to describe the process, equipment and specifications used to reformat a resource.\r\nTwo controlled vocabulary terms will be used for each material: the ppi/bit of the files scanned and the scanner/computers/software type"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

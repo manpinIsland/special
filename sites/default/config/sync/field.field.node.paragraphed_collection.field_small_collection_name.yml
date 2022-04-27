@@ -1,0 +1,30 @@
+uuid: ffbcd337-2c8d-4724-ab8c-92bc840e9d30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_small_collection_name
+    - node.type.paragraphed_collection
+id: node.paragraphed_collection.field_small_collection_name
+field_name: field_small_collection_name
+entity_type: node
+bundle: paragraphed_collection
+label: 'Small Collection Name'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 877a8944-b6f0-4054-b3cc-c47f5730b2c1
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      small_collections: small_collections
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

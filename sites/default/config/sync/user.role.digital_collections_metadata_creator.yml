@@ -1,0 +1,47 @@
+uuid: c19c1110-3ab9-40b0-b889-9fab24308047
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - node.type.dc_object
+    - taxonomy.vocabulary.person
+  module:
+    - field_permissions
+    - filter
+    - islandora
+    - media
+    - node
+    - system
+    - taxonomy
+id: digital_collections_metadata_creator
+label: 'Metadata Creator'
+weight: 6
+is_admin: null
+permissions:
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'create dc_object content'
+  - 'create field_conversion_specifications'
+  - 'create field_staff_note'
+  - 'create media'
+  - 'edit any dc_object content'
+  - 'edit field_staff_note'
+  - 'edit own dc_object content'
+  - 'edit own field_conversion_specifications'
+  - 'edit own field_staff_note'
+  - 'edit terms in person'
+  - 'manage media'
+  - 'manage members'
+  - 'update any media'
+  - 'update media'
+  - 'use text format restricted_html'
+  - 'view checksums'
+  - 'view dc_object revisions'
+  - 'view field_conversion_specifications'
+  - 'view field_staff_note'
+  - 'view own field_conversion_specifications'
+  - 'view own field_staff_note'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'

@@ -1,0 +1,8 @@
+uuid: 0bcdbaa6-8d58-4267-9d97-db9deaeeee2f
+langcode: en
+status: true
+dependencies: {  }
+id: jewish-heritage-side-menu
+label: 'Jewish Heritage Side Menu'
+description: 'The side menu for the Jewish Heritage Template'
+locked: false

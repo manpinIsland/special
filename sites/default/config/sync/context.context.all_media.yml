@@ -1,0 +1,54 @@
+uuid: 65ae5b7d-7a66-481f-a2a3-29104bd15b1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+label: 'All Media'
+name: all_media
+group: Indexing
+description: 'All media, regardless of where it lives'
+requireAllConditions: true
+disabled: false
+conditions:
+  islandora_entity_bundle:
+    id: islandora_entity_bundle
+    bundles:
+      audio: audio
+      document: document
+      extracted_text: extracted_text
+      file: file
+      image: image
+      video: video
+    negate: 0
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+  media_uses_filesystem:
+    id: media_uses_filesystem
+    negate: false
+    uuid: cee085d0-4e18-45b2-b541-a8416a585099
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+    filesystems:
+      fedora: fedora
+reactions:
+  alter_jsonld_type:
+    id: alter_jsonld_type
+    source_field: field_media_use
+    saved: false
+  islandora_map_uri_predicate:
+    id: islandora_map_uri_predicate
+    drupal_uri_predicate: 'iana:describedby'
+    saved: false
+  index:
+    id: index
+    actions:
+      index_media_in_fedora: index_media_in_fedora
+      index_media_in_triplestore: index_media_in_triplestore
+    saved: false
+  delete:
+    id: delete
+    actions:
+      delete_media_from_triplestore: delete_media_from_triplestore
+    saved: false
+weight: -8

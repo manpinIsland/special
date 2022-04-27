@@ -1,0 +1,28 @@
+uuid: 95c5b372-bf14-42b2-96ec-b1040fb86f63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collections
+    - node.type.featured_image
+    - taxonomy.vocabulary.collections
+id: node.featured_image.field_collections
+field_name: field_collections
+entity_type: node
+bundle: featured_image
+label: Collections
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      collections: collections
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

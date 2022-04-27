@@ -1,0 +1,25 @@
+uuid: 57af062c-6bf3-4923-8d79-793da85f2418
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.search_result_grid
+    - field.field.taxonomy_term.family.field_authority_link
+    - field.field.taxonomy_term.family.field_cat_date_begin
+    - field.field.taxonomy_term.family.field_cat_date_end
+    - field.field.taxonomy_term.family.field_relationships
+    - taxonomy.vocabulary.family
+id: taxonomy_term.family.search_result_grid
+targetEntityType: taxonomy_term
+bundle: family
+mode: search_result_grid
+content: {  }
+hidden:
+  description: true
+  field_authority_link: true
+  field_cat_date_begin: true
+  field_cat_date_end: true
+  field_relationships: true
+  langcode: true
+  search_api_excerpt: true
+  taxonomy_term_relations_entity_view_1: true

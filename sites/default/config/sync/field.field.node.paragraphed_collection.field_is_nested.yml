@@ -1,0 +1,23 @@
+uuid: 2e33144f-2a3c-49b4-8508-198f14460513
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_nested
+    - node.type.paragraphed_collection
+id: node.paragraphed_collection.field_is_nested
+field_name: field_is_nested
+entity_type: node
+bundle: paragraphed_collection
+label: 'Is Nested'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

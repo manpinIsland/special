@@ -1,0 +1,31 @@
+uuid: 8ea7c950-15b4-44d7-9042-349e5a4f59c4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:15014475-750d-44bd-9f77-0c179dbecc53'
+  module:
+    - block_content
+    - system
+  theme:
+    - aae
+id: africanamericanexperiencecommunityadvisors_2
+theme: aae
+region: sidebar_menu
+weight: -9
+provider: null
+plugin: 'block_content:15014475-750d-44bd-9f77-0c179dbecc53'
+settings:
+  id: 'block_content:15014475-750d-44bd-9f77-0c179dbecc53'
+  label: 'African American Experience Community Advisors'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /aae

@@ -1,0 +1,8 @@
+uuid: d063eaf5-1298-429f-990c-84b4710114b9
+langcode: en
+status: true
+dependencies: {  }
+id: jewish-heritage-themes
+label: 'Jewish Heritage Themes'
+description: 'The themes menu for the Jewish Heritage Template'
+locked: false

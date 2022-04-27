@@ -1,0 +1,54 @@
+uuid: b31b37bb-f900-4999-851a-b4270a1a904a
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+id: primary
+label: Primary
+weight: 1
+container_id: GTM-M3FGH7Q
+data_layer: dataLayer
+include_classes: false
+whitelist_classes: |-
+  google
+  nonGooglePixels
+  nonGoogleScripts
+  nonGoogleIframes
+blacklist_classes: |-
+  customScripts
+  customPixels
+include_environment: false
+environment_id: ''
+environment_token: ''
+path_toggle: 'exclude listed'
+path_list: |-
+  /admin*
+  /batch*
+  /devel/*
+  /node/add*
+  /node/*/edit
+  /node/*/delete
+  /media/add*
+  /media/*/edit
+  /media/*/delete
+  /user/*/edit*
+  /user/*/cancel*
+role_toggle: 'exclude listed'
+role_list: {  }
+status_toggle: 'exclude listed'
+status_list: |-
+  403
+  404
+conditions:
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid

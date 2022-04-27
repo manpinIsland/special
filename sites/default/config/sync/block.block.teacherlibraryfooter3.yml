@@ -1,0 +1,31 @@
+uuid: 793a6c4a-de3c-4530-98d4-78efe5cdf118
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ab2cf5a4-4c93-4548-93cf-b3bb5ad45080'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: teacherlibraryfooter3
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -8
+provider: null
+plugin: 'block_content:ab2cf5a4-4c93-4548-93cf-b3bb5ad45080'
+settings:
+  id: 'block_content:ab2cf5a4-4c93-4548-93cf-b3bb5ad45080'
+  label: 'Teacher Library Footer 3'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*\r\n/aae\r\n/aae/*\r\n/jewishheritage\r\n/jewishheritage/*"

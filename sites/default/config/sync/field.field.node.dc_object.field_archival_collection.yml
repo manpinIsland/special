@@ -1,0 +1,29 @@
+uuid: 49411560-c312-4be7-8e60-b8f1cb009113
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archival_collection
+    - node.type.archival_resource
+    - node.type.dc_object
+id: node.dc_object.field_archival_collection
+field_name: field_archival_collection
+entity_type: node
+bundle: dc_object
+label: 'Archival Collection'
+description: 'A body of archival material formed by or around a person, family group, corporate body, or subject either from a common source as a natural product of activity or function, or gathered purposefully and artificially without regard to original provenance.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      archival_resource: archival_resource
+    sort:
+      field: field_resource_identifier
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

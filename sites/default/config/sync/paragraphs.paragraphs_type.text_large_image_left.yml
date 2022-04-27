@@ -1,0 +1,9 @@
+uuid: ff6e1ecb-7aaf-44ef-874d-f5eda5737fea
+langcode: en
+status: true
+dependencies: {  }
+id: text_large_image_left
+label: 'Text + Large Image Left'
+icon_uuid: null
+description: 'Use a Large Image + Text for adding an image on the left and a text on the right.'
+behavior_plugins: {  }

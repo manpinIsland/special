@@ -1,0 +1,18 @@
+uuid: 7f3f48ad-c328-4de7-a685-59188b9f8654
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Paragraphed Collection'
+type: paragraphed_collection
+description: 'Small Collection article with Paragraphs.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

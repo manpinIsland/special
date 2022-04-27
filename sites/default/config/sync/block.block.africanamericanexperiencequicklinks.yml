@@ -1,0 +1,31 @@
+uuid: 89ff7da4-c9ee-487a-b2ce-53a7717642a8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e3cf9d13-5499-4ba5-bdef-acd905e24f4e'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: africanamericanexperiencequicklinks
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: 9
+provider: null
+plugin: 'block_content:e3cf9d13-5499-4ba5-bdef-acd905e24f4e'
+settings:
+  id: 'block_content:e3cf9d13-5499-4ba5-bdef-acd905e24f4e'
+  label: 'African American Experience Quick Links'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /aae/research

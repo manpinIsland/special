@@ -1,0 +1,11 @@
+uuid: 74f9edc3-d479-496e-8e5d-cc50b5b7c22a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.jewish_heritage_explore
+id: taxonomy_term.jewish_heritage_explore
+target_entity_type_id: taxonomy_term
+target_bundle: jewish_heritage_explore
+default_langcode: site_default
+language_alterable: false

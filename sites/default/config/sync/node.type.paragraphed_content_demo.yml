@@ -1,0 +1,11 @@
+uuid: daa2ae36-704b-4fe7-a6d1-3bb8628403ec
+langcode: en
+status: true
+dependencies: {  }
+name: 'Paragraphed article'
+type: paragraphed_content_demo
+description: 'Article with Paragraphs.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

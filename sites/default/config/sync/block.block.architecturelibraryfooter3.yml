@@ -1,0 +1,31 @@
+uuid: 6502e424-fb3b-4efd-8f47-337afbbb4078
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:476d15c7-fb29-474d-9d97-c6953fd77308'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: architecturelibraryfooter3
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: -35
+provider: null
+plugin: 'block_content:476d15c7-fb29-474d-9d97-c6953fd77308'
+settings:
+  id: 'block_content:476d15c7-fb29-474d-9d97-c6953fd77308'
+  label: 'Architecture Library Footer 3'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/skyline\r\n/skyline/*\r\n/aae\r\n/aae/*\r\n/jewishheritage\r\n/jewishheritage/*"

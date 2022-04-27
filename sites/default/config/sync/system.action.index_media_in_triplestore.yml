@@ -1,0 +1,16 @@
+uuid: bebd0383-78ae-49d7-91b0-6e2132fcc95c
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+  enforced:
+    module:
+      - islandora_core_feature
+id: index_media_in_triplestore
+label: 'Index Media in Triplestore'
+type: media
+plugin: emit_media_event
+configuration:
+  queue: islandora-indexing-triplestore-index
+  event: Update

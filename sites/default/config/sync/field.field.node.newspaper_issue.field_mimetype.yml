@@ -1,0 +1,23 @@
+uuid: 2bd27132-3811-4c25-8766-e8069dba5922
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mimetype
+    - node.type.newspaper_issue
+  module:
+    - options
+_core:
+  default_config_hash: BKX3yEwOqr5DGRrpdroaZPCZ7yhUqMfsZzZgUGZWjyA
+id: node.newspaper_issue.field_mimetype
+field_name: field_mimetype
+entity_type: node
+bundle: newspaper_issue
+label: Format
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

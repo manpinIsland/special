@@ -1,0 +1,10 @@
+google_map_api_key: AIzaSyDLaYerSXEpm-CyOGn-gtQEp5HzN6UAkzA
+google_map_custom_url_parameters:
+  libraries: {  }
+  region: ''
+  language: ''
+  v: ''
+  client: ''
+  channel: ''
+google_map_api_server_key: AIzaSyDLaYerSXEpm-CyOGn-gtQEp5HzN6UAkzA
+use_current_language: true

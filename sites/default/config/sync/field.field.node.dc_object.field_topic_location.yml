@@ -1,0 +1,21 @@
+uuid: ea171cae-32db-41a6-8354-248e636ccccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topic_location
+    - node.type.dc_object
+  module:
+    - geolocation
+id: node.dc_object.field_topic_location
+field_name: field_topic_location
+entity_type: node
+bundle: dc_object
+label: 'Geolocation Field'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

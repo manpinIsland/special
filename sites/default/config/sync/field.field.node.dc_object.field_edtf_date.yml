@@ -1,0 +1,21 @@
+uuid: c229798f-82d3-49ae-9387-ef4bb4f6edbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_edtf_date
+    - node.type.dc_object
+  module:
+    - controlled_access_terms
+id: node.dc_object.field_edtf_date
+field_name: field_edtf_date
+entity_type: node
+bundle: dc_object
+label: Date
+description: "A point or period of time associated with an event of the resource.\r\n\r\nA resource may have several dates associated with it. The date covered by this element refers to the creation of the original resource, that is, when the resource was first created before undergoing any conversion… Only one date (i.e., date of the original) should be mapped to dcterms:date.\r\n\r\nIf the date is unknown, reference ArchivesSpace (http://archives:8080/) and select the values from the inclusive date range under the dates facet.\r\n\r\nIf no ArchivesSpace record exist, consult the special collections database for inclusive dates in that inventory.\r\n\r\nIf no dates are associated to the record in the special collections database and there are no known dates for the collection, enter the value “XXXX” in the date field.\r\n\r\n<b>Formatting Rules</b>\r\nDates must adopt one of the following formats:\r\n<ul>\r\n<li>yyyy</li>\r\n<li>yyyy/yyyy</li>\r\n<li>yyyy-mm</li>\r\n<li>yyyy-mm-dd</li>\r\n<li>yyyy~ (EDTF 1.0 for circa/approximate year)</li>\r\n<li>yyyy? (EDTF 1.0 for uncertain date)</li>\r\n<li>yyyy% (EDTF 1.0 for circa & uncertain date)</li>\r\n<li>yyyy~/yyyy~ (EDTF 1.0 for circa/approximate year range)</li>\r\n<li>XXXX (EDTF 1.0 for unknown year)</li>\r\n<li>199X (EDTF 1.0 for partial unknown year)</li>\r\n</ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: edtf

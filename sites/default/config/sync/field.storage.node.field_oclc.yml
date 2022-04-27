@@ -1,0 +1,23 @@
+uuid: 46fd69f8-49e3-4ac2-8b0c-2ef82b6858ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 4xf7VIOYgolhtvstdQPtm4dk_rbbJP3xDvq47fe3lz8
+id: node.field_oclc
+field_name: field_oclc
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

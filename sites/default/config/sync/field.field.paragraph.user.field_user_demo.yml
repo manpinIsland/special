@@ -1,0 +1,26 @@
+uuid: 9cf864e7-8bd0-4537-898c-00f8b73a4a73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_user_demo
+    - paragraphs.paragraphs_type.user
+id: paragraph.user.field_user_demo
+field_name: field_user_demo
+entity_type: paragraph
+bundle: user
+label: User
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    filter:
+      type: _none
+field_type: entity_reference

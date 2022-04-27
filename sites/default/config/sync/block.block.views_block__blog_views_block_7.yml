@@ -1,0 +1,30 @@
+uuid: 231d9a8e-6485-475e-b947-eeb032433da2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog_views
+  module:
+    - system
+    - views
+  theme:
+    - drupal8_parallax_theme
+id: views_block__blog_views_block_7
+theme: drupal8_parallax_theme
+region: recent_news
+weight: 0
+provider: null
+plugin: 'views_block:blog_views-block_7'
+settings:
+  id: 'views_block:blog_views-block_7'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

@@ -1,0 +1,31 @@
+uuid: 6cf01f08-cc6e-48a7-814e-be0ddfd0802b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publisher
+    - node.type.newspaper_title
+    - taxonomy.vocabulary.corporate_body
+_core:
+  default_config_hash: ZlNtlsIV-5m7EtWu46gBUK6rWnzEz2q9pyPlPEfbw5s
+id: node.newspaper_title.field_publisher
+field_name: field_publisher
+entity_type: node
+bundle: newspaper_title
+label: Publisher
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      corporate_body: corporate_body
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

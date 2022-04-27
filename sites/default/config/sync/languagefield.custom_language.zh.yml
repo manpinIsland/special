@@ -1,0 +1,8 @@
+uuid: 0552e163-9611-4a23-a9cd-5e1f21b8424c
+langcode: en
+status: true
+dependencies: {  }
+id: zh
+label: Chinese
+weight: -10
+native_name: '中文 (Zhōngwén)'

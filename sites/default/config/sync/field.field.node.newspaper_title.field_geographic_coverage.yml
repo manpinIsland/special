@@ -1,0 +1,31 @@
+uuid: 9e36de94-2452-40e7-97e8-ba91d0b23233
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geographic_coverage
+    - node.type.newspaper_title
+    - taxonomy.vocabulary.geo_location
+_core:
+  default_config_hash: jg6FrEE4kcVfKNWUIePR_gRMjW9QlsP8kaVJaL-tDZI
+id: node.newspaper_title.field_geographic_coverage
+field_name: field_geographic_coverage
+entity_type: node
+bundle: newspaper_title
+label: 'Geographic Coverage'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      geo_location: geo_location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
