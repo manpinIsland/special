@@ -1,0 +1,22 @@
+uuid: 29ab91cb-8772-414c-8396-db5e3383f9cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: digital_collections_object_ark
+label: 'Digital Collections Object ARK'
+type: 'canonical_entities:node'
+pattern: '[node:dc-ark]'
+selection_criteria:
+  57a4fc79-8f2e-47b3-97fd-021126f78f89:
+    id: node_type
+    negate: false
+    uuid: 57a4fc79-8f2e-47b3-97fd-021126f78f89
+    context_mapping:
+      node: node
+    bundles:
+      dc_object: dc_object
+selection_logic: and
+weight: -5
+relationships: {  }

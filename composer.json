@@ -51,7 +51,20 @@
         "islandora_local": {
             "type": "vcs",
             "url": "https://bitbucket.org/unlv_wads/islandora_local.git"
-        }
+        },
+	"special_theme": {
+	    "type": "package",
+	    "package": {
+              "name": "unlv_wads/special_theme",
+	      "version": "1.0.0",
+	      "type": "drupal-theme",
+	      "source": {
+                "type": "git",
+		"reference": "master",
+	        "url": "https://bitbucket.org/unlv_wads/special_theme.git"
+	      }
+	    }
+	}
     },
     "require": {
         "php": "^5.5.9|>=7.0.8",
@@ -109,7 +122,8 @@
         "drupal/switch_page_theme": "^1.0.0",
         "drupal/tvi": "^1.0@RC",
         "drupal/twig_tweak": "^2",
-        "drupal/views_bulk_operations": "^3.3",
+        "drupal/views_bulk_edit": "^2.6",
+        "drupal/views_bulk_operations": "^4",
         "drupal/views_conditional": "*",
         "drupal/views_contextual_filters_or": "^1.2",
         "drupal/views_data_export": "^1.1",
@@ -130,8 +144,9 @@
         "natkeeran/views_nested_details": "^0.0.0",
         "npm-asset/nouislider": "^14",
         "solarium/solarium": "^6.1.3",
-        "unlv/islandora_local": "master",
+        "unlv/islandora_local": "dev-master",
         "unlv_wads/newspapers": "dev-main",
+        "unlv_wads/special_theme": "^1",
         "wikimedia/composer-merge-plugin": "^2",
         "woocommerce/flexslider": "~2.0"
     },
@@ -165,7 +180,11 @@
               "Issue 3206174 Fatal Error": "https://git.drupalcode.org/project/ldap/-/merge_requests/16.diff"
             },
 	    "drupal/archivesspace": {"Install Script": "https://git.drupalcode.org/project/archivesspace/-/commit/bf45783988d2e101ada1cb780d768ca22d67aac5.diff"},
-	    "islandora/controlled_access_terms": {"EDTF Year Formatting": "https://patch-diff.githubusercontent.com/raw/Islandora/controlled_access_terms/pull/76.diff"}
+	    "islandora/controlled_access_terms": {"EDTF Year Formatting": "https://patch-diff.githubusercontent.com/raw/Islandora/controlled_access_terms/pull/76.diff"},
+	    "islandora/islandora": {
+		    "Improved breadcrumbs": "https://patch-diff.githubusercontent.com/raw/Islandora/islandora/pull/873.patch",
+	            "Fix Broken Media WSOD": "https://patch-diff.githubusercontent.com/raw/Islandora/islandora/pull/874.patch"
+	    }
         },
         "installer-types": [
             "bower-asset",

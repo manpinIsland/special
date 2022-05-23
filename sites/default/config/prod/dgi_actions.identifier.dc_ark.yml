@@ -1,0 +1,14 @@
+uuid: 298e3f07-b3a8-4be6-a76c-39c99070994d
+langcode: en
+status: true
+dependencies:
+  config:
+    - dgi_actions.data_profile.dc_ezid
+    - dgi_actions.service_data.ezid_dc
+id: dc_ark
+label: 'DC ARK'
+entity: node
+bundle: dc_object
+field: field_archival_resource_key
+service_data: ezid_dc
+data_profile: dc_ezid

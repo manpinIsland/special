@@ -1,0 +1,8 @@
+maxDepth: -1
+includeSelf: false
+referenceFields:
+  - field_member_of
+  - field_source
+  - field_archival_collection
+  - field_issue
+  - field_title

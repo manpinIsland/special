@@ -1,0 +1,11 @@
+uuid: 786797d9-01fa-4a90-addd-e3f483170b2b
+langcode: en
+status: true
+dependencies: {  }
+label: 'EZID DC'
+id: ezid_dc
+service_data_type: ezid
+data:
+  host: 'https://ezid.cdlib.org'
+  namespace: 'ark:/62930/d1'
+  resolver: 'https://n2t.net'

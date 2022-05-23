@@ -34,7 +34,6 @@ breadcrumb:
   content_types:
     - archival_object
     - archival_resource
-    - dc_object
   parent_field: field_member_of
 resource_description_files:
   pdf_generate_action: update_archival_resource_pdf
