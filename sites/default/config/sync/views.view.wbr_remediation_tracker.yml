@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.dc_object.field_contributor
     - field.field.node.dc_object.field_creator
     - field.field.node.dc_object.field_location
+    - field.storage.media.field_media_image
     - field.storage.node.field_creator
     - field.storage.node.field_digital_id
     - field.storage.node.field_linked_agent
@@ -43,15 +44,13 @@ display:
     display_options:
       title: 'WBR Remediation Tracker'
       fields:
-        thumbnail__target_id:
-          id: thumbnail__target_id
-          table: media_field_data
-          field: thumbnail__target_id
+        field_media_image:
+          id: field_media_image
+          table: media__field_media_image
+          field: field_media_image
           relationship: reverse__media__field_media_of
           group_type: group
           admin_label: ''
-          entity_type: media
-          entity_field: thumbnail
           plugin_id: field
           label: Thumbnail
           exclude: false
@@ -1232,6 +1231,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.node.field_creator'
         - 'config:field.storage.node.field_digital_id'
         - 'config:field.storage.node.field_linked_agent'
@@ -1258,6 +1258,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.node.field_creator'
         - 'config:field.storage.node.field_digital_id'
         - 'config:field.storage.node.field_linked_agent'
@@ -1323,15 +1324,13 @@ display:
           text: edit
           output_url_as_text: false
           absolute: false
-        thumbnail__target_id:
-          id: thumbnail__target_id
-          table: media_field_data
-          field: thumbnail__target_id
+        field_media_image:
+          id: field_media_image
+          table: media__field_media_image
+          field: field_media_image
           relationship: reverse__media__field_media_of
           group_type: group
           admin_label: ''
-          entity_type: media
-          entity_field: thumbnail
           plugin_id: field
           label: Thumbnail
           exclude: false
@@ -1902,6 +1901,7 @@ display:
         - 'config:field.field.node.dc_object.field_contributor'
         - 'config:field.field.node.dc_object.field_creator'
         - 'config:field.field.node.dc_object.field_location'
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.node.field_contributor'
         - 'config:field.storage.node.field_creator'
         - 'config:field.storage.node.field_digital_id'

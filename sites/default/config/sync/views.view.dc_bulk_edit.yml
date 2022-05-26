@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_digital_id
     - node.type.dc_object
   module:
-    - media
     - node
     - user
     - views_bulk_operations
@@ -80,27 +80,19 @@ display:
           buttons: false
           action_title: Action
           clear_on_exposed: false
+          force_selection_info: false
           selected_actions:
-            comment_delete_action: 0
-            emit_node_event: 0
-            generate_audio_derivative: 0
-            generate_image_derivative: 0
-            generate_video_derivative: 0
-            node_assign_owner_action: 0
-            node_unpromote_action: 0
-            node_promote_action: 0
-            node_publish_action: 0
-            node_save_action: 0
-            node_make_sticky_action: 0
-            node_unpublish_by_keyword_action: 0
-            node_unpublish_action: 0
-            node_make_unsticky_action: 0
-            views_bulk_edit: views_bulk_edit
-            views_bulk_operations_delete_entity: 0
-            'entity:delete_action:node': 0
-            'entity:publish_action:node': 'entity:publish_action:node'
-            'entity:save_action:node': 0
-            'entity:unpublish_action:node': 'entity:unpublish_action:node'
+            1:
+              action_id: dgi_actions_mint_ark_identifier_node
+              preconfiguration:
+                add_confirmation: true
+                label_override: 'Mint ARKs'
+            13:
+              action_id: views_bulk_edit
+              preconfiguration:
+                add_confirmation: true
+                label_override: 'Bulk Edit Field Values'
+                get_bundles_from_results: true
           preconfiguration:
             views_bulk_edit:
               label_override: ''
@@ -109,26 +101,108 @@ display:
               label_override: Publish
             'entity:unpublish_action:node':
               label_override: Unpublish
-        title:
-          id: title
+        nid:
+          id: nid
           table: node_field_data
-          field: title
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: title
+          entity_field: nid
           plugin_id: field
-          label: ''
+          label: Thumbnail
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<img src="/node/{{ nid }}/thumbnail" />'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_digital_id:
+          id: field_digital_id
+          table: node__field_digital_id
+          field: field_digital_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Digital ID'
           exclude: false
           alter:
             alter_text: false
+            text: ''
             make_link: false
+            path: ''
             absolute: false
-            word_boundary: false
-            ellipsis: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
             strip_tags: false
             trim: false
+            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -156,8 +230,73 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: Title
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           items_per_page: 50
@@ -166,14 +305,17 @@ display:
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
-            items_per_page: false
+            items_per_page: true
             items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options: '25, 50, 100, 250'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
-            offset: false
+            offset: true
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -187,7 +329,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access content'
+          perm: 'edit any dc_object content'
       cache:
         type: tag
         options: {  }
@@ -217,35 +359,48 @@ display:
           plugin_id: bundle
           value:
             dc_object: dc_object
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_mime_type_value:
-          id: field_mime_type_value
-          table: media__field_mime_type
-          field: field_mime_type_value
-          relationship: reverse__media__field_media_of
+        field_archival_resource_key_uri:
+          id: field_archival_resource_key_uri
+          table: node__field_archival_resource_key
+          field: field_archival_resource_key_uri
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: string
-          operator: '='
-          value: application/pdf
+          operator: 'not empty'
+          value: ''
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: field_archival_resource_key_uri_op
+            label: ARK
             description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
+            use_operator: true
+            operator: field_archival_resource_key_uri_op
+            operator_limit_selection: true
+            operator_list:
+              '=': '='
+              contains: contains
+              empty: empty
+              'not empty': 'not empty'
+            identifier: field_archival_resource_key_uri
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              contributor: '0'
+              fedoraadmin: '0'
+              special_collections_staff: '0'
+              digital_collections_metadata_editor: '0'
+              digital_collections_metadata_manager: '0'
+              digital_collections_metadata_creator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -259,6 +414,116 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_digital_id_value:
+          id: field_digital_id_value
+          table: node__field_digital_id
+          field: field_digital_id_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: 'not empty'
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_digital_id_value_op
+            label: 'Digital ID'
+            description: ''
+            use_operator: true
+            operator: field_digital_id_value_op
+            operator_limit_selection: true
+            operator_list:
+              '=': '='
+              contains: contains
+              regular_expression: regular_expression
+              empty: empty
+              'not empty': 'not empty'
+            identifier: field_digital_id_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              contributor: '0'
+              fedoraadmin: '0'
+              special_collections_staff: '0'
+              digital_collections_metadata_editor: '0'
+              digital_collections_metadata_manager: '0'
+              digital_collections_metadata_creator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: true
+            operator: title_op
+            operator_limit_selection: false
+            operator_list:
+              '=': '='
+              contains: contains
+              word: word
+              allwords: allwords
+              starts: starts
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              contributor: '0'
+              fedoraadmin: '0'
+              special_collections_staff: '0'
+              digital_collections_metadata_editor: '0'
+              digital_collections_metadata_manager: '0'
+              digital_collections_metadata_creator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: table
         options:
@@ -298,17 +563,7 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships:
-        reverse__media__field_media_of:
-          id: reverse__media__field_media_of
-          table: node_field_data
-          field: reverse__media__field_media_of
-          relationship: none
-          group_type: group
-          admin_label: field_media_of
-          entity_type: node
-          plugin_id: entity_reverse
-          required: true
+      relationships: {  }
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -317,10 +572,12 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_digital_id'
   page_1:
     id: page_1
     display_title: Page
@@ -328,13 +585,15 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: dc-bulk-edit
+      path: admin/digital-collections/bulk-edit
     cache_metadata:
       max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_digital_id'
