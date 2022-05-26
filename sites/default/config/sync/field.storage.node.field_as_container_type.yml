@@ -21,6 +21,9 @@ settings:
       value: case
       label: Case
     -
+      value: digital_file
+      label: 'Digital File'
+    -
       value: folder
       label: Folder
     -
@@ -32,6 +35,9 @@ settings:
     -
       value: reel
       label: Reel
+    -
+      value: roll
+      label: Roll
     -
       value: flat_file
       label: 'Flat File'

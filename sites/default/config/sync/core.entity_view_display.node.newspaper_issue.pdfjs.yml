@@ -29,14 +29,14 @@ third_party_settings:
       children:
         - group_object_viewer
         - group_info
+      label: 'Main Content'
       parent_name: ''
+      region: content
       weight: 1
       format_type: html_element
-      region: content
       format_settings:
-        show_empty_fields: false
-        id: ''
         classes: equal
+        id: ''
         element: section
         show_label: false
         label_element: h3
@@ -44,19 +44,19 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Main Content'
+        show_empty_fields: false
     group_object_viewer:
       children:
         - pdfjs_media_evas_service_file
         - display_media_entity_view_2
+      label: 'Object Viewer'
       parent_name: group_main_content
+      region: content
       weight: 9
       format_type: html_element
-      region: content
       format_settings:
-        show_empty_fields: false
-        id: ''
         classes: 'col_two_third panel panel-default'
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -64,7 +64,7 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Object Viewer'
+        show_empty_fields: false
     group_info:
       children:
         - field_title
@@ -77,11 +77,14 @@ third_party_settings:
         - field_geographic_coverage
         - field_stand_rights
         - field_digital_id
+      label: Information
       parent_name: group_main_content
+      region: content
       weight: 10
       format_type: html_element
-      region: content
       format_settings:
+        classes: 'col_one_third col_last panel panel-default fadeIn animated'
+        id: ''
         element: div
         show_label: false
         label_element: h2
@@ -89,10 +92,7 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: 'col_one_third col_last panel panel-default fadeIn animated'
         show_empty_fields: false
-      label: Information
 _core:
   default_config_hash: 01zhV3g_1t4bCo8-t5qjCPB1z-sRRgU8G0Fqyyadcww
 id: node.newspaper_issue.pdfjs
@@ -101,14 +101,12 @@ bundle: newspaper_issue
 mode: pdfjs
 content:
   display_media_entity_view_2:
-    weight: 14
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 14
+    region: content
   field_date:
     type: edtf_default
-    weight: 3
-    region: content
     label: inline
     settings:
       date_separator: space
@@ -117,90 +115,92 @@ content:
       day_format: dd
       year_format: 'y'
     third_party_settings: {  }
+    weight: 3
+    region: content
   field_digital_id:
     type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 13
     region: content
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_edition:
-    weight: 6
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 6
     region: content
   field_geographic_coverage:
-    weight: 9
+    type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 9
     region: content
   field_issue_number:
     type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
     weight: 5
     region: content
-    label: inline
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
   field_issue_volume:
     type: number_integer
-    weight: 4
-    region: content
     label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
+    weight: 4
+    region: content
   field_place_of_publication:
     type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 8
     region: content
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
   field_publisher:
-    weight: 7
+    type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 7
     region: content
   field_stand_rights:
-    weight: 10
+    type: linked_entity_link
     label: inline
     settings:
-      link_field: ''
+      link_field: field_external_uri
     third_party_settings: {  }
-    type: linked_entity_link
+    weight: 10
     region: content
   field_title:
     type: entity_reference_label
-    weight: 2
-    region: content
     label: inline
     settings:
       link: true
     third_party_settings: {  }
+    weight: 2
+    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 0
     region: content
+  pdfjs_media_evas_service_file:
     settings: {  }
     third_party_settings: {  }
-  pdfjs_media_evas_service_file:
     weight: 13
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   digital_object_children_entity_view_1: true
   digital_object_children_entity_view_2: true
