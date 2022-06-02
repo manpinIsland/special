@@ -1,16 +1,27 @@
 <?php
 
+/**
 $query = \Drupal::entityQuery('node');
 $query->condition('type', 'dc_object', '=');
 $nids = $query->execute();
+**/
 $path_alias_storage = \Drupal::entityTypeManager()->getStorage('path_alias');
+$sub_query = \Drupal::database()->select('path_alias', 'sp');
+$sub_query->fields('sp',['alias']);
+$sub_query->condition('sp.alias', '/ark:/62930/d1%', 'LIKE');
+$sub_query->groupBy('sp.alias')->having('count(distinct(path)) > 1');
 
-foreach ($nids as $nid) {
-  $actual_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
-  print("Checking node/$nid ($actual_alias)\n");
+$dup_path_query = \Drupal::database()->select('path_alias', 'p');
+$dup_path_query->fields('p',['path']);
+$dup_path_query->condition('p.alias', $sub_query, 'IN');
+#$dup_path_query->range(0,10);
+$paths = $dup_path_query->execute()->fetchCol();
+foreach ($paths as $path) {
+  $actual_alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+  print("Checking $path ($actual_alias)\n");
   // Load all path alias for this node.
   $alias_objects = $path_alias_storage->loadByProperties([
-    'path' => '/node/' . $nid,
+    'path' => $path,
   ]);
 
   // Delete all other alias than the actual one.
