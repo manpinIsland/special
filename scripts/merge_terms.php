@@ -155,4 +155,5 @@ foreach ($merges as $keeper_tid => $duplicate_tids) {
     print("\tDELETING ".$dup->id()."!\n");
     $dup->delete();
   }
+  $keeper->save();
 }

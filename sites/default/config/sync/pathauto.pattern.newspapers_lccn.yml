@@ -1,0 +1,22 @@
+uuid: c04cd77c-cc22-436c-924a-97886febe5dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: newspapers_lccn
+label: 'Newspapers LCCN'
+type: 'canonical_entities:node'
+pattern: '/collections/newspapers/[node:field_lccn]'
+selection_criteria:
+  0e21e28c-fbcf-4a53-b0e6-4a22045110c1:
+    id: node_type
+    negate: false
+    uuid: 0e21e28c-fbcf-4a53-b0e6-4a22045110c1
+    context_mapping:
+      node: node
+    bundles:
+      newspaper_title: newspaper_title
+selection_logic: and
+weight: -5
+relationships: {  }
