@@ -11,7 +11,7 @@ id: taxonomy_term.person.field_person_preferred_name
 field_name: field_person_preferred_name
 entity_type: taxonomy_term
 bundle: person
-label: 'Preferred Name'
+label: 'Fuller Form of Personal Name'
 description: ''
 required: false
 translatable: true

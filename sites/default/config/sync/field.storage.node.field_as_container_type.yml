@@ -50,6 +50,9 @@ settings:
     -
       value: binder
       label: Binder
+    -
+      value: no_container
+      label: 'No Container'
   allowed_values_function: ''
 module: options
 locked: false

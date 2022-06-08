@@ -3,22 +3,30 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.corporate_body.field_authority_link
     - field.storage.taxonomy_term.field_authority_link
     - taxonomy.vocabulary.corporate_body
     - taxonomy.vocabulary.family
-    - taxonomy.vocabulary.genre
     - taxonomy.vocabulary.geo_location
+    - taxonomy.vocabulary.language
     - taxonomy.vocabulary.material_type
     - taxonomy.vocabulary.person
-    - taxonomy.vocabulary.physical_form
     - taxonomy.vocabulary.resource_types
+    - taxonomy.vocabulary.standardized_rights_statement
     - taxonomy.vocabulary.subject
-    - taxonomy.vocabulary.temporal
     - taxonomy.vocabulary.time_period
+    - user.role.administrator
+    - user.role.digital_collections_metadata_manager
   module:
     - controlled_access_terms
+    - csv_serialization
+    - rest
+    - serialization
     - taxonomy
+    - text
     - user
+    - views_data_export
+    - views_entity_form_field
 id: digital_collections_taxonomy_terms
 label: 'Digital Collections Taxonomy Terms'
 module: views
@@ -386,24 +394,75 @@ display:
           plugin_id: standard
           order: ASC
           expose:
-            label: ''
+            label: Name
             field_identifier: name
-          exposed: false
+          exposed: true
+        changed:
+          id: changed
+          table: taxonomy_term_field_data
+          field: changed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: changed
+          plugin_id: date
+          order: ASC
+          expose:
+            label: 'Updated date'
+            field_identifier: changed
+          exposed: true
+          granularity: second
       arguments: {  }
       filters:
         status:
           id: status
           table: taxonomy_term_field_data
           field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: taxonomy_term
           entity_field: status
           plugin_id: boolean
-          value: '1'
+          operator: '='
+          value: All
           group: 1
+          exposed: true
           expose:
-            operator: ''
+            operator_id: ''
+            label: Published
+            description: ''
+            use_operator: false
+            operator: status_op
             operator_limit_selection: false
             operator_list: {  }
+            identifier: status
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              contributor: '0'
+              fedoraadmin: '0'
+              special_collections_staff: '0'
+              digital_collections_metadata_editor: '0'
+              digital_collections_metadata_manager: '0'
+              digital_collections_metadata_creator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         vid:
           id: vid
           table: taxonomy_term_field_data
@@ -418,14 +477,13 @@ display:
           value:
             corporate_body: corporate_body
             family: family
-            genre: genre
             geo_location: geo_location
+            language: language
             material_type: material_type
             person: person
-            physical_form: physical_form
             resource_types: resource_types
+            standardized_rights_statement: standardized_rights_statement
             subject: subject
-            temporal: temporal
             time_period: time_period
           group: 1
           exposed: true
@@ -563,6 +621,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: table
         options:
@@ -630,6 +692,728 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_authority_link'
+  csv_data_export:
+    id: csv_data_export
+    display_title: 'Comma-delimited data export'
+    display_plugin: data_export
+    position: 1
+    display_options:
+      fields:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: field
+          label: Vocabulary
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: field
+          label: 'Term ID'
+          exclude: false
+          alter:
+            alter_text: true
+            text: '/taxonomy/term/{{ tid }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            trim: false
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        field_authority_link:
+          id: field_authority_link
+          table: taxonomy_term__field_authority_link
+          field: field_authority_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: URI
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_authority_link__uri }}'
+            make_link: true
+            path: '{{ field_authority_link__uri }}'
+            absolute: false
+            external: true
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: authority_formatter_default
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: _blank
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        description__value:
+          id: description__value
+          table: taxonomy_term_field_data
+          field: description__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: description
+          plugin_id: field
+          label: Description
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      style:
+        type: data_export
+        options:
+          formats:
+            csv: csv
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+      defaults:
+        fields: false
+      display_description: ''
+      display_extenders: {  }
+      path: admin/digital-collections/taxonomy-terms/csv-export
+      displays:
+        page_1: page_1
+        default: '0'
+        term_edit_page: '0'
+      filename: 'term-export_[date:html_datetime]'
+      automatic_download: true
+      export_method: batch
+      export_batch_size: 1000
+      store_in_public_file_directory: true
+      custom_redirect_path: false
+      redirect_to_display: page_1
+      include_query_params: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_authority_link'
+  data_export_1:
+    id: data_export_1
+    display_title: 'JSON data export'
+    display_plugin: data_export
+    position: 1
+    display_options:
+      fields:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: field
+          label: Vocabulary
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: field
+          label: 'Term ID'
+          exclude: false
+          alter:
+            alter_text: true
+            text: '/taxonomy/term/{{ tid }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            trim: false
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        field_authority_link:
+          id: field_authority_link
+          table: taxonomy_term__field_authority_link
+          field: field_authority_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: URI
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_authority_link__uri }}'
+            make_link: true
+            path: '{{ field_authority_link__uri }}'
+            absolute: false
+            external: true
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: authority_formatter_default
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: _blank
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        description__value:
+          id: description__value
+          table: taxonomy_term_field_data
+          field: description__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: description
+          plugin_id: field
+          label: Description
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      style:
+        type: data_export
+        options:
+          formats:
+            json: json
+          csv_settings:
+            delimiter: ','
+            enclosure: '"'
+            escape_char: \
+            strip_tags: true
+            trim: true
+            encoding: utf8
+            utf8_bom: '0'
+            use_serializer_encode_only: false
+      defaults:
+        fields: false
+      display_description: ''
+      display_extenders: {  }
+      path: admin/digital-collections/taxonomy-terms/json-export
+      displays:
+        page_1: page_1
+        default: '0'
+        term_edit_page: '0'
+      filename: 'term-export_[date:html_datetime].json'
+      automatic_download: false
+      export_method: batch
+      export_batch_size: 1000
+      store_in_public_file_directory: true
+      custom_redirect_path: false
+      redirect_to_display: page_1
+      include_query_params: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_authority_link'
@@ -639,6 +1423,372 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      fields:
+        edit_taxonomy_term:
+          id: edit_taxonomy_term
+          table: taxonomy_term_data
+          field: edit_taxonomy_term
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          plugin_id: entity_link_edit
+          label: 'Edit term'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: edit
+          output_url_as_text: false
+          absolute: false
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: field
+          label: Vocabulary
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: field
+          label: 'Term ID'
+          exclude: false
+          alter:
+            alter_text: true
+            text: '/taxonomy/term/{{ tid }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            trim: false
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        field_authority_link:
+          id: field_authority_link
+          table: taxonomy_term__field_authority_link
+          field: field_authority_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: URI
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_authority_link__uri }}'
+            make_link: true
+            path: '{{ field_authority_link__uri }}'
+            absolute: false
+            external: true
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: authority_formatter_default
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: _blank
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        description__value:
+          id: description__value
+          table: taxonomy_term_field_data
+          field: description__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: description
+          plugin_id: field
+          label: Description
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      defaults:
+        fields: false
       display_extenders: {  }
       path: admin/digital-collections/taxonomy-terms
     cache_metadata:
@@ -648,6 +1798,399 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user.permissions
       tags:
+        - 'config:field.storage.taxonomy_term.field_authority_link'
+  term_edit_page:
+    id: term_edit_page
+    display_title: 'Term Edit Page'
+    display_plugin: page
+    position: 2
+    display_options:
+      fields:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: field
+          label: Vocabulary
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: field
+          label: 'Term ID'
+          exclude: false
+          alter:
+            alter_text: true
+            text: '/taxonomy/term/{{ tid }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        form_field_name:
+          id: form_field_name
+          table: taxonomy_term_field_data
+          field: form_field_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          plugin_id: entity_form_field
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          plugin:
+            hide_title: 1
+            hide_description: 1
+            type: string_textfield
+            settings:
+              size: '60'
+              placeholder: ''
+            third_party_settings: {  }
+        form_field_field_authority_link:
+          id: form_field_field_authority_link
+          table: taxonomy_term_field_data
+          field: form_field_field_authority_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          plugin_id: entity_form_field
+          label: URI
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          plugin:
+            hide_title: 1
+            hide_description: 1
+            type: authority_link_default
+            settings:
+              placeholder_url: ''
+              placeholder_title: ''
+            third_party_settings: {  }
+        form_field_description:
+          id: form_field_description
+          table: taxonomy_term_field_data
+          field: form_field_description
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          plugin_id: entity_form_field
+          label: Description
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          plugin:
+            hide_title: 1
+            hide_description: 1
+            type: text_textarea
+            settings:
+              rows: '5'
+              placeholder: ''
+            third_party_settings: {  }
+        edit_taxonomy_term:
+          id: edit_taxonomy_term
+          table: taxonomy_term_data
+          field: edit_taxonomy_term
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          plugin_id: entity_link_edit
+          label: 'Edit term'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: edit
+          output_url_as_text: false
+          absolute: false
+      access:
+        type: role
+        options:
+          role:
+            administrator: administrator
+            digital_collections_metadata_manager: digital_collections_metadata_manager
+      defaults:
+        access: false
+        fields: false
+      display_description: ''
+      display_extenders: {  }
+      path: admin/digital-collections/taxonomy-terms/edit
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+        - user
+        - user.roles
+      tags:
+        - 'config:field.field.taxonomy_term.corporate_body.field_authority_link'
         - 'config:field.storage.taxonomy_term.field_authority_link'

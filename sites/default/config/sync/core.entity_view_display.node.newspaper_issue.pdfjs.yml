@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.newspaper_issue.field_geographic_coverage
     - field.field.node.newspaper_issue.field_issue_number
     - field.field.node.newspaper_issue.field_issue_volume
+    - field.field.node.newspaper_issue.field_member_of
     - field.field.node.newspaper_issue.field_mimetype
     - field.field.node.newspaper_issue.field_place_of_publication
     - field.field.node.newspaper_issue.field_publisher
@@ -208,6 +209,7 @@ hidden:
   display_media_service_file: true
   display_media_thumbnail: true
   field_edition_number: true
+  field_member_of: true
   field_mimetype: true
   field_type: true
   langcode: true

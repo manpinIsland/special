@@ -15,3 +15,8 @@ fieldMappings:
   name:
     properties:
       - 'schema:name'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'

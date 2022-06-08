@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.newspaper_issue.field_geographic_coverage
     - field.field.node.newspaper_issue.field_issue_number
     - field.field.node.newspaper_issue.field_issue_volume
+    - field.field.node.newspaper_issue.field_member_of
     - field.field.node.newspaper_issue.field_mimetype
     - field.field.node.newspaper_issue.field_place_of_publication
     - field.field.node.newspaper_issue.field_publisher
@@ -28,10 +29,10 @@ bundle: newspaper_issue
 mode: teaser
 content:
   display_media_thumbnail:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   digital_object_children_entity_view_1: true
   digital_object_children_entity_view_2: true
@@ -45,6 +46,7 @@ hidden:
   field_geographic_coverage: true
   field_issue_number: true
   field_issue_volume: true
+  field_member_of: true
   field_mimetype: true
   field_place_of_publication: true
   field_publisher: true

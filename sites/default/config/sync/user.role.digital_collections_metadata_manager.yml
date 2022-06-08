@@ -15,7 +15,6 @@ dependencies:
     - taxonomy.vocabulary.geo_location
     - taxonomy.vocabulary.material_type
     - taxonomy.vocabulary.person
-    - taxonomy.vocabulary.physical_form
     - taxonomy.vocabulary.resource_types
     - taxonomy.vocabulary.restrictions
     - taxonomy.vocabulary.standardized_rights_statement
@@ -29,6 +28,8 @@ dependencies:
     - node
     - system
     - taxonomy
+    - views_bulk_edit
+    - views_ui
 id: digital_collections_metadata_manager
 label: 'Metadata Manager'
 weight: 5
@@ -37,6 +38,7 @@ permissions:
   - 'access content overview'
   - 'access media overview'
   - 'access taxonomy overview'
+  - 'administer views'
   - 'create dc_object content'
   - 'create field_conversion_specifications'
   - 'create field_staff_note'
@@ -96,7 +98,6 @@ permissions:
   - 'edit terms in geo_location'
   - 'edit terms in material_type'
   - 'edit terms in person'
-  - 'edit terms in physical_form'
   - 'edit terms in resource_types'
   - 'edit terms in standardized_rights_statement'
   - 'edit terms in subject'
@@ -110,6 +111,7 @@ permissions:
   - 'update any media'
   - 'update media'
   - 'use text format restricted_html'
+  - 'use views bulk edit'
   - 'view all media revisions'
   - 'view checksums'
   - 'view dc_object revisions'

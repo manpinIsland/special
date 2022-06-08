@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.newspaper_page.body
     - field.field.node.newspaper_page.field_digital_id
     - field.field.node.newspaper_page.field_issue
+    - field.field.node.newspaper_page.field_member_of
     - field.field.node.newspaper_page.field_page
     - field.field.node.newspaper_page.field_page_sequence
     - field.field.node.newspaper_page.field_section
@@ -21,59 +22,67 @@ bundle: newspaper_page
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 6
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 6
     region: content
   display_media_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
     weight: 2
     region: content
+  display_media_service_file:
     settings: {  }
     third_party_settings: {  }
-  display_media_service_file:
     weight: 1
     region: content
-    settings: {  }
-    third_party_settings: {  }
   field_digital_id:
-    weight: 7
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 7
     region: content
   field_issue:
-    weight: 3
+    type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
+    weight: 3
+    region: content
+  field_member_of:
     type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_page:
-    weight: 5
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 5
     region: content
   field_section:
-    weight: 4
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 4
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   display_media_entity_view_2: true
   display_media_thumbnail: true

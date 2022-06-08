@@ -17,12 +17,13 @@ fieldMappings:
       - 'schema:name'
   created:
     properties:
+      - 'schema:dateCreated'
       - 'schema:sdDatePublished'
     datatype_callback:
       callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
   changed:
     properties:
-      - 'schema:sdDatePublished'
+      - 'schema:dateModified'
     datatype_callback:
       callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
   field_member_of:

@@ -60,7 +60,6 @@ third_party_settings:
     group_links:
       children:
         - taxonomy_term_relations_entity_view_1
-        - taxonomy_term_relations_entity_view_2
         - field_relationships
         - field_authority_link
       label: Links
@@ -88,7 +87,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_authority_link:
     type: authority_formatter_default
@@ -110,8 +109,9 @@ content:
       date_order: big_endian
       month_format: mm
       day_format: dd
+      year_format: 'y'
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_cat_date_end:
     type: edtf_default
@@ -121,8 +121,9 @@ content:
       date_order: big_endian
       month_format: mm
       day_format: dd
+      year_format: 'y'
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_person_alternate_names:
     type: name_default
@@ -137,7 +138,7 @@ content:
       alternative_field_reference: ''
       alternative_field_reference_separator: ', '
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_relationships:
     type: typed_relation_default

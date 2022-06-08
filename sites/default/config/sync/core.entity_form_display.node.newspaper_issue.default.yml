@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.newspaper_issue.field_geographic_coverage
     - field.field.node.newspaper_issue.field_issue_number
     - field.field.node.newspaper_issue.field_issue_volume
+    - field.field.node.newspaper_issue.field_member_of
     - field.field.node.newspaper_issue.field_mimetype
     - field.field.node.newspaper_issue.field_place_of_publication
     - field.field.node.newspaper_issue.field_publisher
@@ -33,60 +34,70 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_edition:
-    weight: 126
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
     type: string_textfield
+    weight: 126
     region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_edition_number:
-    weight: 125
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
     type: number
+    weight: 125
     region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_geographic_coverage:
+    type: entity_reference_autocomplete
     weight: 124
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_member_of:
     type: entity_reference_autocomplete
+    weight: 127
     region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_publisher:
+    type: entity_reference_autocomplete
     weight: 123
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_stand_rights:
+    type: entity_reference_autocomplete
     weight: 122
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_type:
+    type: entity_reference_autocomplete
     weight: 121
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   langcode:
     type: language_select
     weight: 2
@@ -102,24 +113,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 15
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 120
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 16
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -132,12 +143,17 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 5
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
     region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_date: true

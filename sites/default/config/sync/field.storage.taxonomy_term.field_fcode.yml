@@ -12,6 +12,9 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: ll
+      label: 'not available'
+    -
       value: ADM1
       label: 'first-order administrative division'
     -
@@ -2051,9 +2054,6 @@ settings:
     -
       value: VINS
       label: vineyards
-    -
-      value: ll
-      label: 'not available'
   allowed_values_function: ''
 module: options
 locked: false

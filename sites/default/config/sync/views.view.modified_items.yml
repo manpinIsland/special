@@ -437,19 +437,22 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        field_digital_project_target_id:
-          id: field_digital_project_target_id
-          table: node__field_digital_project
-          field: field_digital_project_target_id
+        revision_timestamp:
+          id: revision_timestamp
+          table: node_revision
+          field: revision_timestamp
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: standard
-          order: ASC
+          entity_type: node
+          entity_field: revision_timestamp
+          plugin_id: date
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
+          granularity: second
         field_digital_id_value:
           id: field_digital_id_value
           table: node__field_digital_id
@@ -487,21 +490,26 @@ display:
           plugin_id: bundle
           value:
             dc_object: dc_object
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        revision_log:
-          id: revision_log
+        revision_timestamp:
+          id: revision_timestamp
           table: node_revision
-          field: revision_log
+          field: revision_timestamp
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: revision_log
-          plugin_id: string
-          operator: longerthan
-          value: '1'
+          entity_field: revision_timestamp
+          plugin_id: date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: '-1 month'
+            type: offset
           group: 1
           exposed: false
           expose:
@@ -518,6 +526,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
             placeholder: ''
           is_grouped: false
           group_info:
@@ -531,6 +541,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
@@ -581,7 +595,7 @@ display:
           formats:
             csv: csv
           csv_settings:
-            delimiter: \t
+            delimiter: ','
             enclosure: '"'
             escape_char: \
             strip_tags: true
@@ -591,8 +605,10 @@ display:
             use_serializer_encode_only: true
       display_extenders: {  }
       path: admin/digital-collections/revised-items
-      filename: 'revised-items-[date:html_datetime].txt'
+      filename: 'revised-items-[date:html_datetime]'
       automatic_download: true
+      export_method: batch
+      export_batch_size: 1000
       store_in_public_file_directory: false
       custom_redirect_path: false
       redirect_to_display: none

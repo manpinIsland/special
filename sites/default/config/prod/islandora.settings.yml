@@ -1,8 +1,10 @@
 _core:
   default_config_hash: XgeYJpPmZIOwE_nA73tYvFw-Rcj-HtlbNwfktqSVsaQ
-broker_url: 'tcp://fedora.library.unlv.edu:61613'
+broker_url: 'tcp://localhost:61613'
 jwt_expiry: '+14 days'
-gemini_url: 'http://fedora.library.unlv.edu/gemini'
+upload_form_location: ''
+upload_form_allowed_mimetypes: ''
+gemini_url: 'http://localhost/gemini'
 gemini_pseudo_bundles:
   'islandora_access:taxonomy_term': 'islandora_access:taxonomy_term'
   'islandora_display:taxonomy_term': 'islandora_display:taxonomy_term'
