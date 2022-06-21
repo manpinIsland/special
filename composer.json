@@ -142,6 +142,7 @@
         "islandora/jsonld": "^2",
         "islandora/openseadragon": "^2",
         "maennchen/zipstream-php": "^1.2.0",
+        "mjordan/islandora_workbench_integration": "dev-main",
         "natkeeran/views_nested_details": "^0.0.0",
         "npm-asset/nouislider": "^14",
         "solarium/solarium": "^6.1.3",
