@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - node.type.dc_object
+    - rest.resource.oai_pmh
   module:
     - field_permissions
     - islandora
     - node
+    - path
+    - rest
     - system
 id: digital_collections_metadata_editor
 label: 'Digital Collections Metadata Editor'
@@ -15,14 +18,17 @@ weight: 5
 is_admin: null
 permissions:
   - 'access content overview'
+  - 'administer url aliases'
   - 'create field_conversion_specifications'
   - 'create field_staff_note'
+  - 'create url aliases'
   - 'edit any dc_object content'
   - 'edit own dc_object content'
   - 'edit own field_conversion_specifications'
   - 'edit own field_staff_note'
   - 'manage media'
   - 'manage members'
+  - 'restful post oai_pmh'
   - 'view field_conversion_specifications'
   - 'view field_staff_note'
   - 'view own field_conversion_specifications'

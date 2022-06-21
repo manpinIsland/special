@@ -4,14 +4,25 @@ status: true
 dependencies:
   config:
     - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.extracted_text
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
     - node.type.dc_object
+    - rest.resource.oai_pmh
     - taxonomy.vocabulary.person
   module:
     - field_permissions
+    - field_ui
     - filter
     - islandora
     - media
     - node
+    - path
+    - rest
     - system
     - taxonomy
 id: digital_collections_metadata_creator
@@ -21,18 +32,50 @@ is_admin: null
 permissions:
   - 'access media overview'
   - 'access taxonomy overview'
+  - 'administer media types'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer nodes'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'administer url aliases'
+  - 'create audio media'
   - 'create dc_object content'
+  - 'create document media'
+  - 'create extracted_text media'
   - 'create field_conversion_specifications'
   - 'create field_staff_note'
+  - 'create file media'
+  - 'create image media'
   - 'create media'
+  - 'create remote_video media'
+  - 'create url aliases'
+  - 'create video media'
+  - 'edit any audio media'
   - 'edit any dc_object content'
+  - 'edit any document media'
+  - 'edit any extracted_text media'
+  - 'edit any file media'
+  - 'edit any image media'
+  - 'edit any remote_video media'
+  - 'edit any video media'
+  - 'edit field_conversion_specifications'
   - 'edit field_staff_note'
+  - 'edit own audio media'
   - 'edit own dc_object content'
+  - 'edit own document media'
+  - 'edit own extracted_text media'
   - 'edit own field_conversion_specifications'
   - 'edit own field_staff_note'
+  - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own remote_video media'
+  - 'edit own video media'
   - 'edit terms in person'
   - 'manage media'
   - 'manage members'
+  - 'restful post oai_pmh'
   - 'update any media'
   - 'update media'
   - 'use text format restricted_html'

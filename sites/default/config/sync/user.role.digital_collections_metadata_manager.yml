@@ -4,10 +4,18 @@ status: true
 dependencies:
   config:
     - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.extracted_text
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
     - node.type.dc_object
     - node.type.newspaper_issue
     - node.type.newspaper_page
     - node.type.newspaper_title
+    - rest.resource.oai_pmh
     - taxonomy.vocabulary.corporate_body
     - taxonomy.vocabulary.digital_projects
     - taxonomy.vocabulary.digital_provenance
@@ -22,10 +30,13 @@ dependencies:
     - taxonomy.vocabulary.time_period
   module:
     - field_permissions
+    - field_ui
     - filter
     - islandora
     - media
     - node
+    - path
+    - rest
     - system
     - taxonomy
     - views_bulk_edit
@@ -38,14 +49,29 @@ permissions:
   - 'access content overview'
   - 'access media overview'
   - 'access taxonomy overview'
+  - 'administer media types'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer nodes'
+  - 'administer site configuration'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'administer url aliases'
   - 'administer views'
+  - 'create audio media'
   - 'create dc_object content'
+  - 'create document media'
+  - 'create extracted_text media'
   - 'create field_conversion_specifications'
   - 'create field_staff_note'
+  - 'create file media'
+  - 'create image media'
   - 'create media'
   - 'create newspaper_issue content'
   - 'create newspaper_page content'
   - 'create newspaper_title content'
+  - 'create remote_video media'
   - 'create terms in corporate_body'
   - 'create terms in digital_projects'
   - 'create terms in digital_provenance'
@@ -58,6 +84,8 @@ permissions:
   - 'create terms in standardized_rights_statement'
   - 'create terms in subject'
   - 'create terms in time_period'
+  - 'create url aliases'
+  - 'create video media'
   - 'delete any dc_object content'
   - 'delete any media'
   - 'delete any newspaper_issue content'
@@ -79,18 +107,32 @@ permissions:
   - 'delete terms in standardized_rights_statement'
   - 'delete terms in subject'
   - 'delete terms in time_period'
+  - 'edit any audio media'
   - 'edit any dc_object content'
+  - 'edit any document media'
+  - 'edit any extracted_text media'
+  - 'edit any file media'
+  - 'edit any image media'
   - 'edit any newspaper_issue content'
   - 'edit any newspaper_page content'
   - 'edit any newspaper_title content'
+  - 'edit any remote_video media'
+  - 'edit any video media'
   - 'edit field_conversion_specifications'
   - 'edit field_staff_note'
+  - 'edit own audio media'
   - 'edit own dc_object content'
+  - 'edit own document media'
+  - 'edit own extracted_text media'
   - 'edit own field_conversion_specifications'
   - 'edit own field_staff_note'
+  - 'edit own file media'
+  - 'edit own image media'
   - 'edit own newspaper_issue content'
   - 'edit own newspaper_page content'
   - 'edit own newspaper_title content'
+  - 'edit own remote_video media'
+  - 'edit own video media'
   - 'edit terms in corporate_body'
   - 'edit terms in digital_projects'
   - 'edit terms in digital_provenance'
@@ -104,6 +146,7 @@ permissions:
   - 'edit terms in time_period'
   - 'manage media'
   - 'manage members'
+  - 'restful post oai_pmh'
   - 'revert dc_object revisions'
   - 'revert newspaper_issue revisions'
   - 'revert newspaper_page revisions'
