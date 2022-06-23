@@ -65,11 +65,9 @@ $results = array_diff($nodes_w_service, $nodes_w_thumb);
 printf("BUILDING ACTIONS:\t%d\n", time());
 $action = \Drupal\system\Entity\Action::load('image_generate_a_thumbnail_from_a_service_file');
 
-// After the entityQuery of Media was replaced with select queries the need
-// for a limit was unneccessary, but it may be useful if this is converted
-// into a cron job later. Just setting it very high for the time-being.
-
-$limit = 200000;
+# Thumbnails run ~ 13.8k/hr on 4 consumers, which is quicker than the service derivatives, so
+# so we are pegging its slower 3.5k evern 20 minutes.
+$limit = 3500;
 if($limit < count($results)) {
   printf("Only running %s on %d of %d possible.\n", $action->id(), $limit, count($results));
 }

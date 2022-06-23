@@ -63,7 +63,15 @@ $original_action = Action::load('image_generate_a_service_file_from_an_original_
 $intermediate_action = Action::load('image_generate_a_service_file_from_an_intermediate_file');
 $thumb_action = Action::load('image_generate_a_thumbnail_from_a_service_file');
 
-foreach ($results as $nid) {
+# Derivatives average over 11k/hr on 4 consumers. This will run via cron three times an hour.
+# Hence, limit to ~3.5k every 20 minutes to give some room.
+$limit = 3500;
+if($limit < count($results)) {
+  printf("Only running %s on %d of %d possible.\n", $action->id(), $limit, count($results));
+}
+$to_run = array_slice($results, 0, $limit);
+
+foreach ($to_run as $nid) {
   $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
   $action = (in_array($nid, $nodes_w_intermediates)) ? $intermediate_action : $original_action;
   printf("Performing '%s' on '%s' at %s\n", $action->id(), $node->toUrl()->toString(), date(DATE_ATOM));
