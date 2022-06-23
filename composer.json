@@ -173,7 +173,8 @@
             "drupal/core": {
               "Fix large taxonomy admin scaling issue": "https://www.drupal.org/files/issues/2019-07-08/763380-61.patch",
               "Negate form value for condition plugins should be cast to boolean in validation": "https://www.drupal.org/files/issues/2021-01-06/3114467-16.patch",
-              "Issue 3180227 EntityReference Warning": "https://www.drupal.org/files/issues/2020-11-02/3180227-2-8.9.x.patch"
+              "Issue 3180227 EntityReference Warning": "https://www.drupal.org/files/issues/2020-11-02/3180227-2-8.9.x.patch",
+	      "Issue 2949017 Allow deleting files": "https://www.drupal.org/files/issues/2022-03-24/allow-user-with-delete-any-files-to-delete-in-bulk.patch"
             },
             "drupal/facets": {
               "noUiSlider": "https://www.drupal.org/files/issues/2021-06-16/issue-3153622-nouislider_4.patch"
@@ -186,7 +187,8 @@
 	    "islandora/islandora": {
 		    "Improved breadcrumbs": "https://patch-diff.githubusercontent.com/raw/Islandora/islandora/pull/873.patch",
 	            "Fix Broken Media WSOD": "https://patch-diff.githubusercontent.com/raw/Islandora/islandora/pull/874.patch"
-	    }
+	    },
+	    "islandora/jsonld": {"Fix '@id' errors": "https://patch-diff.githubusercontent.com/raw/Islandora/jsonld/pull/62.patch"}
         },
         "installer-types": [
             "bower-asset",

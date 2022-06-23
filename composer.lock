@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c77d4bfd222dc02afc4f8b712fe35e22",
+    "content-hash": "fbd19f28eac6bea00f8d839ab2d906bb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3069,10 +3069,14 @@
                 }
             },
             "autoload": {
+                "files": [
+                    "includes/bootstrap.inc",
+                    "includes/guzzle_php81_shim.php"
+                ],
                 "psr-4": {
                     "Drupal\\Core\\": "lib/Drupal/Core",
-                    "Drupal\\Component\\": "lib/Drupal/Component",
-                    "Drupal\\Driver\\": "../drivers/lib/Drupal/Driver"
+                    "Drupal\\Driver\\": "../drivers/lib/Drupal/Driver",
+                    "Drupal\\Component\\": "lib/Drupal/Component"
                 },
                 "classmap": [
                     "lib/Drupal.php",
@@ -3101,10 +3105,6 @@
                     "lib/Drupal/Core/Http/InputBag.php",
                     "lib/Drupal/Core/Installer/InstallerRedirectTrait.php",
                     "lib/Drupal/Core/Site/Settings.php"
-                ],
-                "files": [
-                    "includes/bootstrap.inc",
-                    "includes/guzzle_php81_shim.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -9562,6 +9562,45 @@
             "time": "2021-07-01T14:25:37+00:00"
         },
         {
+            "name": "mjordan/islandora_workbench_integration",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mjordan/islandora_workbench_integration.git",
+                "reference": "d5d871ef3b0dee2418f15745a8fcd582546b8804"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mjordan/islandora_workbench_integration/zipball/d5d871ef3b0dee2418f15745a8fcd582546b8804",
+                "reference": "d5d871ef3b0dee2418f15745a8fcd582546b8804",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Jordan",
+                    "email": "mjordan@sfu.ca",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Islandora Workbench Integration",
+            "homepage": "https://github.com/mjordan/islandora_workbench_integration",
+            "keywords": [
+                "Islandora",
+                "drupal"
+            ],
+            "support": {
+                "issues": "https://github.com/mjordan/islandora_workbench_integration/issues",
+                "source": "https://github.com/mjordan/islandora_workbench_integration/tree/issues-22-23"
+            },
+            "time": "2021-12-28T18:25:41+00:00"
+        },
+        {
             "name": "ml/iri",
             "version": "1.1.4",
             "target-dir": "ML/IRI",
@@ -14530,12 +14569,12 @@
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/unlv_wads/islandora_local.git",
-                "reference": "30f8f78166942672e56871878e4111d41b0541ec"
+                "reference": "0c25aa4aece010b975ecc89b8cd9134cd1004976"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/unlv_wads/islandora_local/get/30f8f78166942672e56871878e4111d41b0541ec.zip",
-                "reference": "30f8f78166942672e56871878e4111d41b0541ec",
+                "url": "https://bitbucket.org/unlv_wads/islandora_local/get/0c25aa4aece010b975ecc89b8cd9134cd1004976.zip",
+                "reference": "0c25aa4aece010b975ecc89b8cd9134cd1004976",
                 "shasum": ""
             },
             "require": {
@@ -14586,10 +14625,10 @@
             "description": "Local Islandora Additions",
             "homepage": "https://bitbucket.org/unlv_wads/islandora_local",
             "support": {
-                "source": "https://bitbucket.org/unlv_wads/islandora_local/src/30f8f78166942672e56871878e4111d41b0541ec/?at=master",
+                "source": "https://bitbucket.org/unlv_wads/islandora_local/src/0c25aa4aece010b975ecc89b8cd9134cd1004976/?at=master",
                 "issues": "https://bitbucket.org/unlv_wads/islandora_local/issues"
             },
-            "time": "2022-05-23T21:02:18+00:00"
+            "time": "2022-06-22T15:06:08+00:00"
         },
         {
             "name": "unlv_wads/newspapers",
@@ -14880,6 +14919,7 @@
         "drupal/rest_oai_pmh": 20,
         "drupal/tvi": 5,
         "drupal/views_entity_form_field": 10,
+        "mjordan/islandora_workbench_integration": 20,
         "unlv/islandora_local": 20,
         "unlv_wads/newspapers": 20
     },
