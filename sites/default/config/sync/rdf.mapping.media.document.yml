@@ -50,3 +50,6 @@ fieldMappings:
   field_file_size:
     properties:
       - 'premis:hasSize'
+  field_preservation_level:
+    properties:
+      - 'premis:preservationLevel'
