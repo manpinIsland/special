@@ -10,9 +10,11 @@ dependencies:
     - field.field.media.document.field_media_use
     - field.field.media.document.field_mime_type
     - field.field.media.document.field_original_name
+    - field.field.media.document.field_preservation_level
     - media.type.document
   module:
     - file
+    - options
 id: media.document.default
 targetEntityType: media
 bundle: document
@@ -73,6 +75,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_preservation_level:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   name:
     type: string

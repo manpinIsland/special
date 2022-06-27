@@ -12,10 +12,12 @@ dependencies:
     - field.field.media.image.field_media_use
     - field.field.media.image.field_mime_type
     - field.field.media.image.field_original_name
+    - field.field.media.image.field_preservation_level
     - field.field.media.image.field_width
     - media.type.image
   module:
     - image
+    - options
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -58,6 +60,8 @@ content:
     settings:
       image_link: file
       image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
@@ -91,6 +95,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_preservation_level:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   field_width:
     type: number_integer

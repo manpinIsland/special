@@ -1,0 +1,21 @@
+uuid: f7819965-3b16-4d05-8994-3e0e5067e046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_preservation_level
+    - media.type.extracted_text
+  module:
+    - options
+id: media.extracted_text.field_preservation_level
+field_name: field_preservation_level
+entity_type: media
+bundle: extracted_text
+label: 'Preservation Level'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

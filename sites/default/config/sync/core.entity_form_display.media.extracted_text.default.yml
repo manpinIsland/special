@@ -8,6 +8,7 @@ dependencies:
     - field.field.media.extracted_text.field_media_of
     - field.field.media.extracted_text.field_media_use
     - field.field.media.extracted_text.field_mime_type
+    - field.field.media.extracted_text.field_preservation_level
     - media.type.extracted_text
   module:
     - file
@@ -38,6 +39,12 @@ content:
     region: content
     settings:
       progress_indicator: throbber
+    third_party_settings: {  }
+  field_preservation_level:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select

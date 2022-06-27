@@ -12,6 +12,7 @@ dependencies:
     - field.field.media.file.field_media_use
     - field.field.media.file.field_mime_type
     - field.field.media.file.field_original_name
+    - field.field.media.file.field_preservation_level
     - media.type.file
   module:
     - file_download_link
@@ -41,6 +42,7 @@ hidden:
   field_media_use: true
   field_mime_type: true
   field_original_name: true
+  field_preservation_level: true
   langcode: true
   name: true
   search_api_excerpt: true

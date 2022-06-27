@@ -8,9 +8,11 @@ dependencies:
     - field.field.media.extracted_text.field_media_of
     - field.field.media.extracted_text.field_media_use
     - field.field.media.extracted_text.field_mime_type
+    - field.field.media.extracted_text.field_preservation_level
     - media.type.extracted_text
   module:
     - file
+    - options
     - text
     - user
 id: media.extracted_text.default
@@ -50,6 +52,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_preservation_level:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   uid:
     type: author

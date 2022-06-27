@@ -11,6 +11,7 @@ dependencies:
     - field.field.media.file.field_media_use
     - field.field.media.file.field_mime_type
     - field.field.media.file.field_original_name
+    - field.field.media.file.field_preservation_level
     - media.type.file
   module:
     - file
@@ -62,6 +63,12 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_preservation_level:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
     third_party_settings: {  }
   name:
     type: string_textfield
