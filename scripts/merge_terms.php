@@ -16,6 +16,14 @@
  * Old term<tab>/taxonomy/term/20724<tab>New Term<tab>/taxonomy/term/4249
  *
  * @usage: drush scr merge_terms.php -- <username> <file>
+ *
+ * NOTE: Rarely a term won't want to merge because both instances are already
+ * in use be the same node. These can be fixed by running a delete command
+ * against the database and then running the script again. E.g. for the
+ * source term X and target term Y run:
+ * `DELETE FROM taxonomy_index WHERE tid = Y AND nid IN (SELECT tmp.nid FROM (SELECT nid FROM taxonomy_index WHERE tid = X) AS tmp );`
+ * Yes, the nested sub-query is necessary to avoid a MySQL table conflict error.
+ * Once this delete is completed, just run the merge script again.
  */
 if (! require 'fedora_user_switch.php') { return; }
 
