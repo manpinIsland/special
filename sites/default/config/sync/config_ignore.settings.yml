@@ -1,3 +1,2 @@
 ignored_config_entities:
   - '*.islandora_object.*'
-  - 'migrate_plus.*'

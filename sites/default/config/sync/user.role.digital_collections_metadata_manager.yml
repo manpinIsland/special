@@ -31,6 +31,8 @@ dependencies:
   module:
     - field_permissions
     - field_ui
+    - file
+    - file_replace
     - filter
     - islandora
     - media
@@ -39,6 +41,7 @@ dependencies:
     - rest
     - system
     - taxonomy
+    - update
     - views_bulk_edit
     - views_ui
 id: digital_collections_metadata_manager
@@ -87,6 +90,7 @@ permissions:
   - 'create url aliases'
   - 'create video media'
   - 'delete any dc_object content'
+  - 'delete any files'
   - 'delete any media'
   - 'delete any newspaper_issue content'
   - 'delete any newspaper_page content'
@@ -146,6 +150,7 @@ permissions:
   - 'edit terms in time_period'
   - 'manage media'
   - 'manage members'
+  - 'replace files'
   - 'restful post oai_pmh'
   - 'revert dc_object revisions'
   - 'revert newspaper_issue revisions'
@@ -168,3 +173,4 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view the administration theme'
+  - 'view update notifications'

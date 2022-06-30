@@ -1,0 +1,11 @@
+uuid: dcdde865-1812-496f-bd19-6e148fc774ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.newspaper_title
+id: node.newspaper_title
+target_entity_type_id: node
+target_bundle: newspaper_title
+default_langcode: site_default
+language_alterable: false

@@ -13,7 +13,6 @@ module:
   syslog: 0
 theme: {  }
 blacklist:
-  - context.context.openseadragon_block
   - dgi_actions.service_data.ezid_dc
   - islandora.settings
   - islandora_iiif.settings

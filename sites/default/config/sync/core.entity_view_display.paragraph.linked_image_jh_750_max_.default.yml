@@ -21,6 +21,8 @@ content:
     settings:
       image_link: ''
       image_style: linked_image_jh
+      image_loading:
+        attribute: lazy
     third_party_settings:
       linked_field:
         linked: '1'

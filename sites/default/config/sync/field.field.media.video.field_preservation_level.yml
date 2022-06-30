@@ -1,0 +1,21 @@
+uuid: 92fa37f6-ac2e-4a2c-9daf-92f4eb995d31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_preservation_level
+    - media.type.video
+  module:
+    - options
+id: media.video.field_preservation_level
+field_name: field_preservation_level
+entity_type: media
+bundle: video
+label: 'Preservation Level'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

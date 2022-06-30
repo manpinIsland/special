@@ -1,0 +1,10 @@
+uuid: d458cd4d-38d8-4646-b0e5-19006bdd599c
+langcode: en
+status: true
+dependencies: {  }
+id: archivesspace_agents
+label: archivesspace_agents
+description: ''
+source_type: null
+module: null
+shared_configuration: null

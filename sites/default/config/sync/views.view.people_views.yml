@@ -1065,6 +1065,8 @@ display:
           settings:
             image_link: ''
             image_style: people_main_image
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1476,6 +1478,8 @@ display:
           settings:
             image_link: content
             image_style: jewish_heritage_people_list_210_x_158_
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -2114,6 +2118,8 @@ display:
           settings:
             image_link: ''
             image_style: people_main_image
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -2628,6 +2634,8 @@ display:
           settings:
             image_link: content
             image_style: large
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -3173,6 +3181,8 @@ display:
           settings:
             image_link: ''
             image_style: people_main_image
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -3687,6 +3697,8 @@ display:
           settings:
             image_link: content
             image_style: large
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -4150,6 +4162,8 @@ display:
           settings:
             image_link: content
             image_style: large
+            image_loading:
+              attribute: lazy
           group_column: ''
           group_columns: {  }
           group_rows: true

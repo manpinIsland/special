@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.paragraph_linked_image_left_.field_image
+    - field.field.paragraph.paragraph_linked_image_left_.field_link
     - field.field.paragraph.paragraph_linked_image_left_.field_text
     - paragraphs.paragraphs_type.paragraph_linked_image_left_
   module:
@@ -21,6 +22,8 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

@@ -8,6 +8,7 @@ dependencies:
     - taxonomy.vocabulary.corporate_body
     - taxonomy.vocabulary.family
     - taxonomy.vocabulary.geo_location
+    - taxonomy.vocabulary.material_type
     - taxonomy.vocabulary.person
     - taxonomy.vocabulary.subject
 id: node.archival_resource.field_subject
@@ -27,6 +28,7 @@ settings:
       corporate_body: corporate_body
       family: family
       geo_location: geo_location
+      material_type: material_type
       person: person
       subject: subject
     sort:

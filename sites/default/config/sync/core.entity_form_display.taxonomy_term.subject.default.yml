@@ -15,17 +15,16 @@ bundle: subject
 mode: default
 content:
   description:
-    type: text_textfield
-    weight: 121
+    type: text_textarea
+    weight: 2
     region: content
     settings:
-      placeholder: ''
       rows: 9
-      summary_rows: 3
+      placeholder: ''
     third_party_settings: {  }
   field_authority_link:
     type: authority_link_default
-    weight: 123
+    weight: 1
     region: content
     settings:
       placeholder_url: ''
@@ -33,14 +32,14 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -48,24 +47,24 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 100
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   tvi:
-    weight: 100
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

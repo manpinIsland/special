@@ -182,13 +182,11 @@
             "drupal/ldap": {
               "Issue 3206174 Fatal Error": "https://git.drupalcode.org/project/ldap/-/merge_requests/16.diff"
             },
-	    "drupal/archivesspace": {"Install Script": "https://git.drupalcode.org/project/archivesspace/-/commit/bf45783988d2e101ada1cb780d768ca22d67aac5.diff"},
 	    "islandora/controlled_access_terms": {"EDTF Year Formatting": "https://patch-diff.githubusercontent.com/raw/Islandora/controlled_access_terms/pull/76.diff"},
 	    "islandora/islandora": {
 		    "Improved breadcrumbs": "https://patch-diff.githubusercontent.com/raw/Islandora/islandora/pull/873.patch",
 	            "Fix Broken Media WSOD": "https://patch-diff.githubusercontent.com/raw/Islandora/islandora/pull/874.patch"
-	    },
-	    "islandora/jsonld": {"Fix '@id' errors": "https://patch-diff.githubusercontent.com/raw/Islandora/jsonld/pull/62.patch"}
+	    }
         },
         "installer-types": [
             "bower-asset",

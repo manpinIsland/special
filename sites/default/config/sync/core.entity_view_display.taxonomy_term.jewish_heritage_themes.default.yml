@@ -22,6 +22,8 @@ content:
     settings:
       image_link: ''
       image_style: jewish_heritage_explore
+      image_loading:
+        attribute: lazy
     third_party_settings:
       linked_field:
         linked: '1'

@@ -1,0 +1,106 @@
+uuid: ec9fb200-ca4d-4659-a9dd-0107a7cd851e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.newspaper_title.body
+    - field.field.node.newspaper_title.field_alternate_title
+    - field.field.node.newspaper_title.field_date
+    - field.field.node.newspaper_title.field_frequency
+    - field.field.node.newspaper_title.field_geographic_coverage
+    - field.field.node.newspaper_title.field_issn
+    - field.field.node.newspaper_title.field_language
+    - field.field.node.newspaper_title.field_lccn
+    - field.field.node.newspaper_title.field_motto
+    - field.field.node.newspaper_title.field_oclc
+    - field.field.node.newspaper_title.field_place_of_publication
+    - field.field.node.newspaper_title.field_publisher
+    - field.field.node.newspaper_title.field_replaces
+    - field.field.node.newspaper_title.field_subject
+    - field.field.node.newspaper_title.field_website
+    - node.type.newspaper_title
+  module:
+    - controlled_access_terms
+    - text
+    - user
+_core:
+  default_config_hash: Ckq0fw9J18H7FVpF38IhNO9weDgURh0FrPtMwUnm1lI
+id: node.newspaper_title.teaser
+targetEntityType: node
+bundle: newspaper_title
+mode: teaser
+content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_alternate_title:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_date:
+    type: edtf_default
+    label: above
+    settings:
+      date_separator: dash
+      date_order: big_endian
+      month_format: mm
+      day_format: dd
+      year_format: 'y'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_geographic_coverage:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_motto:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_place_of_publication:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_service_file: true
+  display_media_thumbnail: true
+  field_frequency: true
+  field_issn: true
+  field_language: true
+  field_lccn: true
+  field_oclc: true
+  field_publisher: true
+  field_replaces: true
+  field_subject: true
+  field_website: true
+  langcode: true
+  links: true
+  newspaper_issues_entity_view_1: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  pdfjs_media_evas_service_file: true
+  search_api_excerpt: true

@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.standardized_rights_statement.field_authority_link
     - field.field.taxonomy_term.standardized_rights_statement.field_external_uri
     - taxonomy.vocabulary.standardized_rights_statement
   module:
+    - controlled_access_terms
     - link
     - text
 id: taxonomy_term.standardized_rights_statement.default
@@ -19,6 +21,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_authority_link:
+    type: authority_formatter_default
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: _blank
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_external_uri:
     type: link
