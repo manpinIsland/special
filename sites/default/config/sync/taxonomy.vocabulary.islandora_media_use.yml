@@ -1,8 +1,0 @@
-uuid: 622f2b0f-8927-4687-a6dd-99807a644705
-langcode: en
-status: true
-dependencies: {  }
-name: 'Islandora Media Use'
-vid: islandora_media_use
-description: 'Terms to define how a media object is to be used.'
-weight: 0

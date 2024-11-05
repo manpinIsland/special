@@ -1,9 +1,0 @@
-uuid: 665ac8a1-90ba-4351-8c4e-a0f9b100d1ea
-langcode: en
-status: true
-dependencies: {  }
-id: zxx
-label: 'Not applicable'
-direction: ltr
-weight: 4
-locked: true

@@ -1,8 +1,0 @@
-uuid: b51326ff-7237-4a79-a706-f3d2fb080ad6
-langcode: en
-status: true
-dependencies: {  }
-id: formats
-label: Formats
-description: 'Formats list on homepage'
-locked: false

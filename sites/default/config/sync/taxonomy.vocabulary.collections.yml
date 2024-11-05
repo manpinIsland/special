@@ -1,8 +1,0 @@
-uuid: 0f30f508-1789-4222-b657-174a5ae6b8c6
-langcode: en
-status: true
-dependencies: {  }
-name: 'Digital Projects Carousel'
-vid: collections
-description: 'Digital Projects (formerly "Collections") for the footer carousel'
-weight: 0

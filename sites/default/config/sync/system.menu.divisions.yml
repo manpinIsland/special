@@ -1,8 +1,0 @@
-uuid: f85d5e79-f9a2-4106-8628-11a200ff0af2
-langcode: en
-status: true
-dependencies: {  }
-id: divisions
-label: Divisions
-description: 'Front page major content divisions list'
-locked: false

@@ -1,9 +1,0 @@
-uuid: 1d095fa3-b8cf-41fb-95cd-286fd919d25e
-langcode: en
-status: true
-dependencies: {  }
-id: header_image
-label: 'Header Image'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

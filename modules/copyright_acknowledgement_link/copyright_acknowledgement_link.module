@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains copyright_acknowledgement_link.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function copyright_acknowledgement_link_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the copyright_acknowledgement_link module.
+    case 'help.page.copyright_acknowledgement_link':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Turns a file link into a copyright acknowledgement form and download button.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function copyright_acknowledgement_link_theme() {
+  return [
+    'copyright_acknowledgement_link' => [
+      'variables' => [
+        'item' => NULL,
+        'url' => NULL,
+        'label' => NULL,
+        'checkbox' => TRUE,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_image_title_caption_formatter().
+ */
+function template_preprocess_copyright_acknowledgement_link(&$vars) {
+  $vars['#attached']['library'][] = 'copyright_acknowledgement_link/copyright-acknowledgement-modal';
+}

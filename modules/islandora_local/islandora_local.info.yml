@@ -1,0 +1,66 @@
+name: 'Islandora Local'
+type: module
+description: 'Custom additions and changes to Islandora 8.x'
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - archivesspace
+  - authorization
+  - blazy
+  - block
+  - content_translation
+  - context
+  - controlled_access_terms
+  - controlled_access_terms_defaults
+  - datetime
+  - 'drupal:migrate'
+  - dgi_actions_ark_identifier
+  - eva
+  - facets_block
+  - field
+  - field_group
+  - field_permissions
+  - file_download_link
+  - file_replace
+  - geolocation
+  - hook_post_action
+  - html_title
+  - islandora
+  - islandora_core_feature
+  - islandora_defaults
+  - islandora_image
+  - islandora_local
+  - language
+  - languagefield
+  - libraries
+  - link
+  - media
+  - menu_ui
+  - migrate_plus
+  - 'migrate_plus:migrate_plus'
+  - migrate_source_csv
+  - name
+  - node
+  - openseadragon
+  - options
+  - path
+  - 'drupal:pathauto'
+  - rdf
+  - rest_oai_pmh
+  - search_api_field_map
+  - select2_facets
+  - slick
+  - system
+  - taxonomy
+  - text
+  - 'drupal:token'
+  - user
+  - views
+  - views_bulk_operations
+  - views_contextual_filters_or
+  - views_entity_form_field
+  - views_field_formatter
+  - weight
+package: Islandora
+library_dependencies:
+  - flexslider
+core_incompatible: false

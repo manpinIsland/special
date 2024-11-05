@@ -1,9 +1,0 @@
-uuid: bf4cb2c3-662f-45f0-b640-890a9e40dfbb
-langcode: en
-status: true
-dependencies: {  }
-id: images
-label: Images
-icon_uuid: null
-description: 'Use <em>Images</em> for adding one or multiple images.'
-behavior_plugins: {  }

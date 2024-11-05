@@ -1,8 +1,0 @@
-uuid: cab1f0cd-e59d-49aa-a5a3-4c9fc453f272
-langcode: en
-status: true
-dependencies: {  }
-name: 'Corporate Body'
-vid: corporate_body
-description: 'An organization or group of persons that is identified by a particular name and that acts, or may act, as an entity.'
-weight: 0

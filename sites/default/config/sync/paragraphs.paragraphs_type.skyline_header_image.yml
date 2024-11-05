@@ -1,9 +1,0 @@
-uuid: dd9d120f-911a-4034-98d2-a2d506b8b6b5
-langcode: en
-status: true
-dependencies: {  }
-id: skyline_header_image
-label: 'Skyline Header Image'
-icon_uuid: null
-description: 'A header image for the Skyline Templates'
-behavior_plugins: {  }

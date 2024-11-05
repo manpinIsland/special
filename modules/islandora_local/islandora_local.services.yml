@@ -1,0 +1,10 @@
+services:
+
+  islandora_local.route_subscriber:
+    class: Drupal\islandora_local\Routing\IslandoraLocalRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  islandora_local.autocomplete_matcher:
+    class: Drupal\islandora_local\EntityAutocompleteMatcher
+    arguments: ['@plugin.manager.entity_reference_selection']

@@ -1,0 +1,14 @@
+bundle: islandora
+excluded:
+  - block.block.bartik_local_actions
+  - block.block.bartik_local_tasks
+  - block.block.seven_local_actions
+  - block.block.seven_primary_local_tasks
+  - block.block.seven_secondary_local_tasks
+  - block.block.aae_local_actions
+  - block.block.jewishheritage_d8_local_actions
+  - block.block.menus_local_actions
+  - block.block.skyline_local_actions
+  - block.block.skyline_local_tasks
+  - core.entity_view_mode.media.download_link
+required: true

@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function islandora_local_install() {
+
+  // Using an arbitrarily large weight will make it run after permissions updates.
+  module_set_weight('islandora_local', 10);
+
+  // // Update the Islandora Configs.
+  // $config_factory = \Drupal::configFactory();
+  //
+  // // Make local bundles indexable in Fedora and Triple-store.
+  // $repository_content_config = $config_factory->getEditable('context.context.repository_content');
+  // $repository_content_config->set('conditions.node_type.bundles.dc_object','dc_object');
+  // $repository_content_config->save(TRUE);
+  //
+  // // Enable the openseadragon view.
+  // $openseadragon_media_config = $config_factory->getEditable('views.view.openseadragon_media_evas');
+  // $openseadragon_displays = $openseadragon_media_config->get('display');
+  // foreach ($openseadragon_displays as $display_name => $display) {
+  //   if(!empty($display['display_options']['bundles'])){
+  //     $media_display_bundles = $display['display_options']['bundles'];
+  //     $media_display_bundles[] = 'dc_object';
+  //   }
+  //   $openseadragon_media_config->set("display.$display_name.display_options.bundles",$media_display_bundles);
+  // }
+  // $openseadragon_media_config->save(TRUE);
+}

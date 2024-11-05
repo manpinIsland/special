@@ -1,9 +1,0 @@
-uuid: a5373853-0690-4495-97ce-09d682e8e533
-langcode: en
-status: true
-dependencies: {  }
-id: linked_image_jh_750_max_
-label: 'Linked Image JH (750 Max)'
-icon_uuid: null
-description: 'A paragraph of with a linked image with a max width of 750px specifically for the Jewish Heritage Blog.'
-behavior_plugins: {  }

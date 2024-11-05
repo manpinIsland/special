@@ -1,0 +1,362 @@
+<?php
+
+/**
+ * @file
+ * Contains islandora_local.module.
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ *
+ * We are dynamically switching the view mode for the
+ * search display to use the grid display when that
+ * parameter is found. Items not using the list mode
+ * for the search results will be uneffected.
+ */
+function islandora_local_entity_view_mode_alter(&$view_mode, EntityInterface $entity, $context) {
+  $display = \Drupal::request()->query->get('display');
+  if ($entity->getEntityTypeId() == 'node' &&
+      !empty($display) &&
+      $display == 'grid' &&
+      $view_mode == 'search_result_list') {
+    $view_mode = 'search_result_grid';
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_list().
+ *
+ * Modifies the siblings_block view results to set a 'sibling-active'
+ * CSS class on the row that matches the currently displayed node.
+ * Either add the CSS to your theme or, if using adaptive_theme,
+ * optionally add it to the Custom CSS extension.
+ */
+function islandora_local_preprocess_views_view_list(&$vars) {
+  if ($vars['view']->current_display == 'siblings_block') {
+    $path = \Drupal::service('path.alias_manager')
+      ->getAliasByPath(\Drupal::service('path.current')
+        ->getPath());
+    foreach ($vars['rows'] as $id => $row) {
+      $entity = $row['content']['#node'];
+      if (!empty($entity) && $entity->toUrl()->toString() == $path) {
+        $vars['rows'][$id]['attributes']->addClass('sibling-active');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_search_display_control_block().
+ */
+function islandora_local_preprocess_search_display_control_block(&$vars) {
+  $uri = \Drupal::request()->getRequestUri();
+  $url = Url::fromUserInput($uri);
+  $vars['display_btns']['list'] = $url->setOption('query', array_merge($url->getOption('query'), ['display' => 'list']))->toString();
+  $vars['display_btns']['grid'] = $url->setOption('query', array_merge($url->getOption('query'), ['display' => 'grid']))->toString();
+}
+
+/**
+ * Implements hook_theme().
+ */
+function islandora_local_theme($existing, $type, $theme, $path) {
+  return [
+    'search_display_control_block' => [
+      'variables' => [
+        'sorts' => '',
+        'paginations' => '',
+        'existing_params' => '',
+        'term_buttons' => '',
+        'facet_buttons' => '',
+      ],
+    ],
+    'flexslider' => [],
+  ];
+}
+
+/**
+ * Implements our flexslider view style.
+ */
+function template_preprocess_views_view_flexslider(&$variables) {
+  // Get module path for use in twig.
+  $module_handler = Drupal::service('module_handler');
+  $variables['module_path'] = $module_handler->getModule('islandora_local')->getPath();
+
+  $variables['#attached']['library'][] = 'islandora_local/flexslider_views_style';
+  $options = $variables['view']->style_plugin->options;
+  $slides = [];
+  $islandora_utils = \Drupal::service('islandora.utils');
+  $service_file_term = $islandora_utils->getTermForUri('http://pcdm.org/use#ServiceFile');
+  $thumbnail_term = $islandora_utils->getTermForUri('http://pcdm.org/use#ThumbnailImage');
+  if (!$service_file_term || !$thumbnail_term) {
+    throw new \RuntimeException("Could not locate either the service file or thumbnail terms.", 500);
+  }
+
+  // Gather each slide's components.
+  foreach ($variables['view']->result as $id => $result) {
+    $node = $result->_entity;
+    $slide = [];
+
+    // Gather media.
+    $thumbnail_media = $islandora_utils->getMediaWithTerm($node, $thumbnail_term);
+    $content_media = $islandora_utils->getMediaWithTerm($node, $service_file_term);
+    if ($thumbnail_media) {
+      $slide['thumb'] = file_url_transform_relative(file_create_url($thumbnail_media->field_media_image->entity->getFileUri()));
+    }
+
+    // Use PDFjs for media with a pdf mime-type.
+    if (array_search('application/pdf', array_column($content_media->get('field_mime_type')->getValue(), 'value')) !== FALSE) {
+      $slide['content'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($content_media, 'pdfjs');
+    }
+    elseif (!empty(preg_grep('/^image\//', array_column($content_media->get('field_mime_type')->getValue(), 'value')))) {
+      $slide['content'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($content_media, 'open_seadragon');
+    }
+    else {
+      $slide['content'] = \Drupal::entityTypeManager()->getViewBuilder('media')->view($content_media, 'source');
+    }
+
+    // Build captions.
+    $slide['caption'] = ['#theme' => 'container', '#children' => []];
+    if ($node->title->value) {
+      // "<div class='caption-title'>" . $node->title->value . "</div>";
+      $slide['caption']['#children'][] = [
+        '#theme' => 'container',
+        '#attribtues' => [
+          'class' => [
+            'caption-title',
+          ],
+        ],
+        '#children' => [
+          Link::fromTextAndUrl($node->title->value, Url::fromRoute('entity.node.canonical', ['node' => $node->id()]))->toRenderable(),
+        ],
+      ];
+    }
+    if ($node->title->body) {
+      $slide['caption']['#children'][] = [
+        '#theme' => 'container',
+        '#attribtues' => [
+          'class' => [
+            'caption-body',
+          ],
+        ],
+        '#children' => [
+          $node->body->view(),
+        ],
+      ];
+    }
+    $slides[$id] = $slide;
+  }
+  $variables['slides'] = $slides;
+  $variables['options'] = $options;
+}
+
+/**
+ * Implements hook_form_views_exposed_form_alter().
+ */
+function islandora_local_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $view = $form_state->getStorage('view');
+
+  // Update the Islandora search exposed form.
+  if (($view['view']->id() == 'islandora_search') && ($view['view']->current_display == 'search')) {
+    // Search box forms on node pages...
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof NodeInterface) {
+      // Alters for search box on archival description pages.
+      // We use the archival collection label value because we are using the
+      // facets for our filter.
+      // Using facets allows us to show that, even if there are no results
+      // for this search, there are results for other collections (if any).
+      if ($node->bundle() == 'archival_resource') {
+        $archival_collection = $node->label();
+      }
+      elseif ($node->bundle() == 'archival_object' && $node->hasField('field_as_resource') && !empty($node->get('field_as_resource'))) {
+        $archival_collection = $node->get('field_as_resource')->entity->title->value;
+      }
+      // You can get nid and anything else you need from the node object.
+      $form['f[0]'] = [
+        '#type' => 'hidden',
+        '#value' => 'archival_collection:' . $archival_collection,
+      ];
+      unset($form['items_per_page']);
+      $form['actions']['submit']['#attributes']['class'][] = 'btn btn-danger';
+      $form['#info']['filter-search_api_fulltext']['label'] = '';
+      $form['keys']['#attributes']['placeholder'] = t('Enter keywords...');
+    }
+  }
+}
+
+/**
+ * Filter condition plugins out of the google tag form.
+ */
+function islandora_local_plugin_filter_condition__google_tag_alter(&$definitions, array $extra) {
+  unset($definitions['file_uses_filesystem']);
+  unset($definitions['islandora_entity_bundle']);
+  unset($definitions['media_has_mimetype']);
+  unset($definitions['media_has_term']);
+  unset($definitions['media_is_islandora_media']);
+  unset($definitions['media_uses_filesystem']);
+  unset($definitions['node_anon_access']);
+  unset($definitions['node_had_namespace']);
+  unset($definitions['node_has_parent']);
+  unset($definitions['node_has_term']);
+  unset($definitions['node_is_islandora_object']);
+  unset($definitions['node_is_published']);
+  unset($definitions['node_referenced_by_field']);
+  unset($definitions['node_referenced_by_node']);
+  unset($definitions['parent_node_has_term']);
+}
+
+/**
+ * Attach library to Digital Collections Edit Form.
+ */
+function islandora_local_preprocess_views_view(&$variables) {
+  if ($variables['view']->storage->id() == 'digital_collections_object_edit_form') {
+    $variables['#attached']['library'][] = 'islandora_local/dc-editor';
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ *
+ * Set alt text of related images.
+ */
+function islandora_local_node_update(EntityInterface $node) {
+  // Make sure field_access_terms changed before bothering with media.
+  $title = $node->original->get('title')->value;
+  $new_title = $node->get('title')->value;
+  if (!($title == $new_title)) {
+    $related_image_media = \Drupal::entityTypeManager()->getStorage('media')->loadByProperties([
+      'bundle' => 'image',
+      'field_media_of' => $node->id(),
+    ]);
+    foreach ($related_image_media as $mid => $media) {
+      $images = $media->get('field_media_image');
+      foreach ($images as $delta => $image) {
+        $image->set('alt', $new_title);
+        $image->set('title', $new_title);
+      }
+      $media->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_media_presave().
+ *
+ * Add alt text to image fields with related node label if available.
+ */
+function islandora_local_media_presave(EntityInterface $entity) {
+  if ($entity->hasField('field_media_of') && $entity->bundle() == 'image' && !empty($entity->field_media_of->entity)) {
+    // There is generally only one related node,
+    // so use the first's label for alt text.
+    $alt = $entity->field_media_of->entity->label();
+    $images = $entity->get('field_media_image');
+    foreach ($images as $delta => $image) {
+      if (empty($image->alt)) {
+        $image->set('alt', $alt);
+      }
+      if (empty($image->title)) {
+        $image->set('title', $alt);
+      }
+    }
+  }
+}
+
+use Drupal\jsonld\Normalizer\NormalizerBase;
+
+/**
+ * Implements hook_jsonld_alter_normalized_array().
+ */
+function islandora_local_jsonld_alter_normalized_array(EntityInterface $entity, array &$normalized, array $context) {
+  if (isset($normalized['@graph']) && is_array($normalized['@graph'])) {
+    foreach ($entity->getFieldDefinitions() as $field => $field_definition) {
+      if (!empty($entity->get($field)->getValue())) {
+        if ($field_definition->getType() == 'datetime') {
+          // Foreach ($entity->get($field)->getValue() as $value) {.
+          foreach ($context['current_entity_rdf_mapping']->get('fieldMappings')[$field]['properties'] as $predicate) {
+            // Find the predicate value that needs updating.
+            $predicate_normalized = NormalizerBase::escapePrefix($predicate, $context['namespaces']);
+            foreach ($normalized['@graph'][0][$predicate_normalized] as $index => $value) {
+              // Pull value from array for ease of reference.
+              $value = $value['@value'];
+              if (strpos($value, 'T') !== FALSE) {
+                continue;
+              }
+
+              // Determine which type to use.
+              $date_type = NormalizerBase::escapePrefix('xs:date', $context['namespaces']);
+              switch (count(explode('-', $value))) {
+                case 1:
+                  $date_type = NormalizerBase::escapePrefix('xs:gYear', $context['namespaces']);
+                  break;
+
+                case 2:
+                  $date_type = NormalizerBase::escapePrefix('xs:gYearMonth', $context['namespaces']);
+                  break;
+              }
+              $normalized['@graph'][0][$predicate_normalized][$index]['@type'] = $date_type;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+use Drupal\Core\Render\BubbleableMetadata;
+
+/**
+ * Implements hook_token_info().
+ */
+function islandora_local_token_info() {
+  $type = [
+    'name' => t('Local'),
+    'description' => t('Locally defined tokens.'),
+    'needs-data' => 'node',
+  ];
+
+  $node['dc-ark'] = [
+    'name' => t("DC ARK"),
+    'description' => t("The ARK from the field_archival_resource_key field."),
+  ];
+
+  return [
+    'types' => ['node' => $type],
+    'tokens' => ['node' => $node],
+  ];
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function islandora_local_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+  $ark_field_id = 'field_archival_resource_key';
+  if ($type == 'node' && !empty($data['node'])) {
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $data['node'];
+
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        // Simple key values on the node.
+        case 'dc-ark':
+          $type = $node->getType();
+          $matches = [];
+          if (isset($node->get($ark_field_id)->uri) && preg_match('#ark:/\d+/.*#i', $node->get($ark_field_id)->uri, $matches)) {
+            $replacements[$original] = $matches[0];
+          }
+          else {
+            $replacements[$original] = "/node/{$node->id()}";
+          }
+          break;
+      }
+    }
+
+  }
+  return $replacements;
+}

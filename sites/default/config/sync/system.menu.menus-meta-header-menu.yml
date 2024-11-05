@@ -1,8 +1,0 @@
-uuid: 2b07c5ce-0333-4e06-8b57-d96ba913e212
-langcode: en
-status: true
-dependencies: {  }
-id: menus-meta-header-menu
-label: 'Menus Meta Header Menu'
-description: 'The main meta menu for the Menus collections'
-locked: false

@@ -1,8 +1,0 @@
-uuid: 2920756f-44de-4b90-b38e-8ffa17b9fab3
-langcode: en
-status: true
-dependencies: {  }
-name: Person
-vid: person
-description: 'An individual of the human species. '
-weight: 0

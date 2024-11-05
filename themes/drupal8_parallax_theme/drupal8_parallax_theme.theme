@@ -1,0 +1,561 @@
+<?php
+
+/**
+ * @file
+ * Contains theme override functions and preprocess functions
+ */
+
+use Drupal\Core\Template\RenderWrapper;
+use Drupal\Core\Template\Attribute;
+use Drupal\search\Form\SearchBlockForm;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\system\Form\ThemeSettingsForm;
+use Drupal\file\Entity\File;
+use Drupal\Core\Url;
+use Drupal\file\Plugin\Core\Entity\FileInterface;
+
+
+function drupal8_parallax_theme_preprocess_html(&$variables) {
+	$is_front_page = \Drupal::service('path.matcher')->isFrontPage();
+  if($is_front_page)$variables['head_title']['title'] = "";
+}
+
+
+/**
+ * Implements hook_preprocess_page() for block templates.
+ */
+
+function drupal8_parallax_theme_preprocess_page(&$variables) {
+
+  // Add Responsive class for Top Widget.
+  if (!empty($variables['page']['topwidget_first']) && !empty($variables['page']['topwidget_second']) && !empty($variables['page']['topwidget_third'])) {
+    $variables['topwidget_class'] = 'col-sm-4';
+    $variables['topwidget_third_class'] = 'col-sm-4';
+  }
+  elseif((!empty($variables['page']['topwidget_first']) && !empty($variables['page']['topwidget_second'])) or (!empty($variables['page']['topwidget_first']) && !empty($variables['page']['topwidget_third'])) or (!empty($variables['page']['topwidget_third']) && !empty($variables['page']['topwidget_second']))) {
+    $variables['topwidget_class'] = 'col-sm-6';
+    $variables['topwidget_third_class'] = 'col-sm-6';
+  }
+  else {
+    $variables['topwidget_class'] = 'col-md-12';
+  }
+
+  // Add Responsive class for Bottom Widget.
+  if (!empty($variables['page']['bottom_first']) && !empty($variables['page']['bottom_second']) && !empty($variables['page']['bottom_third']) && !empty($variables['page']['bottom_forth'])) {
+    $variables['bottom_class'] = 'col-sm-3';
+  }
+  else if (!empty($variables['page']['bottom_first']) && !empty($variables['page']['bottom_second']) && !empty($variables['page']['bottom_third'])) {
+    $variables['bottom_class'] = 'col-sm-4';
+  }
+  else if((!empty($variables['page']['bottom_first']) && !empty($variables['page']['bottom_second'])) or (!empty($variables['page']['bottom_first']) && !empty($variables['page']['bottom_third'])) or (!empty($variables['page']['bottom_third']) && !empty($variables['page']['bottom_second']))) {
+    $variables['bottom_class'] = 'col-sm-6';
+  }
+  else {
+    $variables['bottom_class'] = 'col-md-12';
+  }
+
+  // Add Responsive class for footer.
+  if (!empty($variables['page']['footer_first']) && !empty($variables['page']['footer_second']) && !empty($variables['page']['footer_third'])) {
+    $variables['footer_class'] = 'col-md-4';
+    $variables['footer_first_class'] = 'col-md-4';
+  }
+  elseif((!empty($variables['page']['footer_first']) && !empty($variables['page']['footer_second'])) or (!empty($variables['page']['footer_first']) && !empty($variables['page']['footer_third'])) or (!empty($variables['page']['footer_third']) && !empty($variables['page']['footer_second']))) {
+    $variables['footer_class'] = 'col-md-6';
+    $variables['footer_first_class'] = 'col-md-6';
+  }
+  else {
+    $variables['footer_class'] = 'col-md-12';
+  }
+
+  // Add information about the number of sidebars.
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['contentlayout'] = 'col-md-6';
+    $variables['sidebarfirst'] = 'col-md-3';
+    $variables['sidebarsecond'] = 'col-md-3';
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['contentlayout'] = 'col-md-9 ';
+    $variables['sidebarfirst'] = 'col-md-3';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['contentlayout'] = 'col-md-9';
+    $variables['sidebarsecond'] = 'col-md-3';
+  }
+  else {
+    $variables['contentlayout'] = 'col-md-12';
+  }
+
+  // Social media global variable.
+  $variables['show_social_icon'] = theme_get_setting('show_social_icon');
+  $variables['facebook_url'] = theme_get_setting('facebook_url');
+  $variables['google_plus_url'] = theme_get_setting('google_plus_url');
+  $variables['twitter_url'] = theme_get_setting('twitter_url');
+  $variables['linkedin_url'] = theme_get_setting('linkedin_url');
+  $variables['pinterest_url'] = theme_get_setting('pinterest_url');
+  $variables['rss_url'] = theme_get_setting('rss_url');
+  $variables['show_credit_link'] = theme_get_setting('show_credit_link');
+
+  //To get the current url
+  $current_url  = \Drupal::request()->getRequestUri();
+  $current_path = explode("/", $current_url);
+  $variables['current_path'] = $current_path[2];
+  
+  // Slider
+  // Asign Variable for Slider
+  if ($variables['is_front']) {
+    if (theme_get_setting('show_slideshow','drupal8_parallax_theme') == 1) {
+      $variables['show_slideshow'] = 1;
+      $variables['slider_content'] = drupal8_parallax_theme_get_slider_content();
+    }
+  }
+  
+  $is_front_page = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['is_front_page'] = $is_front_page;
+  
+  $edit_current_path=\Drupal::service('path.current')->getPath();
+  
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(1);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['digital_collections_footer_1']=$block_view;
+		$variables['custom_blocks']['digital_collections_footer_1_edit']="/block/1?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(2);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['digital_collections_footer_2']=$block_view;
+		$variables['custom_blocks']['digital_collections_footer_2_edit']="/block/2?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(3);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['digital_collections_footer_3']=$block_view;
+		$variables['custom_blocks']['digital_collections_footer_3_edit']="/block/3?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(4);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['digital_collections_footer_4']=$block_view;
+		$variables['custom_blocks']['digital_collections_footer_4_edit']="/block/4?destination=".$edit_current_path;
+	}
+
+
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(5);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['lied_library_footer_1']=$block_view;
+		$variables['custom_blocks']['lied_library_footer_1_edit']="/block/5?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(6);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['lied_library_footer_2']=$block_view;
+		$variables['custom_blocks']['lied_library_footer_2_edit']="/block/6?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(7);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['lied_library_footer_3']=$block_view;
+		$variables['custom_blocks']['lied_library_footer_3_edit']="/block/7?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(8);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['lied_library_footer_4']=$block_view;
+		$variables['custom_blocks']['lied_library_footer_4_edit']="/block/8?destination=".$edit_current_path;
+	}
+
+
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(9);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['special_collections_footer_1']=$block_view;
+		$variables['custom_blocks']['special_collections_footer_1_edit']="/block/9?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(10);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['special_collections_footer_2']=$block_view;
+		$variables['custom_blocks']['special_collections_footer_2_edit']="/block/10?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(11);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['special_collections_footer_3']=$block_view;
+		$variables['custom_blocks']['special_collections_footer_3_edit']="/block/11?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(12);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['special_collections_footer_4'] = $block_view;
+		$variables['custom_blocks']['special_collections_footer_4_edit']="/block/12?destination=".$edit_current_path;
+	}
+
+
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(13);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['health_sciences_library_footer_1']=$block_view;
+		$variables['custom_blocks']['health_sciences_library_footer_1_edit']="/block/13?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(14);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['health_sciences_library_footer_2']=$block_view;
+		$variables['custom_blocks']['health_sciences_library_footer_2_edit']="/block/14?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(15);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['health_sciences_library_footer_3']=$block_view;
+		$variables['custom_blocks']['health_sciences_library_footer_3_edit']="/block/15?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(16);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['health_sciences_library_footer_4']=$block_view;
+		$variables['custom_blocks']['health_sciences_library_footer_4_edit']="/block/16?destination=".$edit_current_path;
+	}
+
+
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(17);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['architecture_library_footer_1']=$block_view;
+		$variables['custom_blocks']['architecture_library_footer_1_edit']="/block/17?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(18);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['architecture_library_footer_2']=$block_view;
+		$variables['custom_blocks']['architecture_library_footer_2_edit']="/block/18?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(19);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['architecture_library_footer_3']=$block_view;
+		$variables['custom_blocks']['architecture_library_footer_3_edit']="/block/19?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(20);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['architecture_library_footer_4']=$block_view;
+		$variables['custom_blocks']['architecture_library_footer_4_edit']="/block/20?destination=".$edit_current_path;
+	}
+
+
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(21);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['teacher_library_footer_1']=$block_view;
+		$variables['custom_blocks']['teacher_library_footer_1_edit']="/block/21?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(22);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['teacher_library_footer_2']=$block_view;
+		$variables['custom_blocks']['teacher_library_footer_2_edit']="/block/22?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(23);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['teacher_library_footer_3']=$block_view;
+		$variables['custom_blocks']['teacher_library_footer_3_edit']="/block/23?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(24);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['teacher_library_footer_4']=$block_view;
+		$variables['custom_blocks']['teacher_library_footer_4_edit']="/block/24?destination=".$edit_current_path;
+	}
+
+
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(25);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['music_library_footer_1']=$block_view;
+		$variables['custom_blocks']['music_library_footer_1_edit']="/block/25?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(26);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['music_library_footer_2']=$block_view;
+		$variables['custom_blocks']['music_library_footer_2_edit']="/block/26?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(27);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['music_library_footer_3']=$block_view;
+		$variables['custom_blocks']['music_library_footer_3_edit']="/block/27?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(28);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['music_library_footer_4']=$block_view;
+		$variables['custom_blocks']['music_library_footer_4_edit']="/block/28?destination=".$edit_current_path;
+	}
+
+
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(29);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['law_library_footer_1']=$block_view;
+		$variables['custom_blocks']['law_library_footer_1_edit']="/block/29?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(30);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['law_library_footer_2']=$block_view;
+		$variables['custom_blocks']['law_library_footer_2_edit']="/block/30?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(31);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['law_library_footer_3']=$block_view;
+		$variables['custom_blocks']['law_library_footer_3_edit']="/block/31?destination=".$edit_current_path;
+	}
+	$block_entity=Drupal\block_content\Entity\BlockContent::load(32);
+	$block_view=\Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity);
+	if($block_view){
+		$variables['custom_blocks']['law_library_footer_4']=$block_view;
+		$variables['custom_blocks']['law_library_footer_4_edit']="/block/32?destination=".$edit_current_path;
+	}
+  
+  
+  $termStorage=\Drupal::entityTypeManager()->getStorage('taxonomy_term');// Load all collections taxonomy term.
+  $variables['collections_list']=$termStorage->loadTree('collections',0,NULL,TRUE);
+
+  
+  $tree = \Drupal::menuTree()->load('topics', new \Drupal\Core\Menu\MenuTreeParameters());
+  foreach ($tree as $k=>$item){
+	  $url_obj=$item->link->getUrlObject();
+	  $title=$item->link->getTitle();
+	  $url=$url_obj->toString();
+	  $options=$url_obj->getOptions();
+	  $icon=$options['attributes']['title'];
+	  $variables['topics_menu'][$k]['title']=$title;
+	  $variables['topics_menu'][$k]['url']=$url;
+	  $variables['topics_menu'][$k]['icon']=$icon;
+  }
+  
+  
+  $tree1 = \Drupal::menuTree()->load('formats', new \Drupal\Core\Menu\MenuTreeParameters());
+  foreach ($tree1 as $k=>$item){
+	  $url_obj=$item->link->getUrlObject();
+	  $title=$item->link->getTitle();
+	  $url=$url_obj->toString();
+	  $options=$url_obj->getOptions();
+	  $icon=$options['attributes']['title'];
+	  $variables['formats_menu'][$k]['title']=$title;
+	  $variables['formats_menu'][$k]['url']=$url;
+	  $variables['formats_menu'][$k]['icon']=$icon;
+  }
+
+  $homeNode=\Drupal\paragraphs\Entity\Paragraph::load(23);
+  $homeText=$homeNode->get('field_text')->getValue();
+  $homeIMG=$homeNode->get('field_image')->entity->getFileUri();
+  //var_dump($homeText);
+  $variables['home_content']['image']=$homeIMG;
+  $variables['home_content']['text']=html_entity_decode($homeText);
+  
+  
+
+}
+
+
+/**
+* Implements hook_preprocess_node.
+*
+function drupal8_parallax_theme_preprocess_node(&$variables){
+	$node=$variables['node'];
+	if($node->bundle()=='ice-cream'){
+		// Should be injected.
+		$termStorage=\Drupal::entityManager()->getStorage('taxonomy_term');
+		// Load all flavors taxonomy term.
+		$variables['flavors']=$termStorage->loadTree('flavors',0,NULL,TRUE);
+	}
+}
+*/
+
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function drupal8_parallax_theme_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__main') { // We're doing that for main menu.
+    // Get the current path.
+    $current_path = \Drupal::request()->getRequestUri();
+    $items = $variables['items'];
+    foreach ($items as $key => $item) {
+      // If path is current_path, set active to li.
+      if ($item['url']->toString() == $current_path) {
+      // Add active link.
+      $variables['items'][$key]['attributes']['class'] = 'active';
+      }
+    }
+  }
+}
+
+/**
+ * Slider
+ * Implements custom function for get slider content.
+ */
+function drupal8_parallax_theme_get_slider_content() {
+  $slider_content = array();
+  for ($i = 1; $i <= theme_get_setting('no_of_slides'); $i++) {
+    $fid = theme_get_setting('slide_image_path'.$i,'drupal8_parallax_theme');
+    if (!empty($fid)) {
+      $file = \Drupal\file\Entity\File::load($fid[0]);
+      $uri = $file->getFileUri();
+      $path = file_create_url($uri);
+    }
+    else {
+      $path = base_path() . drupal_get_path('theme', 'drupal8_parallax_theme') . theme_get_setting('slide_image_path_' . $i, 'drupal8_parallax_theme');
+    }
+    $slider_content[$i] = '<li>
+      <img src="' . $path . '" alt="Slider Banner" />
+      <div class="slider-caption">
+        <h2 class="slider-title">' . theme_get_setting('slide_title_' . $i, 'drupal8_parallax_theme').'</h2>
+        <div class="clearfix"><p class="slider-description">' . theme_get_setting('slide_description_' . $i, 'drupal8_parallax_theme').'</p></div>
+        <a href=' . theme_get_setting('slide_url_' . $i, 'drupal8_parallax_theme') . ' class="more-link">Read more</a>
+      </div>
+    </li>';
+  }
+  return $slider_content;
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function drupal8_parallax_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+  $form['drupal8_parallax_theme_info'] = array(
+    '#markup' => '<h2><br/>Advanced Theme Settings</h2><div class="messages messages--warning">Clear cache after making any changes in theme settings. <a href="../../config/development/performance">Click here to clear cashe</a></div>'
+  );
+
+  //Social Icon Link
+  $form['drupal8_parallax_theme_settings']['social_icon'] = array(
+    '#type' => 'details',
+    '#title' => t('Social Media Link'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['drupal8_parallax_theme_settings']['social_icon']['show_social_icon'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Social Icons'),
+    '#default_value' => theme_get_setting('show_social_icon'),
+    '#description'   => t("Show/Hide Social media links"),
+  );
+  $form['drupal8_parallax_theme_settings']['social_icon']['facebook_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Facebook URL'),
+    '#default_value' => theme_get_setting('facebook_url'),
+  );
+  $form['drupal8_parallax_theme_settings']['social_icon']['google_plus_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google plus URL'),
+    '#default_value' => theme_get_setting('google_plus_url'),
+  );
+  $form['drupal8_parallax_theme_settings']['social_icon']['twitter_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twitter URL'),
+    '#default_value' => theme_get_setting('twitter_url'),
+  );
+  $form['drupal8_parallax_theme_settings']['social_icon']['linkedin_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('LinkedIn URL'),
+    '#default_value' => theme_get_setting('linkedin_url'),
+  );
+  $form['drupal8_parallax_theme_settings']['social_icon']['pinterest_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Pinterest URL'),
+    '#default_value' => theme_get_setting('pinterest_url'),
+  );
+  $form['drupal8_parallax_theme_settings']['social_icon']['rss_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('RSS URL'),
+    '#default_value' => theme_get_setting('rss_url'),
+  );
+
+  // Custom submit to save the file permenant.
+  // $form['#submit'][] = 'drupal8_parallax_theme_settings_form_submit';
+
+  //Show/Hide credit
+  $form['drupal8_parallax_theme_settings']['credit_link'] = array(
+    '#type' => 'details',
+    '#title' => t('Footer Credit Link'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['drupal8_parallax_theme_settings']['credit_link']['show_credit_link'] = array(
+    '#type' => 'checkbox',
+    '#title' => t("Show/Hide 'Designed by Zymphonies' credit text"),
+    '#default_value' => theme_get_setting('show_credit_link'),
+    '#description'   => t("Highly recomend to display credit in footer"),
+  );
+  //Slide show config 
+  $form['drupal8_parallax_theme_settings']['slideshow'] = array(
+    '#type' => 'details',
+    '#title' => t('Front Page Slideshow'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['drupal8_parallax_theme_settings']['slideshow']['no_of_slides'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Number of slides'),
+    '#default_value' => theme_get_setting('no_of_slides'),
+    '#description'  => t("Enter the number of slides required & Save configuration"),
+    '#markup' => '<div class="messages messages--warning">Clear caches after making any changes in theme settings. <a href="../../config/development/performance">Click here to clear cashe</a></div>',
+  );
+  $form['drupal8_parallax_theme_settings']['slideshow']['show_slideshow'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Slideshow'),
+    '#default_value' => theme_get_setting('show_slideshow'),
+    '#description'   => t("Show/Hide Slideshow in home page"),
+  );
+  $form['drupal8_parallax_theme_settings']['slideshow']['slide'] = array(
+    '#markup' => t('Change the banner image, title, description and link using below fieldset'),
+  );
+  for ($i = 1; $i <= theme_get_setting('no_of_slides'); $i++) {
+    $form['drupal8_parallax_theme_settings']['slideshow']['slide' . $i] = array(
+      '#type' => 'details',
+      '#title' => t('Slide '.$i),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+    $form['drupal8_parallax_theme_settings']['slideshow']['slide' . $i]['slide_image_path' . $i] = array(
+      '#type' => 'managed_file',
+      '#title' => t('Slide '.$i.' Image'),
+      '#default_value' => theme_get_setting('slide_image_path'.$i,'drupal8_parallax_theme'),
+      '#upload_location' => 'public://',
+    );
+    $form['drupal8_parallax_theme_settings']['slideshow']['slide' . $i]['slide_title_' . $i] = array(
+      '#type' => 'textfield',
+      '#title' => t('Slide '.$i.' Title'),
+      '#default_value' => theme_get_setting('slide_title_' . $i,'drupal8_parallax_theme'),
+    );
+    $form['drupal8_parallax_theme_settings']['slideshow']['slide' . $i]['slide_description_' . $i] = array(
+      '#type' => 'textarea',
+      '#title' => t('Slide '.$i.' Description'),
+      '#default_value' => theme_get_setting('slide_description_' . $i,'drupal8_parallax_theme'),
+    );    
+    $form['drupal8_parallax_theme_settings']['slideshow']['slide' . $i]['slide_url_' . $i] = array(
+      '#type' => 'textfield',
+      '#title' => t('Slide '.$i.' URL'),
+      '#default_value' => theme_get_setting('slide_url_' . $i,'drupal8_parallax_theme'),
+    );
+  }
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function drupal8_parallax_theme_preprocess_breadcrumb(&$variables){
+  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+    $variables['breadcrumb'][] = array(
+     'text' => $node->getTitle(),
+     'url' => $node->URL()
+   );
+  }
+}

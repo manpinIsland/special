@@ -1,0 +1,25 @@
+name: Jewish Heritage
+type: theme
+description: This is a Southern Nevada Jewish Community Digital Heritage Project sub theme of Drupal 8 Parallax Theme
+core: 8.x
+core_version_requirement: ^8 || ^9
+# Defines the base theme
+base theme: stable
+# Defines libraries group in which we can add css/js.
+libraries:
+  - jewishheritage_d8/global-styling
+# Regions
+regions:
+  header: Header
+  primary_menu: 'Primary menu' 
+  search_box: 'Search Box' 
+  featured_img: 'Featured Images'
+  featured: Featured
+  sidebar_menu: Left menu
+  sidebar_first: Left sidebar
+  content: Content
+  #Footer widgets
+  footer_first: 'Footer first widget'
+  footer_second: 'Footer second widget'
+  footer_third: 'Footer third widget'
+  footer_fourth: 'Footer fourth widget'

@@ -1,9 +1,0 @@
-uuid: 555f2255-fe78-4c62-a860-0770d00418f6
-langcode: en
-status: true
-dependencies: {  }
-id: fedoraadmin
-label: fedoraAdmin
-weight: 3
-is_admin: null
-permissions: {  }

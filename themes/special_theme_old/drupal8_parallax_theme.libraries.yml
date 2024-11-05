@@ -1,0 +1,190 @@
+# Bootstrap
+bootstrap:
+  version: 1.x
+  css:
+    theme:
+      includes/bootstrap/css/bootstrap.min.css: {}
+  js:
+    includes/bootstrap/js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+# global components
+global-components:
+  Version: 1.x
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic': { type: external, minified: true }
+      css/global.css: {}
+      css/media.css: {}
+      css/bootstrap.css: {}
+      css/style.css: {}
+      css/additional-styles.css: {}
+      css/animate.css: {}
+      css/colors.css: {}
+      css/dark.css: {}
+      css/font-icons.css: {}
+      css/magnific-popup.css: {}
+      css/responsive.css: {}
+  js:
+    js/custom.js: {}
+    js/functions.js: {}
+    js/plugins.js: {}
+    js/search.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+
+# flexslider
+flexslider:
+  version: 1.x
+  css:
+    theme:
+      includes/flexslider/css/flexslider.css: {}
+  js:
+    includes/flexslider/js/jquery.flexslider-min.js: {}
+  dependencies:
+    - core/jquery
+
+fontawesome:
+  version: 1.x
+  css:
+    theme:
+      includes/fontawesome/css/font-awesome.css: {}
+
+# smartmenus
+smartmenus:
+  version: 1.x
+  css:
+    theme:
+      includes/smartmenus/sm-core-css.css: {}
+  js:
+    includes/smartmenus/jquery.smartmenus.min.js: {}
+  dependencies:
+    - core/jquery
+
+# OWL
+owl:
+  version: 1.x
+  css:
+    theme:
+      includes/owl/assets/owl.carousel.css: {}
+      includes/owl/assets/owl.theme.default.min.css: {}
+  js:
+    includes/owl/owl.carousel.min.js: {}
+  dependencies:
+    - core/jquery
+
+# Animate
+animate:
+  version: 1.x
+  css:
+    theme:
+      includes/animate/animate.css: {}
+  js:
+    includes/animate/wow.min.js: {}
+  dependencies:
+    - core/jquery
+
+# Search
+search:
+  version: 1.x
+  css:
+    theme:
+      css/search.css: {}
+
+# Select 2 Facet fix
+select2-facet:
+  js:
+    js/select2-facet.js: {}
+  dependencies:
+    - select2/select2
+
+# Year Facet
+year-facet:
+  js:
+    js/year-facet-slider.js: {}
+  dependencies:
+    - facets_range_widget/slider
+
+# Horizontal Tabs
+horizontal-tabs:
+  css:
+    theme:
+      css/horizontal-tabs.css: {}
+
+# Field Group Info
+field-group-info:
+  css:
+    theme:
+      css/field-group-info.css: {}
+
+# Archival materials
+archivesspace:
+  css:
+    theme:
+      css/archivesspace.css: {}
+  js:
+    js/archivesspace.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.11/split.min.js: { type: external, minified: true }
+
+# Compact form
+compact-form:
+  css:
+    theme:
+      css/compact-form.css: {}
+
+# Finding Aid View Page
+finding-aid-view:
+  css:
+    theme:
+      css/finding-aid-view.css: {}
+  dependencies:
+    - drupal8_parallax_theme/compact-form
+
+# ReadMore.js
+readmore:
+  js:
+    includes/readmore/readmore.js: {}
+
+# Agents
+agents:
+  css:
+    theme:
+      css/agents.css: {}
+  js:
+    js/agents.js: {}
+  dependencies:
+    - drupal8_parallax_theme/readmore
+
+# Digital Objects
+digital_objects:
+  css:
+    theme:
+      css/digital_objects.css: {}
+  js:
+    js/digital_objects.js: {}
+  dependencies:
+    - drupal8_parallax_theme/readmore
+
+# Copyright Acknowledgement
+copyright_acknowledgement:
+  css:
+    theme:
+      css/copyright_acknowledgement.css: {}
+  js:
+    js/copyright_acknowledgement.js: {}
+  dependencies:
+    - drupal8_parallax_theme/bootstrap 
+
+# Newspapers
+newspapers:
+  css:
+    theme:
+      css/newspapers.css: {}

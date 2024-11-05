@@ -1,8 +1,0 @@
-uuid: b187303f-bb4c-4c5a-87c0-f19d42565de4
-langcode: en
-status: true
-dependencies: {  }
-id: aae-main-menu
-label: 'AAE Main Menu'
-description: 'The main menu for the African American Experience Template'
-locked: false

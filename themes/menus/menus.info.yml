@@ -1,0 +1,30 @@
+name: Menus
+type: theme
+description: This is a Menus sub theme of Drupal 8 Parallax Theme
+core: 8.x
+core_version_requirement: ^8 || ^9
+# Defines the base theme
+base theme: stable
+# Defines libraries group in which we can add css/js.
+libraries:
+  - menus/global-styling
+# Regions
+regions:
+  header: Header
+  #Meta Header widgets
+  meta_breadcrumb: 'Meta Breadcrumb'
+  meta_navigation: 'Meta Navigation'
+  primary_menu: 'Primary menu' 
+  search_box: 'Search Box' 
+  featured_img: 'Featured Images'
+  featured: Timeline Main
+  sidebar_menu: Left menu
+  sidebar_second: Right menu
+  sidebar_first: Right sidebar
+  content: Content
+  #Footer widgets
+  footer: Footer menu
+  footer_first: 'Footer first widget'
+  footer_second: 'Footer second widget'
+  footer_third: 'Footer third widget'
+  footer_fourth: 'Footer fourth widget'

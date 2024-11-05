@@ -31,6 +31,19 @@
                 }
             }
         },
+        "islandora_riprap": {
+            "type": "package",
+            "package": {
+                "name": "mjordan/islandora_riprap",
+                "version": "0.0.0",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://github.com/mjordan/islandora_riprap",
+                    "type": "git",
+                    "reference": "main"
+              }
+            }
+        },
         "newspapers": {
             "type": "vcs",
             "url": "https://bitbucket.org/unlv_wads/newspapers.git"
@@ -182,6 +195,7 @@
             "drupal/ldap": {
               "Issue 3206174 Fatal Error": "https://git.drupalcode.org/project/ldap/-/merge_requests/16.diff"
             },
+	    "drupal/archivesspace": {"UpdateASResource patch": "https://special.library.unlv.edu/sites/default/files/uasr.patch"},
 	    "islandora/controlled_access_terms": {"EDTF Year Formatting": "https://patch-diff.githubusercontent.com/raw/Islandora/controlled_access_terms/pull/76.diff"},
 	    "islandora/islandora": {
 		    "Improved breadcrumbs": "https://patch-diff.githubusercontent.com/raw/Islandora/islandora/pull/873.patch",

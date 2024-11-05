@@ -1,8 +1,0 @@
-uuid: 97e0e2f0-1b0d-44b9-8984-b7f4e4bfbec4
-langcode: en
-status: true
-dependencies: {  }
-name: 'Resource Types'
-vid: resource_types
-description: 'See http://purl.org/dc/dcmitype/ and http://id.loc.gov/vocabulary/resourceTypes.html (a nested list of types).'
-weight: 0

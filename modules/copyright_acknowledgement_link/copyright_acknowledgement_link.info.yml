@@ -1,0 +1,5 @@
+name: 'Copyright Acknowledgement Link'
+type: module
+description: 'Turns a file link into a copyright acknowledgement form and download button.'
+core: 8.x
+package: 'Custom'

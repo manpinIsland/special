@@ -1,9 +1,0 @@
-uuid: 985b4893-32b2-4065-908f-18a1079aab5b
-langcode: en
-status: true
-dependencies: {  }
-id: url_override
-label: 'URL Override'
-icon_uuid: null
-description: '**COLLECTIONS ONLY** This will create an external link for the collection and ignore all other content for the node'
-behavior_plugins: {  }

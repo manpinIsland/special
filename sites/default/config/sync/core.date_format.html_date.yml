@@ -1,8 +1,0 @@
-uuid: 2e9c7b5d-e2ee-4211-8a5a-0e305b9b3681
-langcode: en
-status: true
-dependencies: {  }
-id: html_date
-label: 'HTML Date'
-locked: true
-pattern: Y-m-d

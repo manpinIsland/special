@@ -1,9 +1,0 @@
-uuid: e35b045b-188d-4004-8901-9bbe2d405dd1
-langcode: en
-status: true
-dependencies: {  }
-id: paragraph_linked_image_right_
-label: 'Paragraph + Linked Image (Right)'
-icon_uuid: null
-description: 'A paragraph of text with a linked image floating right of the text.'
-behavior_plugins: {  }

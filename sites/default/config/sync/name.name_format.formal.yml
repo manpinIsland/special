@@ -1,8 +1,0 @@
-uuid: 1bc22f79-596e-415c-b107-7e7f12542c15
-langcode: en
-status: true
-dependencies: {  }
-id: formal
-label: 'Title Family'
-locked: false
-pattern: t+if

@@ -1,8 +1,0 @@
-uuid: f4345e4b-a385-4377-9a3a-b3dd1e894033
-langcode: en
-status: true
-dependencies: {  }
-name: 'Jewish Heritage Themes'
-vid: jewish_heritage_themes
-description: 'The ''Themes'' list of image/links on Jewish Heritage'
-weight: 0

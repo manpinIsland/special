@@ -1,0 +1,16 @@
+global-styling:
+  css:
+    component:
+      css/style.css: {}
+      /themes/drupal8_parallax_theme/css/timeline.css: {}
+      'https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css': { type: external, minified: true }
+  js:
+    js/menus.js: {}
+    js/jquery.flexslider-min.js: {}
+    'https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js': { type: external, minified: true }
+    /modules/views_timelinejs/js/views_timelinejs.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

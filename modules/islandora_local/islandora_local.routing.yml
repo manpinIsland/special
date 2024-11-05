@@ -1,0 +1,13 @@
+islandora_local.node_thumbnail:
+  path: '/node/{node}/thumbnail'
+  defaults: 
+    _controller: '\Drupal\islandora_local\Controller\LocalController::getNodeThumbnail' 
+    _title: 'Node Thumbnail'
+  methods: [GET, HEAD]
+  requirements: 
+    _permission: 'access content'
+    node: \d+
+  options:
+    parameters:
+      node:
+        type: entity:node

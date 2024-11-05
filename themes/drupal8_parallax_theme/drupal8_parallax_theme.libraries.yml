@@ -1,0 +1,93 @@
+# Bootstrap
+bootstrap:
+  version: 1.x
+  css:
+    theme:
+      includes/bootstrap/css/bootstrap.min.css: {}
+  js:
+    includes/bootstrap/js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+# global components
+global-components:
+  Version: 1.x
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic': { type: external, minified: true }
+      css/global.css: {}
+      css/media.css: {}
+      css/additional-styles.css: {}
+      css/animate.css: {}
+      css/bootstrap.css: {}
+      css/colors.css: {}
+      css/dark.css: {}
+      css/font-icons.css: {}
+      css/magnific-popup.css: {}
+      css/responsive.css: {}
+      css/style.css: {}
+  js:
+    js/custom.js: {}
+    js/functions.js: {}
+    js/plugins.js: {}
+    js/search.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+
+# flexslider
+flexslider:
+  version: 1.x
+  css:
+    theme:
+      includes/flexslider/css/flexslider.css: {}
+  js:
+    includes/flexslider/js/jquery.flexslider-min.js: {}
+  dependencies:
+    - core/jquery
+
+fontawesome:
+  version: 1.x
+  css:
+    theme:
+      includes/fontawesome/css/font-awesome.css: {}
+
+# smartmenus
+smartmenus:
+  version: 1.x
+  css:
+    theme:
+      includes/smartmenus/sm-core-css.css: {}
+  js:
+    includes/smartmenus/jquery.smartmenus.min.js: {}
+  dependencies:
+    - core/jquery
+
+# OWL
+owl:
+  version: 1.x
+  css:
+    theme:
+      includes/owl/assets/owl.carousel.css: {}
+      includes/owl/assets/owl.theme.default.min.css: {}
+  js:
+    includes/owl/owl.carousel.min.js: {}
+  dependencies:
+    - core/jquery
+
+# Animate
+animate:
+  version: 1.x
+  css:
+    theme:
+      includes/animate/animate.css: {}
+  js:
+    includes/animate/wow.min.js: {}
+  dependencies:
+    - core/jquery

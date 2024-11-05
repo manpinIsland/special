@@ -1,8 +1,0 @@
-uuid: 2fe6ebe5-b021-4bac-b0e6-573e1d3d363a
-langcode: en
-status: true
-dependencies: {  }
-id: topics
-label: Topics
-description: 'Topics list on homepage'
-locked: false

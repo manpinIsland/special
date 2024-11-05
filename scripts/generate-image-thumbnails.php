@@ -60,23 +60,25 @@ printf("COMPARE LISTS:\t%d\n", time());
 #print("Nodes with thumb:\n");
 #print_r($nodes_w_thumb);
 $results = array_diff($nodes_w_service, $nodes_w_thumb);
-#print("Nodes to process:\n");
+printf("Nodes to process:\t%d", count($results));
 #print_r($results);
 printf("BUILDING ACTIONS:\t%d\n", time());
-$action = \Drupal\system\Entity\Action::load('image_generate_a_thumbnail_from_a_service_file');
+$action = \Drupal\system\Entity\Action::load('image_generate_a_thumbnail_from_an_original_file');
 
 # Thumbnails run ~ 13.8k/hr on 4 consumers, which is quicker than the service derivatives, so
-# so we are pegging its slower 3.5k evern 20 minutes.
-$limit = 3500;
-if($limit < count($results)) {
-  printf("Only running %s on %d of %d possible.\n", $action->id(), $limit, count($results));
-}
-$to_run = array_slice($results, 0, $limit);
+# so we are pegging its slower 3.5k every 20 minutes.
+# Johnny - 2022-08-23 - COMMENTED OUT to do all the results
+#$limit = 3500;
+#if($limit < count($results)) {
+  #printf("Only running %s on %d of %d possible.\n", $action->id(), $limit, count($results));
+#}
+#$to_run = array_slice($results, 0, $limit);
 
 printf("STARTING ACTIONS:\t%d\n", time());
 #print("Nodes after slice:\n");
 #print_r($to_run);
-foreach ($to_run as $nid) {
+#foreach ($to_run as $nid) {
+foreach ($results as $nid) {
   $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
   #printf("Performing '%s' on '%s' at %s\n", $action->id(), $node->toUrl()->toString(), date(DATE_ATOM));
   if ($node) {

@@ -1,0 +1,16 @@
+flexslider_views_style:
+  version: 1.x
+  css:
+    theme:
+      css/flexslider.css: { weight: 2000 }
+  js:
+    js/slider-view-style.js: {}
+  dependencies:
+    - core/jquery
+    - drupal8_parallax_theme/flexslider
+
+# Digital Collections Edit Form
+dc-editor:
+  css:
+    component:
+      css/dc-editor.css: {}

@@ -1,8 +1,0 @@
-uuid: 97402da6-5255-4530-af8e-ee1bd1d6cdf5
-langcode: en
-status: true
-dependencies: {  }
-id: skyline-main-menu
-label: 'Skyline Main Menu'
-description: 'The main menu for the Skyline Template'
-locked: false

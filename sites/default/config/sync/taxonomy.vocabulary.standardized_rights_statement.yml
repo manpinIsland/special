@@ -1,8 +1,0 @@
-uuid: 86e7852e-731c-4e14-9ca4-53a2ff8e67cb
-langcode: en
-status: true
-dependencies: {  }
-name: 'Standardized Rights Statement'
-vid: standardized_rights_statement
-description: 'A universal resource identifier that indicates the copyright, usage and access rights that apply to a resource.'
-weight: 0
